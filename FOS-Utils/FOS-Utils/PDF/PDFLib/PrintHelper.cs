@@ -16,13 +16,12 @@ namespace FOS_Utils.PDF.PDFLib
         #region variable
         private static PrintDocument doc;
         private static PrintPreviewDialog prDialog;
-        //
+        //Panel Chinh de ve
         private static FPdfPanel panelMain;
         //tong so trang Pdf
         private static int NumberPage = 1;
         //trang Pdf hien tai
-        private static int CurPage = 1;
-      
+        private static int CurPage = 1;      
         //Tong hop tat ca cac line trong trang
         private static List<FosLine> lsLineInpage = new List<FosLine>();
         #endregion

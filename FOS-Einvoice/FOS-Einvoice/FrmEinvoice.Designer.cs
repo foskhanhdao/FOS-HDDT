@@ -85,9 +85,8 @@
             this.btnPreview = new FOS_Utils.FButton();
             this.btnClose = new FOS_Utils.FButton();
             this.btnNew = new FOS_Utils.FButton();
-            this.footer1 = new FOS_Einvoice.UserControls.Footer();
             this.btnSaveAndInvoice = new FOS_Utils.FButton();
-            this.btnSave = new FOS_Utils.FButton();
+            this.footer1 = new FOS_Einvoice.UserControls.Footer();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             this.panel3.SuspendLayout();
@@ -798,7 +797,6 @@
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Controls.Add(this.btnSaveAndInvoice);
-            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Location = new System.Drawing.Point(12, 480);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(918, 60);
@@ -807,7 +805,7 @@
             // fButton2
             // 
             this.fButton2.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fButton2.Location = new System.Drawing.Point(462, 9);
+            this.fButton2.Location = new System.Drawing.Point(338, 9);
             this.fButton2.Name = "fButton2";
             this.fButton2.Size = new System.Drawing.Size(160, 40);
             this.fButton2.TabIndex = 6;
@@ -839,12 +837,24 @@
             // btnNew
             // 
             this.btnNew.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(628, 9);
+            this.btnNew.Location = new System.Drawing.Point(504, 9);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(100, 40);
             this.btnNew.TabIndex = 3;
             this.btnNew.Text = "Tạo mới";
             this.btnNew.UseVisualStyleBackColor = true;
+            // 
+            // btnSaveAndInvoice
+            // 
+            this.btnSaveAndInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSaveAndInvoice.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveAndInvoice.Location = new System.Drawing.Point(172, 9);
+            this.btnSaveAndInvoice.Name = "btnSaveAndInvoice";
+            this.btnSaveAndInvoice.Size = new System.Drawing.Size(160, 40);
+            this.btnSaveAndInvoice.TabIndex = 1;
+            this.btnSaveAndInvoice.Text = "Lưu và Xuất Hóa Đơn";
+            this.btnSaveAndInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSaveAndInvoice.UseVisualStyleBackColor = true;
             // 
             // footer1
             // 
@@ -857,31 +867,6 @@
             this.footer1.Name = "footer1";
             this.footer1.Size = new System.Drawing.Size(942, 26);
             this.footer1.TabIndex = 16;
-            // 
-            // btnSaveAndInvoice
-            // 
-            this.btnSaveAndInvoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSaveAndInvoice.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAndInvoice.Location = new System.Drawing.Point(296, 9);
-            this.btnSaveAndInvoice.Name = "btnSaveAndInvoice";
-            this.btnSaveAndInvoice.Size = new System.Drawing.Size(160, 40);
-            this.btnSaveAndInvoice.TabIndex = 1;
-            this.btnSaveAndInvoice.Text = "Lưu và Xuất Hóa Đơn";
-            this.btnSaveAndInvoice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSaveAndInvoice.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = global::FOS_Einvoice.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(176, 9);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(114, 40);
-            this.btnSave.TabIndex = 0;
-            this.btnSave.Text = "Lưu HĐ";
-            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // FrmEinvoice
             // 
@@ -956,7 +941,6 @@
         public FOS_Utils.FButton btnClose;
         public FOS_Utils.FButton btnNew;
         public FOS_Utils.FButton btnSaveAndInvoice;
-        public FOS_Utils.FButton btnSave;
         public FOS_Utils.FButton btnPreview;
         private FOS_Utils.FTextBox txtTotal;
         private FOS_Utils.FTextBox txtSotienbangchu;

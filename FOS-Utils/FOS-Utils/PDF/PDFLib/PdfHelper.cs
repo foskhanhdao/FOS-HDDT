@@ -24,8 +24,7 @@ namespace FOS_Utils.PDF.PDFLib
         //tong so trang Pdf
         private static int NumberPage = 1;
         //trang Pdf hien tai
-        private static int CurPage = 1;
-      
+        private static int CurPage = 1;      
         //Tong hop tat ca cac line trong trang
         private static List<FosLine> lsLineInpage = new List<FosLine>();
         #endregion
@@ -402,6 +401,9 @@ namespace FOS_Utils.PDF.PDFLib
                 doc.NewPage();
             }
         }
+        /// <summary>
+        /// Ham in Pdf chinh
+        /// </summary>
         public static void PrintPdfFile()
         {
             if (doc != null)
