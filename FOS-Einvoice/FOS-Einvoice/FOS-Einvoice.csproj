@@ -31,10 +31,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FOS-Utils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\FOS-Utils\FOS-Utils\bin\Release\FOS-Utils.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -128,6 +124,12 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPaymentType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPaymentType.Designer.cs">
+      <DependentUpon>FrmPaymentType.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStaff.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +147,12 @@
     </Compile>
     <Compile Include="FrmTestPDF.Designer.cs">
       <DependentUpon>FrmTestPDF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUnit.Designer.cs">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
     </Compile>
     <Compile Include="Invoices\invoiceGTGT.cs">
       <SubType>UserControl</SubType>
@@ -202,6 +210,10 @@
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPaymentType.resx">
+      <DependentUpon>FrmPaymentType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStaff.resx">
       <DependentUpon>FrmStaff.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -212,6 +224,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTestPDF.resx">
       <DependentUpon>FrmTestPDF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUnit.resx">
+      <DependentUpon>FrmUnit.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoices\invoiceGTGT.resx">
@@ -268,6 +284,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="img\fos-invoice-logo-detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dll\FOS-Utils.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\FOS-Utils\FOS-Utils\FOS-Utils.csproj">
+      <Project>{05CD2BC3-5C75-4C7B-869A-182B4227DC7F}</Project>
+      <Name>FOS-Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

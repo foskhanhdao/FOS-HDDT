@@ -33,6 +33,10 @@
             this.btnConnection = new FOS_Utils.FButton();
             this.btnCompany = new FOS_Utils.FButton();
             this.btnTest = new FOS_Utils.FButton();
+            this.btnStaff = new FOS_Utils.FButton();
+            this.btnTax = new FOS_Utils.FButton();
+            this.btnUnit = new FOS_Utils.FButton();
+            this.btnPaymentType = new FOS_Utils.FButton();
             this.SuspendLayout();
             // 
             // btnInvoiceCreate
@@ -51,7 +55,7 @@
             this.btnCustomer.Name = "btnCustomer";
             this.btnCustomer.Size = new System.Drawing.Size(150, 150);
             this.btnCustomer.TabIndex = 1;
-            this.btnCustomer.Text = "Khánh hàng";
+            this.btnCustomer.Text = "Khách hàng";
             this.btnCustomer.UseVisualStyleBackColor = true;
             this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
@@ -85,11 +89,55 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // btnStaff
+            // 
+            this.btnStaff.Location = new System.Drawing.Point(480, 168);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(150, 150);
+            this.btnStaff.TabIndex = 5;
+            this.btnStaff.Text = "Nhân viên";
+            this.btnStaff.UseVisualStyleBackColor = true;
+            this.btnStaff.Click += new System.EventHandler(this.btnStaff_Click);
+            // 
+            // btnTax
+            // 
+            this.btnTax.Location = new System.Drawing.Point(636, 168);
+            this.btnTax.Name = "btnTax";
+            this.btnTax.Size = new System.Drawing.Size(150, 150);
+            this.btnTax.TabIndex = 6;
+            this.btnTax.Text = "Thuế suất";
+            this.btnTax.UseVisualStyleBackColor = true;
+            this.btnTax.Click += new System.EventHandler(this.btnTax_Click);
+            // 
+            // btnUnit
+            // 
+            this.btnUnit.Location = new System.Drawing.Point(12, 324);
+            this.btnUnit.Name = "btnUnit";
+            this.btnUnit.Size = new System.Drawing.Size(150, 150);
+            this.btnUnit.TabIndex = 7;
+            this.btnUnit.Text = "Đơn vị tính";
+            this.btnUnit.UseVisualStyleBackColor = true;
+            this.btnUnit.Click += new System.EventHandler(this.btnUnit_Click);
+            // 
+            // btnPaymentType
+            // 
+            this.btnPaymentType.Location = new System.Drawing.Point(168, 324);
+            this.btnPaymentType.Name = "btnPaymentType";
+            this.btnPaymentType.Size = new System.Drawing.Size(150, 150);
+            this.btnPaymentType.TabIndex = 8;
+            this.btnPaymentType.Text = "Hình thức thanh toán";
+            this.btnPaymentType.UseVisualStyleBackColor = true;
+            this.btnPaymentType.Click += new System.EventHandler(this.btnPaymentType_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.btnPaymentType);
+            this.Controls.Add(this.btnUnit);
+            this.Controls.Add(this.btnTax);
+            this.Controls.Add(this.btnStaff);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnCompany);
             this.Controls.Add(this.btnConnection);
@@ -111,6 +159,10 @@
         private FOS_Utils.FButton btnConnection;
         private FOS_Utils.FButton btnCompany;
         private FOS_Utils.FButton btnTest;
+        private FOS_Utils.FButton btnStaff;
+        private FOS_Utils.FButton btnTax;
+        private FOS_Utils.FButton btnUnit;
+        private FOS_Utils.FButton btnPaymentType;
     }
 }
 

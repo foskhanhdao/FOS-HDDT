@@ -144,6 +144,7 @@ namespace FOS_Utils.PDF.PDFLib
                     }
                 }
             }
+           
             // In hinh dau tien
             foreach (Control c in panel.Controls)
             {
@@ -171,6 +172,8 @@ namespace FOS_Utils.PDF.PDFLib
                 if (c is FPdfPanel)
                 {
                     FPdfPanel FPdfPanelChirld = c as FPdfPanel;
+                    //In BackGround Image
+                    PrintBackGroundImage(g, FPdfPanelChirld, rootPoint);
                     //inborder
                     if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
                         PrintBorderForControl(FPdfPanelChirld, rootPoint);
@@ -235,6 +238,35 @@ namespace FOS_Utils.PDF.PDFLib
             catch(Exception ex)
             {
                 Console.WriteLine(ex.ToString()); 
+            }
+        }
+        /// <summary>
+        /// Print BackGround Image
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="pB"></param>
+        /// <param name="rootPoint"></param>
+        public static void PrintBackGroundImage(Graphics g, Control ct, FosPoint rootPoint)
+        {
+            if (ct.BackgroundImage == null)
+                return;
+            try
+            {
+                Image img = ct.BackgroundImage;
+                FosPoint point = new FosPoint(ct.Location.X, ct.Location.Y);
+                Size size = new Size(ct.Width,ct.Height);
+                if (ct.BackgroundImageLayout == ImageLayout.Center)
+                {
+                    point.XPoint += (ct.Width - img.Width) / 2;
+                    point.YPoint += (ct.Height - img.Height) / 2;
+                    size.Width = img.Width;
+                    size.Height = img.Height;
+                }
+                g.DrawImage(img, point.XPoint + rootPoint.XPoint, point.YPoint + rootPoint.YPoint, size.Width, size.Height);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
         /// <summary>

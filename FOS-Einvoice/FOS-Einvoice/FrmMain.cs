@@ -13,12 +13,12 @@ namespace FOS_Einvoice
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            //string[] info = CommonFunctions.ReadConnectionFileInfo();
-            //DataBase.SetConnectionInfo(info);
-            //if (!DataBase.TestConnection())
-            //{
-            //    MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
-            //}            
+            string[] info = CommonFunctions.ReadConnectionFileInfo();
+            DataBase.SetConnectionInfo(info);
+            if (!DataBase.TestConnection())
+            {
+                MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
+            }            
         }
 
         private void btnInvoiceCreate_Click(object sender, EventArgs e)
@@ -44,6 +44,26 @@ namespace FOS_Einvoice
         private void btnTest_Click(object sender, EventArgs e)
         {
             new FrmTestPDF().ShowDialog();
+        }
+
+        private void btnStaff_Click(object sender, EventArgs e)
+        {
+            new FrmStaff().ShowDialog();
+        }
+
+        private void btnTax_Click(object sender, EventArgs e)
+        {
+            new FrmTax().ShowDialog();
+        }
+
+        private void btnUnit_Click(object sender, EventArgs e)
+        {
+            new FrmUnit().ShowDialog();
+        }
+
+        private void btnPaymentType_Click(object sender, EventArgs e)
+        {
+            new FrmPaymentType().ShowDialog();
         }
     }
 }

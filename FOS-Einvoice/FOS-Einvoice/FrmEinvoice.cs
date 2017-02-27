@@ -18,7 +18,7 @@ namespace FOS_Einvoice
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            txtSotienbangchu.Text = NumberToTextVN(999999900);
+            txtSotienbangchu.Text = NumberToTextVN(1000000);
         }
 
         private void btnClose_Click(object sender, EventArgs e)

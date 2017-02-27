@@ -465,6 +465,7 @@ namespace FOS_Utils.PDF.PDFLib
                     }
                 }
             }
+            
             // In hinh dau tien
             foreach (Control c in panel.Controls)
             {
@@ -492,6 +493,8 @@ namespace FOS_Utils.PDF.PDFLib
                 if (c is FPdfPanel)
                 {
                     FPdfPanel FPdfPanelChirld = c as FPdfPanel;
+                    // InBackgroundImage
+                    PrinBackgroundImage(FPdfPanelChirld, page, rootPoint);
                     //inborder
                     if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
                         PrintBorderForControl(FPdfPanelChirld, page, rootPoint);
@@ -672,7 +675,45 @@ namespace FOS_Utils.PDF.PDFLib
             {
                 Console.WriteLine(ex.ToString());
             }
-        }        
+        }
+        /// <summary>
+        /// In background Image cho 
+        /// </summary>
+        /// <param name="pB"></param>
+        /// <param name="page"></param>
+        /// <param name="rootPoint"></param>
+        public static void PrinBackgroundImage(Control control, PagePdf page, FosPoint rootPoint)
+        {
+            if (control.BackgroundImage == null)
+                return;
+            BaseColor bc = new BaseColor(255, 255, 255);
+            try
+            {
+                var logo = iTextSharp.text.Image.GetInstance(control.BackgroundImage, bc);
+                //xet toa do, goc toa do la goc phan |_
+                FosPoint point = new FosPoint(control.Location.X + rootPoint.XPoint, control.Location.Y + control.Size.Height + rootPoint.YPoint);
+                Size size = new Size(control.Width,control.Height);
+                if (control.BackgroundImageLayout == ImageLayout.Center)
+                {
+                    point.XPoint += (control.Width - control.BackgroundImage.Width) / 2;
+                    point.YPoint -= (control.Height - control.BackgroundImage.Height) / 2;
+                    size.Width = control.BackgroundImage.Width;
+                    size.Height = control.BackgroundImage.Height;
+ 
+                }
+                
+                PdfHelper.ConvertToPointPdf(point, page);
+                logo.SetAbsolutePosition(point.XPoint, point.YPoint);
+                //xet kich thuoc
+                logo.ScaleAbsoluteHeight(size.Height);
+                logo.ScaleAbsoluteWidth(size.Width);
+                doc.Add(logo);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+        }      
         /// <summary>
         /// In BackColor cho control
         /// </summary>

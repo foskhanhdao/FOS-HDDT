@@ -66,7 +66,7 @@
             // fax
             // 
             this.fax.CheckMinMaxChar = false;
-            this.fax.ColumnName = "fax";
+            this.fax.ColumnName = "customerfax";
             this.fax.DBNullValueWhenBlank = false;
             this.fax.DBValue = "";
             this.fax.Enabled = false;
@@ -86,7 +86,7 @@
             // phone
             // 
             this.phone.CheckMinMaxChar = false;
-            this.phone.ColumnName = "phone";
+            this.phone.ColumnName = "customerphone";
             this.phone.DBNullValueWhenBlank = false;
             this.phone.DBValue = "";
             this.phone.Enabled = false;
@@ -106,7 +106,7 @@
             // email
             // 
             this.email.CheckMinMaxChar = false;
-            this.email.ColumnName = "email";
+            this.email.ColumnName = "customeremail";
             this.email.DBNullValueWhenBlank = false;
             this.email.DBValue = "";
             this.email.Enabled = false;
@@ -128,7 +128,7 @@
             this.cusaddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.cusaddress.CheckMinMaxChar = false;
-            this.cusaddress.ColumnName = "cusaddress";
+            this.cusaddress.ColumnName = "customeraddress";
             this.cusaddress.DBNullValueWhenBlank = false;
             this.cusaddress.DBValue = "";
             this.cusaddress.Enabled = false;
@@ -148,7 +148,7 @@
             // taxcode
             // 
             this.taxcode.CheckMinMaxChar = false;
-            this.taxcode.ColumnName = "taxcode";
+            this.taxcode.ColumnName = "customertaxcode";
             this.taxcode.DBNullValueWhenBlank = false;
             this.taxcode.DBValue = "";
             this.taxcode.Enabled = false;
@@ -170,7 +170,7 @@
             this.companyname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.companyname.CheckMinMaxChar = false;
-            this.companyname.ColumnName = "companyname";
+            this.companyname.ColumnName = "customercompanyname";
             this.companyname.DBNullValueWhenBlank = false;
             this.companyname.DBValue = "";
             this.companyname.Enabled = false;
@@ -189,7 +189,7 @@
             // 
             // cussex
             // 
-            this.cussex.ColumnName = "cussex";
+            this.cussex.ColumnName = "customersex";
             this.cussex.DBValue = "";
             this.cussex.Enabled = false;
             this.cussex.FormattingEnabled = true;
@@ -200,7 +200,7 @@
             // 
             // cusbirthday
             // 
-            this.cusbirthday.ColumnName = "cusbirthday";
+            this.cusbirthday.ColumnName = "customerbirthday";
             this.cusbirthday.CustomFormat = "dd/MM/yyyy";
             this.cusbirthday.DBValue = new System.DateTime(2017, 2, 21, 11, 42, 43, 488);
             this.cusbirthday.Enabled = false;
@@ -217,7 +217,7 @@
             this.cusname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.cusname.CheckMinMaxChar = false;
-            this.cusname.ColumnName = "cusname";
+            this.cusname.ColumnName = "customername";
             this.cusname.DBNullValueWhenBlank = false;
             this.cusname.DBValue = "";
             this.cusname.Enabled = false;
@@ -237,7 +237,7 @@
             // cuspass
             // 
             this.cuspass.CheckMinMaxChar = false;
-            this.cuspass.ColumnName = "cuspass";
+            this.cuspass.ColumnName = "customerpass";
             this.cuspass.DBNullValueWhenBlank = false;
             this.cuspass.DBValue = "";
             this.cuspass.Enabled = false;
@@ -259,7 +259,7 @@
             // 
             this.cuscode.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cuscode.CheckMinMaxChar = false;
-            this.cuscode.ColumnName = "cuscode";
+            this.cuscode.ColumnName = "customercode";
             this.cuscode.DBNullValueWhenBlank = false;
             this.cuscode.DBValue = "";
             this.cuscode.FillZeroWhenHavingText = false;
@@ -450,7 +450,7 @@
             this.fTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.fTextBox1.CheckMinMaxChar = false;
-            this.fTextBox1.ColumnName = "note";
+            this.fTextBox1.ColumnName = "customernote";
             this.fTextBox1.DBNullValueWhenBlank = false;
             this.fTextBox1.DBValue = "";
             this.fTextBox1.Enabled = false;

@@ -15,8 +15,8 @@ namespace FOS_Einvoice
             InitDataControls(this.groupBox1);
             //Table Name
             TableName = TableInfo.TableNames.COMPANY;
-            getdateColumnNamesInsert = new string[] { "datecreate" };
-            getdateColumnNamesUpdate = new string[] { "dateupdate" };
+            getdateColumnNamesInsert = new string[] { "companydatecreate" };
+            getdateColumnNamesUpdate = new string[] { "companydateupdate" };
         }
 
         protected override void OnShown(EventArgs e)

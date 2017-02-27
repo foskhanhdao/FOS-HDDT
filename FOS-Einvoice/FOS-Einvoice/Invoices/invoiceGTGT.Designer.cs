@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties123 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties124 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties125 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties126 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
@@ -150,11 +149,14 @@
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties242 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties243 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties244 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
+            FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties245 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
+            FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties246 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             this.pnlMain = new FOS_Utils.PDF.PDFControl.FPdfPanel();
             this.pnlDetail = new FOS_Utils.PDF.PDFControl.FPdfPanel();
+            this.fPdfLabel1 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblCompanyBankAccount = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblCompanyPhone = new FOS_Utils.PDF.PDFControl.FPdfLabel();
-            this.lblCompanyName = new FOS_Utils.PDF.PDFControl.FPdfLabel();
+            this.lblAddress = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel119 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel118 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblDateSigned = new FOS_Utils.PDF.PDFControl.FPdfLabel();
@@ -276,8 +278,8 @@
             this.fPdfLabel5 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel4 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel3 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
-            this.fPdfLabel2 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
-            this.fPdfLabel1 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
+            this.lblMasothue = new FOS_Utils.PDF.PDFControl.FPdfLabel();
+            this.lblCompanyName = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.pnlMain.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.fPdfPanel2.SuspendLayout();
@@ -304,9 +306,10 @@
             this.pnlDetail.BackColor = System.Drawing.Color.White;
             this.pnlDetail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.fPdfLabel1);
             this.pnlDetail.Controls.Add(this.lblCompanyBankAccount);
             this.pnlDetail.Controls.Add(this.lblCompanyPhone);
-            this.pnlDetail.Controls.Add(this.lblCompanyName);
+            this.pnlDetail.Controls.Add(this.lblAddress);
             this.pnlDetail.Controls.Add(this.fPdfLabel119);
             this.pnlDetail.Controls.Add(this.fPdfLabel118);
             this.pnlDetail.Controls.Add(this.lblDateSigned);
@@ -362,8 +365,8 @@
             this.pnlDetail.Controls.Add(this.fPdfLabel5);
             this.pnlDetail.Controls.Add(this.fPdfLabel4);
             this.pnlDetail.Controls.Add(this.fPdfLabel3);
-            this.pnlDetail.Controls.Add(this.fPdfLabel2);
-            this.pnlDetail.Controls.Add(this.fPdfLabel1);
+            this.pnlDetail.Controls.Add(this.lblMasothue);
+            this.pnlDetail.Controls.Add(this.lblCompanyName);
             this.pnlDetail.Location = new System.Drawing.Point(50, 50);
             this.pnlDetail.MaxRow = 1;
             this.pnlDetail.Name = "pnlDetail";
@@ -372,15 +375,39 @@
             this.pnlDetail.Size = new System.Drawing.Size(680, 1000);
             this.pnlDetail.TabIndex = 0;
             // 
+            // fPdfLabel1
+            // 
+            this.fPdfLabel1.ColumnName = "mytaxcode";
+            this.fPdfLabel1.DBValue = "0314210262";
+            this.fPdfLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fPdfProperties124.Rotation = 0;
+            fPdfProperties124.TableColumn = "";
+            fPdfProperties124.TableRow = 0;
+            this.fPdfLabel1.FPdfProperties = fPdfProperties124;
+            this.fPdfLabel1.IsShowLineBottom = false;
+            this.fPdfLabel1.IsShowLineLeft = false;
+            this.fPdfLabel1.IsShowLineRight = false;
+            this.fPdfLabel1.IsShowLineTop = false;
+            this.fPdfLabel1.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel1.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel1.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel1.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel1.Location = new System.Drawing.Point(352, 29);
+            this.fPdfLabel1.Name = "fPdfLabel1";
+            this.fPdfLabel1.Size = new System.Drawing.Size(248, 28);
+            this.fPdfLabel1.TabIndex = 111;
+            this.fPdfLabel1.Text = "0314210262";
+            this.fPdfLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // lblCompanyBankAccount
             // 
-            this.lblCompanyBankAccount.ColumnName = "";
+            this.lblCompanyBankAccount.ColumnName = "mybankaccount";
             this.lblCompanyBankAccount.DBValue = "000.000.00000000";
             this.lblCompanyBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties123.Rotation = 0;
-            fPdfProperties123.TableColumn = "";
-            fPdfProperties123.TableRow = 0;
-            this.lblCompanyBankAccount.FPdfProperties = fPdfProperties123;
+            fPdfProperties125.Rotation = 0;
+            fPdfProperties125.TableColumn = "";
+            fPdfProperties125.TableRow = 0;
+            this.lblCompanyBankAccount.FPdfProperties = fPdfProperties125;
             this.lblCompanyBankAccount.IsShowLineBottom = false;
             this.lblCompanyBankAccount.IsShowLineLeft = false;
             this.lblCompanyBankAccount.IsShowLineRight = false;
@@ -398,13 +425,13 @@
             // 
             // lblCompanyPhone
             // 
-            this.lblCompanyPhone.ColumnName = "";
+            this.lblCompanyPhone.ColumnName = "myphone";
             this.lblCompanyPhone.DBValue = "0903 093 595";
             this.lblCompanyPhone.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties124.Rotation = 0;
-            fPdfProperties124.TableColumn = "";
-            fPdfProperties124.TableRow = 0;
-            this.lblCompanyPhone.FPdfProperties = fPdfProperties124;
+            fPdfProperties126.Rotation = 0;
+            fPdfProperties126.TableColumn = "";
+            fPdfProperties126.TableRow = 0;
+            this.lblCompanyPhone.FPdfProperties = fPdfProperties126;
             this.lblCompanyPhone.IsShowLineBottom = false;
             this.lblCompanyPhone.IsShowLineLeft = false;
             this.lblCompanyPhone.IsShowLineRight = false;
@@ -420,29 +447,29 @@
             this.lblCompanyPhone.Text = "0903 093 595";
             this.lblCompanyPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lblCompanyName
+            // lblAddress
             // 
-            this.lblCompanyName.ColumnName = "";
-            this.lblCompanyName.DBValue = "284/41 Võ Văn Tần, Phường 5, Quận 3, TP.Hồ Chí Minh, Việt Nam";
-            this.lblCompanyName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties125.Rotation = 0;
-            fPdfProperties125.TableColumn = "";
-            fPdfProperties125.TableRow = 0;
-            this.lblCompanyName.FPdfProperties = fPdfProperties125;
-            this.lblCompanyName.IsShowLineBottom = false;
-            this.lblCompanyName.IsShowLineLeft = false;
-            this.lblCompanyName.IsShowLineRight = false;
-            this.lblCompanyName.IsShowLineTop = false;
-            this.lblCompanyName.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblCompanyName.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblCompanyName.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblCompanyName.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblCompanyName.Location = new System.Drawing.Point(180, 57);
-            this.lblCompanyName.Name = "lblCompanyName";
-            this.lblCompanyName.Size = new System.Drawing.Size(495, 22);
-            this.lblCompanyName.TabIndex = 108;
-            this.lblCompanyName.Text = "284/41 Võ Văn Tần, Phường 5, Quận 3, TP.Hồ Chí Minh, Việt Nam";
-            this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblAddress.ColumnName = "myaddress";
+            this.lblAddress.DBValue = "284/41 Võ Văn Tần, Phường 5, Quận 3, TP.Hồ Chí Minh, Việt Nam";
+            this.lblAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fPdfProperties127.Rotation = 0;
+            fPdfProperties127.TableColumn = "";
+            fPdfProperties127.TableRow = 0;
+            this.lblAddress.FPdfProperties = fPdfProperties127;
+            this.lblAddress.IsShowLineBottom = false;
+            this.lblAddress.IsShowLineLeft = false;
+            this.lblAddress.IsShowLineRight = false;
+            this.lblAddress.IsShowLineTop = false;
+            this.lblAddress.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblAddress.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblAddress.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblAddress.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblAddress.Location = new System.Drawing.Point(180, 57);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(495, 22);
+            this.lblAddress.TabIndex = 108;
+            this.lblAddress.Text = "284/41 Võ Văn Tần, Phường 5, Quận 3, TP.Hồ Chí Minh, Việt Nam";
+            this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fPdfLabel119
             // 
@@ -451,10 +478,10 @@
             this.fPdfLabel119.DBValue = "(Xuất bởi phần mềm FOS-Einvoice, FOS TECHNOLOGY SOLUTIONS CO., LTD. - MST: 031421" +
                 "0262 - www.fos-vn.com)";
             this.fPdfLabel119.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties126.Rotation = 0;
-            fPdfProperties126.TableColumn = "";
-            fPdfProperties126.TableRow = 0;
-            this.fPdfLabel119.FPdfProperties = fPdfProperties126;
+            fPdfProperties128.Rotation = 0;
+            fPdfProperties128.TableColumn = "";
+            fPdfProperties128.TableRow = 0;
+            this.fPdfLabel119.FPdfProperties = fPdfProperties128;
             this.fPdfLabel119.IsShowLineBottom = false;
             this.fPdfLabel119.IsShowLineLeft = false;
             this.fPdfLabel119.IsShowLineRight = false;
@@ -477,10 +504,10 @@
             this.fPdfLabel118.ColumnName = "";
             this.fPdfLabel118.DBValue = "(Cần kiểm tra, đối chiếu khi lập, giao nhận hóa đơn)";
             this.fPdfLabel118.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties127.Rotation = 0;
-            fPdfProperties127.TableColumn = "";
-            fPdfProperties127.TableRow = 0;
-            this.fPdfLabel118.FPdfProperties = fPdfProperties127;
+            fPdfProperties129.Rotation = 0;
+            fPdfProperties129.TableColumn = "";
+            fPdfProperties129.TableRow = 0;
+            this.fPdfLabel118.FPdfProperties = fPdfProperties129;
             this.fPdfLabel118.IsShowLineBottom = false;
             this.fPdfLabel118.IsShowLineLeft = false;
             this.fPdfLabel118.IsShowLineRight = false;
@@ -502,10 +529,10 @@
             this.lblDateSigned.ColumnName = "";
             this.lblDateSigned.DBValue = "Ngày 26 tháng 02 năm 2017";
             this.lblDateSigned.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties128.Rotation = 0;
-            fPdfProperties128.TableColumn = "";
-            fPdfProperties128.TableRow = 0;
-            this.lblDateSigned.FPdfProperties = fPdfProperties128;
+            fPdfProperties130.Rotation = 0;
+            fPdfProperties130.TableColumn = "";
+            fPdfProperties130.TableRow = 0;
+            this.lblDateSigned.FPdfProperties = fPdfProperties130;
             this.lblDateSigned.IsShowLineBottom = false;
             this.lblDateSigned.IsShowLineLeft = false;
             this.lblDateSigned.IsShowLineRight = false;
@@ -527,10 +554,10 @@
             this.fPdfLabel116.ColumnName = "";
             this.fPdfLabel116.DBValue = "Ngày ký:";
             this.fPdfLabel116.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties129.Rotation = 0;
-            fPdfProperties129.TableColumn = "";
-            fPdfProperties129.TableRow = 0;
-            this.fPdfLabel116.FPdfProperties = fPdfProperties129;
+            fPdfProperties131.Rotation = 0;
+            fPdfProperties131.TableColumn = "";
+            fPdfProperties131.TableRow = 0;
+            this.fPdfLabel116.FPdfProperties = fPdfProperties131;
             this.fPdfLabel116.IsShowLineBottom = false;
             this.fPdfLabel116.IsShowLineLeft = false;
             this.fPdfLabel116.IsShowLineRight = false;
@@ -552,10 +579,10 @@
             this.fPdfLabel115.ColumnName = "";
             this.fPdfLabel115.DBValue = "Được ký bởi CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
             this.fPdfLabel115.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties130.Rotation = 0;
-            fPdfProperties130.TableColumn = "";
-            fPdfProperties130.TableRow = 0;
-            this.fPdfLabel115.FPdfProperties = fPdfProperties130;
+            fPdfProperties132.Rotation = 0;
+            fPdfProperties132.TableColumn = "";
+            fPdfProperties132.TableRow = 0;
+            this.fPdfLabel115.FPdfProperties = fPdfProperties132;
             this.fPdfLabel115.IsShowLineBottom = false;
             this.fPdfLabel115.IsShowLineLeft = false;
             this.fPdfLabel115.IsShowLineRight = false;
@@ -577,10 +604,10 @@
             this.fPdfLabel114.ColumnName = "";
             this.fPdfLabel114.DBValue = "(Ký, ghi rõ họ tên)";
             this.fPdfLabel114.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties131.Rotation = 0;
-            fPdfProperties131.TableColumn = "";
-            fPdfProperties131.TableRow = 0;
-            this.fPdfLabel114.FPdfProperties = fPdfProperties131;
+            fPdfProperties133.Rotation = 0;
+            fPdfProperties133.TableColumn = "";
+            fPdfProperties133.TableRow = 0;
+            this.fPdfLabel114.FPdfProperties = fPdfProperties133;
             this.fPdfLabel114.IsShowLineBottom = false;
             this.fPdfLabel114.IsShowLineLeft = false;
             this.fPdfLabel114.IsShowLineRight = false;
@@ -602,10 +629,10 @@
             this.fPdfLabel113.ColumnName = "";
             this.fPdfLabel113.DBValue = "(Ký, ghi rõ họ tên)";
             this.fPdfLabel113.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties132.Rotation = 0;
-            fPdfProperties132.TableColumn = "";
-            fPdfProperties132.TableRow = 0;
-            this.fPdfLabel113.FPdfProperties = fPdfProperties132;
+            fPdfProperties134.Rotation = 0;
+            fPdfProperties134.TableColumn = "";
+            fPdfProperties134.TableRow = 0;
+            this.fPdfLabel113.FPdfProperties = fPdfProperties134;
             this.fPdfLabel113.IsShowLineBottom = false;
             this.fPdfLabel113.IsShowLineLeft = false;
             this.fPdfLabel113.IsShowLineRight = false;
@@ -627,10 +654,10 @@
             this.fPdfLabel112.ColumnName = "";
             this.fPdfLabel112.DBValue = "Người bán hàng";
             this.fPdfLabel112.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties133.Rotation = 0;
-            fPdfProperties133.TableColumn = "";
-            fPdfProperties133.TableRow = 0;
-            this.fPdfLabel112.FPdfProperties = fPdfProperties133;
+            fPdfProperties135.Rotation = 0;
+            fPdfProperties135.TableColumn = "";
+            fPdfProperties135.TableRow = 0;
+            this.fPdfLabel112.FPdfProperties = fPdfProperties135;
             this.fPdfLabel112.IsShowLineBottom = false;
             this.fPdfLabel112.IsShowLineLeft = false;
             this.fPdfLabel112.IsShowLineRight = false;
@@ -652,10 +679,10 @@
             this.fPdfLabel111.ColumnName = "";
             this.fPdfLabel111.DBValue = "Người mua hàng";
             this.fPdfLabel111.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties134.Rotation = 0;
-            fPdfProperties134.TableColumn = "";
-            fPdfProperties134.TableRow = 0;
-            this.fPdfLabel111.FPdfProperties = fPdfProperties134;
+            fPdfProperties136.Rotation = 0;
+            fPdfProperties136.TableColumn = "";
+            fPdfProperties136.TableRow = 0;
+            this.fPdfLabel111.FPdfProperties = fPdfProperties136;
             this.fPdfLabel111.IsShowLineBottom = false;
             this.fPdfLabel111.IsShowLineLeft = false;
             this.fPdfLabel111.IsShowLineRight = false;
@@ -674,13 +701,13 @@
             // lblAmountinwords
             // 
             this.lblAmountinwords.BackColor = System.Drawing.Color.Transparent;
-            this.lblAmountinwords.ColumnName = "";
+            this.lblAmountinwords.ColumnName = "amountinwords";
             this.lblAmountinwords.DBValue = "Một tỷ đồng chẵn";
             this.lblAmountinwords.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties135.Rotation = 0;
-            fPdfProperties135.TableColumn = "";
-            fPdfProperties135.TableRow = 0;
-            this.lblAmountinwords.FPdfProperties = fPdfProperties135;
+            fPdfProperties137.Rotation = 0;
+            fPdfProperties137.TableColumn = "";
+            fPdfProperties137.TableRow = 0;
+            this.lblAmountinwords.FPdfProperties = fPdfProperties137;
             this.lblAmountinwords.IsShowLineBottom = true;
             this.lblAmountinwords.IsShowLineLeft = false;
             this.lblAmountinwords.IsShowLineRight = false;
@@ -702,10 +729,10 @@
             this.fPdfLabel109.ColumnName = "";
             this.fPdfLabel109.DBValue = "Số tiền viết bằng chữ:";
             this.fPdfLabel109.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties136.Rotation = 0;
-            fPdfProperties136.TableColumn = "";
-            fPdfProperties136.TableRow = 0;
-            this.fPdfLabel109.FPdfProperties = fPdfProperties136;
+            fPdfProperties138.Rotation = 0;
+            fPdfProperties138.TableColumn = "";
+            fPdfProperties138.TableRow = 0;
+            this.fPdfLabel109.FPdfProperties = fPdfProperties138;
             this.fPdfLabel109.IsShowLineBottom = true;
             this.fPdfLabel109.IsShowLineLeft = false;
             this.fPdfLabel109.IsShowLineRight = false;
@@ -724,13 +751,13 @@
             // lblTaxRate
             // 
             this.lblTaxRate.BackColor = System.Drawing.Color.Transparent;
-            this.lblTaxRate.ColumnName = "";
+            this.lblTaxRate.ColumnName = "taxrate";
             this.lblTaxRate.DBValue = "10%";
             this.lblTaxRate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties137.Rotation = 0;
-            fPdfProperties137.TableColumn = "";
-            fPdfProperties137.TableRow = 0;
-            this.lblTaxRate.FPdfProperties = fPdfProperties137;
+            fPdfProperties139.Rotation = 0;
+            fPdfProperties139.TableColumn = "";
+            fPdfProperties139.TableRow = 0;
+            this.lblTaxRate.FPdfProperties = fPdfProperties139;
             this.lblTaxRate.IsShowLineBottom = false;
             this.lblTaxRate.IsShowLineLeft = false;
             this.lblTaxRate.IsShowLineRight = false;
@@ -752,10 +779,10 @@
             this.fPdfLabel107.ColumnName = "";
             this.fPdfLabel107.DBValue = "Thuế suất GTGT:";
             this.fPdfLabel107.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties138.Rotation = 0;
-            fPdfProperties138.TableColumn = "";
-            fPdfProperties138.TableRow = 0;
-            this.fPdfLabel107.FPdfProperties = fPdfProperties138;
+            fPdfProperties140.Rotation = 0;
+            fPdfProperties140.TableColumn = "";
+            fPdfProperties140.TableRow = 0;
+            this.fPdfLabel107.FPdfProperties = fPdfProperties140;
             this.fPdfLabel107.IsShowLineBottom = false;
             this.fPdfLabel107.IsShowLineLeft = false;
             this.fPdfLabel107.IsShowLineRight = false;
@@ -774,13 +801,13 @@
             // lblAmount
             // 
             this.lblAmount.BackColor = System.Drawing.Color.Transparent;
-            this.lblAmount.ColumnName = "";
+            this.lblAmount.ColumnName = "amount";
             this.lblAmount.DBValue = "1,000,000,000";
             this.lblAmount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties139.Rotation = 0;
-            fPdfProperties139.TableColumn = "";
-            fPdfProperties139.TableRow = 0;
-            this.lblAmount.FPdfProperties = fPdfProperties139;
+            fPdfProperties141.Rotation = 0;
+            fPdfProperties141.TableColumn = "";
+            fPdfProperties141.TableRow = 0;
+            this.lblAmount.FPdfProperties = fPdfProperties141;
             this.lblAmount.IsShowLineBottom = false;
             this.lblAmount.IsShowLineLeft = false;
             this.lblAmount.IsShowLineRight = false;
@@ -799,13 +826,13 @@
             // lblTax
             // 
             this.lblTax.BackColor = System.Drawing.Color.Transparent;
-            this.lblTax.ColumnName = "";
+            this.lblTax.ColumnName = "tax";
             this.lblTax.DBValue = "1,000,000,000";
             this.lblTax.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties140.Rotation = 0;
-            fPdfProperties140.TableColumn = "";
-            fPdfProperties140.TableRow = 0;
-            this.lblTax.FPdfProperties = fPdfProperties140;
+            fPdfProperties142.Rotation = 0;
+            fPdfProperties142.TableColumn = "";
+            fPdfProperties142.TableRow = 0;
+            this.lblTax.FPdfProperties = fPdfProperties142;
             this.lblTax.IsShowLineBottom = false;
             this.lblTax.IsShowLineLeft = false;
             this.lblTax.IsShowLineRight = false;
@@ -824,13 +851,13 @@
             // lblTotal
             // 
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lblTotal.ColumnName = "";
+            this.lblTotal.ColumnName = "total";
             this.lblTotal.DBValue = "1,000,000,000";
             this.lblTotal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties141.Rotation = 0;
-            fPdfProperties141.TableColumn = "";
-            fPdfProperties141.TableRow = 0;
-            this.lblTotal.FPdfProperties = fPdfProperties141;
+            fPdfProperties143.Rotation = 0;
+            fPdfProperties143.TableColumn = "";
+            fPdfProperties143.TableRow = 0;
+            this.lblTotal.FPdfProperties = fPdfProperties143;
             this.lblTotal.IsShowLineBottom = false;
             this.lblTotal.IsShowLineLeft = false;
             this.lblTotal.IsShowLineRight = false;
@@ -852,10 +879,10 @@
             this.fPdfLabel103.ColumnName = "";
             this.fPdfLabel103.DBValue = "Tổng cộng tiền hàng:";
             this.fPdfLabel103.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties142.Rotation = 0;
-            fPdfProperties142.TableColumn = "";
-            fPdfProperties142.TableRow = 0;
-            this.fPdfLabel103.FPdfProperties = fPdfProperties142;
+            fPdfProperties144.Rotation = 0;
+            fPdfProperties144.TableColumn = "";
+            fPdfProperties144.TableRow = 0;
+            this.fPdfLabel103.FPdfProperties = fPdfProperties144;
             this.fPdfLabel103.IsShowLineBottom = false;
             this.fPdfLabel103.IsShowLineLeft = false;
             this.fPdfLabel103.IsShowLineRight = false;
@@ -877,10 +904,10 @@
             this.fPdfLabel102.ColumnName = "";
             this.fPdfLabel102.DBValue = "Tiền thuế GTGT:";
             this.fPdfLabel102.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties143.Rotation = 0;
-            fPdfProperties143.TableColumn = "";
-            fPdfProperties143.TableRow = 0;
-            this.fPdfLabel102.FPdfProperties = fPdfProperties143;
+            fPdfProperties145.Rotation = 0;
+            fPdfProperties145.TableColumn = "";
+            fPdfProperties145.TableRow = 0;
+            this.fPdfLabel102.FPdfProperties = fPdfProperties145;
             this.fPdfLabel102.IsShowLineBottom = false;
             this.fPdfLabel102.IsShowLineLeft = false;
             this.fPdfLabel102.IsShowLineRight = false;
@@ -902,10 +929,10 @@
             this.fPdfLabel101.ColumnName = "";
             this.fPdfLabel101.DBValue = "Cộng tiền hàng:";
             this.fPdfLabel101.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties144.Rotation = 0;
-            fPdfProperties144.TableColumn = "";
-            fPdfProperties144.TableRow = 0;
-            this.fPdfLabel101.FPdfProperties = fPdfProperties144;
+            fPdfProperties146.Rotation = 0;
+            fPdfProperties146.TableColumn = "";
+            fPdfProperties146.TableRow = 0;
+            this.fPdfLabel101.FPdfProperties = fPdfProperties146;
             this.fPdfLabel101.IsShowLineBottom = false;
             this.fPdfLabel101.IsShowLineLeft = false;
             this.fPdfLabel101.IsShowLineRight = false;
@@ -997,13 +1024,13 @@
             // fPdfLabel95
             // 
             this.fPdfLabel95.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel95.ColumnName = "";
+            this.fPdfLabel95.ColumnName = "amount10";
             this.fPdfLabel95.DBValue = "100,000,000";
             this.fPdfLabel95.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties145.Rotation = 0;
-            fPdfProperties145.TableColumn = "";
-            fPdfProperties145.TableRow = 0;
-            this.fPdfLabel95.FPdfProperties = fPdfProperties145;
+            fPdfProperties147.Rotation = 0;
+            fPdfProperties147.TableColumn = "";
+            fPdfProperties147.TableRow = 0;
+            this.fPdfLabel95.FPdfProperties = fPdfProperties147;
             this.fPdfLabel95.IsShowLineBottom = true;
             this.fPdfLabel95.IsShowLineLeft = false;
             this.fPdfLabel95.IsShowLineRight = true;
@@ -1025,10 +1052,10 @@
             this.fPdfLabel41.ColumnName = "";
             this.fPdfLabel41.DBValue = "1";
             this.fPdfLabel41.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties146.Rotation = 0;
-            fPdfProperties146.TableColumn = "";
-            fPdfProperties146.TableRow = 0;
-            this.fPdfLabel41.FPdfProperties = fPdfProperties146;
+            fPdfProperties148.Rotation = 0;
+            fPdfProperties148.TableColumn = "";
+            fPdfProperties148.TableRow = 0;
+            this.fPdfLabel41.FPdfProperties = fPdfProperties148;
             this.fPdfLabel41.IsShowLineBottom = true;
             this.fPdfLabel41.IsShowLineLeft = false;
             this.fPdfLabel41.IsShowLineRight = true;
@@ -1047,13 +1074,13 @@
             // fPdfLabel96
             // 
             this.fPdfLabel96.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel96.ColumnName = "";
+            this.fPdfLabel96.ColumnName = "price10";
             this.fPdfLabel96.DBValue = "100,000,000";
             this.fPdfLabel96.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties147.Rotation = 0;
-            fPdfProperties147.TableColumn = "";
-            fPdfProperties147.TableRow = 0;
-            this.fPdfLabel96.FPdfProperties = fPdfProperties147;
+            fPdfProperties149.Rotation = 0;
+            fPdfProperties149.TableColumn = "";
+            fPdfProperties149.TableRow = 0;
+            this.fPdfLabel96.FPdfProperties = fPdfProperties149;
             this.fPdfLabel96.IsShowLineBottom = true;
             this.fPdfLabel96.IsShowLineLeft = false;
             this.fPdfLabel96.IsShowLineRight = true;
@@ -1072,13 +1099,13 @@
             // fPdfLabel97
             // 
             this.fPdfLabel97.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel97.ColumnName = "";
+            this.fPdfLabel97.ColumnName = "10";
             this.fPdfLabel97.DBValue = "10";
             this.fPdfLabel97.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties148.Rotation = 0;
-            fPdfProperties148.TableColumn = "";
-            fPdfProperties148.TableRow = 0;
-            this.fPdfLabel97.FPdfProperties = fPdfProperties148;
+            fPdfProperties150.Rotation = 0;
+            fPdfProperties150.TableColumn = "";
+            fPdfProperties150.TableRow = 0;
+            this.fPdfLabel97.FPdfProperties = fPdfProperties150;
             this.fPdfLabel97.IsShowLineBottom = true;
             this.fPdfLabel97.IsShowLineLeft = false;
             this.fPdfLabel97.IsShowLineRight = true;
@@ -1097,13 +1124,13 @@
             // fPdfLabel98
             // 
             this.fPdfLabel98.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel98.ColumnName = "";
+            this.fPdfLabel98.ColumnName = "unitname10";
             this.fPdfLabel98.DBValue = "Đơn vị 10";
             this.fPdfLabel98.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties149.Rotation = 0;
-            fPdfProperties149.TableColumn = "";
-            fPdfProperties149.TableRow = 0;
-            this.fPdfLabel98.FPdfProperties = fPdfProperties149;
+            fPdfProperties151.Rotation = 0;
+            fPdfProperties151.TableColumn = "";
+            fPdfProperties151.TableRow = 0;
+            this.fPdfLabel98.FPdfProperties = fPdfProperties151;
             this.fPdfLabel98.IsShowLineBottom = true;
             this.fPdfLabel98.IsShowLineLeft = false;
             this.fPdfLabel98.IsShowLineRight = true;
@@ -1122,13 +1149,13 @@
             // fPdfLabel99
             // 
             this.fPdfLabel99.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel99.ColumnName = "";
+            this.fPdfLabel99.ColumnName = "productname10";
             this.fPdfLabel99.DBValue = "Tên hàng hóa, dịch vụ 10";
             this.fPdfLabel99.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties150.Rotation = 0;
-            fPdfProperties150.TableColumn = "";
-            fPdfProperties150.TableRow = 0;
-            this.fPdfLabel99.FPdfProperties = fPdfProperties150;
+            fPdfProperties152.Rotation = 0;
+            fPdfProperties152.TableColumn = "";
+            fPdfProperties152.TableRow = 0;
+            this.fPdfLabel99.FPdfProperties = fPdfProperties152;
             this.fPdfLabel99.IsShowLineBottom = true;
             this.fPdfLabel99.IsShowLineLeft = false;
             this.fPdfLabel99.IsShowLineRight = true;
@@ -1150,10 +1177,10 @@
             this.fPdfLabel100.ColumnName = "";
             this.fPdfLabel100.DBValue = "10";
             this.fPdfLabel100.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties151.Rotation = 0;
-            fPdfProperties151.TableColumn = "";
-            fPdfProperties151.TableRow = 0;
-            this.fPdfLabel100.FPdfProperties = fPdfProperties151;
+            fPdfProperties153.Rotation = 0;
+            fPdfProperties153.TableColumn = "";
+            fPdfProperties153.TableRow = 0;
+            this.fPdfLabel100.FPdfProperties = fPdfProperties153;
             this.fPdfLabel100.IsShowLineBottom = true;
             this.fPdfLabel100.IsShowLineLeft = false;
             this.fPdfLabel100.IsShowLineRight = true;
@@ -1172,13 +1199,13 @@
             // fPdfLabel89
             // 
             this.fPdfLabel89.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel89.ColumnName = "";
+            this.fPdfLabel89.ColumnName = "amount09";
             this.fPdfLabel89.DBValue = "100,000,000";
             this.fPdfLabel89.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties152.Rotation = 0;
-            fPdfProperties152.TableColumn = "";
-            fPdfProperties152.TableRow = 0;
-            this.fPdfLabel89.FPdfProperties = fPdfProperties152;
+            fPdfProperties154.Rotation = 0;
+            fPdfProperties154.TableColumn = "";
+            fPdfProperties154.TableRow = 0;
+            this.fPdfLabel89.FPdfProperties = fPdfProperties154;
             this.fPdfLabel89.IsShowLineBottom = true;
             this.fPdfLabel89.IsShowLineLeft = false;
             this.fPdfLabel89.IsShowLineRight = true;
@@ -1197,13 +1224,13 @@
             // fPdfLabel90
             // 
             this.fPdfLabel90.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel90.ColumnName = "";
+            this.fPdfLabel90.ColumnName = "price09";
             this.fPdfLabel90.DBValue = "100,000,000";
             this.fPdfLabel90.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties153.Rotation = 0;
-            fPdfProperties153.TableColumn = "";
-            fPdfProperties153.TableRow = 0;
-            this.fPdfLabel90.FPdfProperties = fPdfProperties153;
+            fPdfProperties155.Rotation = 0;
+            fPdfProperties155.TableColumn = "";
+            fPdfProperties155.TableRow = 0;
+            this.fPdfLabel90.FPdfProperties = fPdfProperties155;
             this.fPdfLabel90.IsShowLineBottom = true;
             this.fPdfLabel90.IsShowLineLeft = false;
             this.fPdfLabel90.IsShowLineRight = true;
@@ -1222,13 +1249,13 @@
             // fPdfLabel91
             // 
             this.fPdfLabel91.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel91.ColumnName = "";
+            this.fPdfLabel91.ColumnName = "quantity09";
             this.fPdfLabel91.DBValue = "9";
             this.fPdfLabel91.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties154.Rotation = 0;
-            fPdfProperties154.TableColumn = "";
-            fPdfProperties154.TableRow = 0;
-            this.fPdfLabel91.FPdfProperties = fPdfProperties154;
+            fPdfProperties156.Rotation = 0;
+            fPdfProperties156.TableColumn = "";
+            fPdfProperties156.TableRow = 0;
+            this.fPdfLabel91.FPdfProperties = fPdfProperties156;
             this.fPdfLabel91.IsShowLineBottom = true;
             this.fPdfLabel91.IsShowLineLeft = false;
             this.fPdfLabel91.IsShowLineRight = true;
@@ -1247,13 +1274,13 @@
             // fPdfLabel92
             // 
             this.fPdfLabel92.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel92.ColumnName = "";
+            this.fPdfLabel92.ColumnName = "unitname09";
             this.fPdfLabel92.DBValue = "Đơn vị 9";
             this.fPdfLabel92.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties155.Rotation = 0;
-            fPdfProperties155.TableColumn = "";
-            fPdfProperties155.TableRow = 0;
-            this.fPdfLabel92.FPdfProperties = fPdfProperties155;
+            fPdfProperties157.Rotation = 0;
+            fPdfProperties157.TableColumn = "";
+            fPdfProperties157.TableRow = 0;
+            this.fPdfLabel92.FPdfProperties = fPdfProperties157;
             this.fPdfLabel92.IsShowLineBottom = true;
             this.fPdfLabel92.IsShowLineLeft = false;
             this.fPdfLabel92.IsShowLineRight = true;
@@ -1272,13 +1299,13 @@
             // fPdfLabel93
             // 
             this.fPdfLabel93.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel93.ColumnName = "";
+            this.fPdfLabel93.ColumnName = "productname09";
             this.fPdfLabel93.DBValue = "Tên hàng hóa, dịch vụ 9";
             this.fPdfLabel93.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties156.Rotation = 0;
-            fPdfProperties156.TableColumn = "";
-            fPdfProperties156.TableRow = 0;
-            this.fPdfLabel93.FPdfProperties = fPdfProperties156;
+            fPdfProperties158.Rotation = 0;
+            fPdfProperties158.TableColumn = "";
+            fPdfProperties158.TableRow = 0;
+            this.fPdfLabel93.FPdfProperties = fPdfProperties158;
             this.fPdfLabel93.IsShowLineBottom = true;
             this.fPdfLabel93.IsShowLineLeft = false;
             this.fPdfLabel93.IsShowLineRight = true;
@@ -1300,10 +1327,10 @@
             this.fPdfLabel94.ColumnName = "";
             this.fPdfLabel94.DBValue = "9";
             this.fPdfLabel94.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties157.Rotation = 0;
-            fPdfProperties157.TableColumn = "";
-            fPdfProperties157.TableRow = 0;
-            this.fPdfLabel94.FPdfProperties = fPdfProperties157;
+            fPdfProperties159.Rotation = 0;
+            fPdfProperties159.TableColumn = "";
+            fPdfProperties159.TableRow = 0;
+            this.fPdfLabel94.FPdfProperties = fPdfProperties159;
             this.fPdfLabel94.IsShowLineBottom = true;
             this.fPdfLabel94.IsShowLineLeft = false;
             this.fPdfLabel94.IsShowLineRight = true;
@@ -1322,13 +1349,13 @@
             // fPdfLabel83
             // 
             this.fPdfLabel83.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel83.ColumnName = "";
+            this.fPdfLabel83.ColumnName = "amount08";
             this.fPdfLabel83.DBValue = "100,000,000";
             this.fPdfLabel83.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties158.Rotation = 0;
-            fPdfProperties158.TableColumn = "";
-            fPdfProperties158.TableRow = 0;
-            this.fPdfLabel83.FPdfProperties = fPdfProperties158;
+            fPdfProperties160.Rotation = 0;
+            fPdfProperties160.TableColumn = "";
+            fPdfProperties160.TableRow = 0;
+            this.fPdfLabel83.FPdfProperties = fPdfProperties160;
             this.fPdfLabel83.IsShowLineBottom = true;
             this.fPdfLabel83.IsShowLineLeft = false;
             this.fPdfLabel83.IsShowLineRight = true;
@@ -1347,13 +1374,13 @@
             // fPdfLabel84
             // 
             this.fPdfLabel84.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel84.ColumnName = "";
+            this.fPdfLabel84.ColumnName = "price08";
             this.fPdfLabel84.DBValue = "100,000,000";
             this.fPdfLabel84.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties159.Rotation = 0;
-            fPdfProperties159.TableColumn = "";
-            fPdfProperties159.TableRow = 0;
-            this.fPdfLabel84.FPdfProperties = fPdfProperties159;
+            fPdfProperties161.Rotation = 0;
+            fPdfProperties161.TableColumn = "";
+            fPdfProperties161.TableRow = 0;
+            this.fPdfLabel84.FPdfProperties = fPdfProperties161;
             this.fPdfLabel84.IsShowLineBottom = true;
             this.fPdfLabel84.IsShowLineLeft = false;
             this.fPdfLabel84.IsShowLineRight = true;
@@ -1372,13 +1399,13 @@
             // fPdfLabel85
             // 
             this.fPdfLabel85.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel85.ColumnName = "";
+            this.fPdfLabel85.ColumnName = "quantity08";
             this.fPdfLabel85.DBValue = "8";
             this.fPdfLabel85.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties160.Rotation = 0;
-            fPdfProperties160.TableColumn = "";
-            fPdfProperties160.TableRow = 0;
-            this.fPdfLabel85.FPdfProperties = fPdfProperties160;
+            fPdfProperties162.Rotation = 0;
+            fPdfProperties162.TableColumn = "";
+            fPdfProperties162.TableRow = 0;
+            this.fPdfLabel85.FPdfProperties = fPdfProperties162;
             this.fPdfLabel85.IsShowLineBottom = true;
             this.fPdfLabel85.IsShowLineLeft = false;
             this.fPdfLabel85.IsShowLineRight = true;
@@ -1397,13 +1424,13 @@
             // fPdfLabel86
             // 
             this.fPdfLabel86.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel86.ColumnName = "";
+            this.fPdfLabel86.ColumnName = "unitname08";
             this.fPdfLabel86.DBValue = "Đơn vị 8";
             this.fPdfLabel86.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties161.Rotation = 0;
-            fPdfProperties161.TableColumn = "";
-            fPdfProperties161.TableRow = 0;
-            this.fPdfLabel86.FPdfProperties = fPdfProperties161;
+            fPdfProperties163.Rotation = 0;
+            fPdfProperties163.TableColumn = "";
+            fPdfProperties163.TableRow = 0;
+            this.fPdfLabel86.FPdfProperties = fPdfProperties163;
             this.fPdfLabel86.IsShowLineBottom = true;
             this.fPdfLabel86.IsShowLineLeft = false;
             this.fPdfLabel86.IsShowLineRight = true;
@@ -1422,13 +1449,13 @@
             // fPdfLabel87
             // 
             this.fPdfLabel87.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel87.ColumnName = "";
+            this.fPdfLabel87.ColumnName = "productname08";
             this.fPdfLabel87.DBValue = "Tên hàng hóa, dịch vụ 8";
             this.fPdfLabel87.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties162.Rotation = 0;
-            fPdfProperties162.TableColumn = "";
-            fPdfProperties162.TableRow = 0;
-            this.fPdfLabel87.FPdfProperties = fPdfProperties162;
+            fPdfProperties164.Rotation = 0;
+            fPdfProperties164.TableColumn = "";
+            fPdfProperties164.TableRow = 0;
+            this.fPdfLabel87.FPdfProperties = fPdfProperties164;
             this.fPdfLabel87.IsShowLineBottom = true;
             this.fPdfLabel87.IsShowLineLeft = false;
             this.fPdfLabel87.IsShowLineRight = true;
@@ -1450,10 +1477,10 @@
             this.fPdfLabel88.ColumnName = "";
             this.fPdfLabel88.DBValue = "8";
             this.fPdfLabel88.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties163.Rotation = 0;
-            fPdfProperties163.TableColumn = "";
-            fPdfProperties163.TableRow = 0;
-            this.fPdfLabel88.FPdfProperties = fPdfProperties163;
+            fPdfProperties165.Rotation = 0;
+            fPdfProperties165.TableColumn = "";
+            fPdfProperties165.TableRow = 0;
+            this.fPdfLabel88.FPdfProperties = fPdfProperties165;
             this.fPdfLabel88.IsShowLineBottom = true;
             this.fPdfLabel88.IsShowLineLeft = false;
             this.fPdfLabel88.IsShowLineRight = true;
@@ -1472,13 +1499,13 @@
             // fPdfLabel77
             // 
             this.fPdfLabel77.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel77.ColumnName = "";
+            this.fPdfLabel77.ColumnName = "amount07";
             this.fPdfLabel77.DBValue = "100,000,000";
             this.fPdfLabel77.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties164.Rotation = 0;
-            fPdfProperties164.TableColumn = "";
-            fPdfProperties164.TableRow = 0;
-            this.fPdfLabel77.FPdfProperties = fPdfProperties164;
+            fPdfProperties166.Rotation = 0;
+            fPdfProperties166.TableColumn = "";
+            fPdfProperties166.TableRow = 0;
+            this.fPdfLabel77.FPdfProperties = fPdfProperties166;
             this.fPdfLabel77.IsShowLineBottom = true;
             this.fPdfLabel77.IsShowLineLeft = false;
             this.fPdfLabel77.IsShowLineRight = true;
@@ -1497,13 +1524,13 @@
             // fPdfLabel78
             // 
             this.fPdfLabel78.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel78.ColumnName = "";
+            this.fPdfLabel78.ColumnName = "price07";
             this.fPdfLabel78.DBValue = "100,000,000";
             this.fPdfLabel78.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties165.Rotation = 0;
-            fPdfProperties165.TableColumn = "";
-            fPdfProperties165.TableRow = 0;
-            this.fPdfLabel78.FPdfProperties = fPdfProperties165;
+            fPdfProperties167.Rotation = 0;
+            fPdfProperties167.TableColumn = "";
+            fPdfProperties167.TableRow = 0;
+            this.fPdfLabel78.FPdfProperties = fPdfProperties167;
             this.fPdfLabel78.IsShowLineBottom = true;
             this.fPdfLabel78.IsShowLineLeft = false;
             this.fPdfLabel78.IsShowLineRight = true;
@@ -1522,13 +1549,13 @@
             // fPdfLabel79
             // 
             this.fPdfLabel79.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel79.ColumnName = "";
+            this.fPdfLabel79.ColumnName = "quantity07";
             this.fPdfLabel79.DBValue = "7";
             this.fPdfLabel79.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties166.Rotation = 0;
-            fPdfProperties166.TableColumn = "";
-            fPdfProperties166.TableRow = 0;
-            this.fPdfLabel79.FPdfProperties = fPdfProperties166;
+            fPdfProperties168.Rotation = 0;
+            fPdfProperties168.TableColumn = "";
+            fPdfProperties168.TableRow = 0;
+            this.fPdfLabel79.FPdfProperties = fPdfProperties168;
             this.fPdfLabel79.IsShowLineBottom = true;
             this.fPdfLabel79.IsShowLineLeft = false;
             this.fPdfLabel79.IsShowLineRight = true;
@@ -1547,13 +1574,13 @@
             // fPdfLabel80
             // 
             this.fPdfLabel80.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel80.ColumnName = "";
+            this.fPdfLabel80.ColumnName = "unitname07";
             this.fPdfLabel80.DBValue = "Đơn vị 7";
             this.fPdfLabel80.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties167.Rotation = 0;
-            fPdfProperties167.TableColumn = "";
-            fPdfProperties167.TableRow = 0;
-            this.fPdfLabel80.FPdfProperties = fPdfProperties167;
+            fPdfProperties169.Rotation = 0;
+            fPdfProperties169.TableColumn = "";
+            fPdfProperties169.TableRow = 0;
+            this.fPdfLabel80.FPdfProperties = fPdfProperties169;
             this.fPdfLabel80.IsShowLineBottom = true;
             this.fPdfLabel80.IsShowLineLeft = false;
             this.fPdfLabel80.IsShowLineRight = true;
@@ -1572,13 +1599,13 @@
             // fPdfLabel81
             // 
             this.fPdfLabel81.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel81.ColumnName = "";
+            this.fPdfLabel81.ColumnName = "productname07";
             this.fPdfLabel81.DBValue = "Tên hàng hóa, dịch vụ 7";
             this.fPdfLabel81.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties168.Rotation = 0;
-            fPdfProperties168.TableColumn = "";
-            fPdfProperties168.TableRow = 0;
-            this.fPdfLabel81.FPdfProperties = fPdfProperties168;
+            fPdfProperties170.Rotation = 0;
+            fPdfProperties170.TableColumn = "";
+            fPdfProperties170.TableRow = 0;
+            this.fPdfLabel81.FPdfProperties = fPdfProperties170;
             this.fPdfLabel81.IsShowLineBottom = true;
             this.fPdfLabel81.IsShowLineLeft = false;
             this.fPdfLabel81.IsShowLineRight = true;
@@ -1600,10 +1627,10 @@
             this.fPdfLabel82.ColumnName = "";
             this.fPdfLabel82.DBValue = "7";
             this.fPdfLabel82.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties169.Rotation = 0;
-            fPdfProperties169.TableColumn = "";
-            fPdfProperties169.TableRow = 0;
-            this.fPdfLabel82.FPdfProperties = fPdfProperties169;
+            fPdfProperties171.Rotation = 0;
+            fPdfProperties171.TableColumn = "";
+            fPdfProperties171.TableRow = 0;
+            this.fPdfLabel82.FPdfProperties = fPdfProperties171;
             this.fPdfLabel82.IsShowLineBottom = true;
             this.fPdfLabel82.IsShowLineLeft = false;
             this.fPdfLabel82.IsShowLineRight = true;
@@ -1622,13 +1649,13 @@
             // fPdfLabel71
             // 
             this.fPdfLabel71.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel71.ColumnName = "";
+            this.fPdfLabel71.ColumnName = "amount06";
             this.fPdfLabel71.DBValue = "100,000,000";
             this.fPdfLabel71.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties170.Rotation = 0;
-            fPdfProperties170.TableColumn = "";
-            fPdfProperties170.TableRow = 0;
-            this.fPdfLabel71.FPdfProperties = fPdfProperties170;
+            fPdfProperties172.Rotation = 0;
+            fPdfProperties172.TableColumn = "";
+            fPdfProperties172.TableRow = 0;
+            this.fPdfLabel71.FPdfProperties = fPdfProperties172;
             this.fPdfLabel71.IsShowLineBottom = true;
             this.fPdfLabel71.IsShowLineLeft = false;
             this.fPdfLabel71.IsShowLineRight = true;
@@ -1647,13 +1674,13 @@
             // fPdfLabel72
             // 
             this.fPdfLabel72.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel72.ColumnName = "";
+            this.fPdfLabel72.ColumnName = "price06";
             this.fPdfLabel72.DBValue = "100,000,000";
             this.fPdfLabel72.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties171.Rotation = 0;
-            fPdfProperties171.TableColumn = "";
-            fPdfProperties171.TableRow = 0;
-            this.fPdfLabel72.FPdfProperties = fPdfProperties171;
+            fPdfProperties173.Rotation = 0;
+            fPdfProperties173.TableColumn = "";
+            fPdfProperties173.TableRow = 0;
+            this.fPdfLabel72.FPdfProperties = fPdfProperties173;
             this.fPdfLabel72.IsShowLineBottom = true;
             this.fPdfLabel72.IsShowLineLeft = false;
             this.fPdfLabel72.IsShowLineRight = true;
@@ -1672,13 +1699,13 @@
             // fPdfLabel73
             // 
             this.fPdfLabel73.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel73.ColumnName = "";
+            this.fPdfLabel73.ColumnName = "quantity06";
             this.fPdfLabel73.DBValue = "6";
             this.fPdfLabel73.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties172.Rotation = 0;
-            fPdfProperties172.TableColumn = "";
-            fPdfProperties172.TableRow = 0;
-            this.fPdfLabel73.FPdfProperties = fPdfProperties172;
+            fPdfProperties174.Rotation = 0;
+            fPdfProperties174.TableColumn = "";
+            fPdfProperties174.TableRow = 0;
+            this.fPdfLabel73.FPdfProperties = fPdfProperties174;
             this.fPdfLabel73.IsShowLineBottom = true;
             this.fPdfLabel73.IsShowLineLeft = false;
             this.fPdfLabel73.IsShowLineRight = true;
@@ -1697,13 +1724,13 @@
             // fPdfLabel74
             // 
             this.fPdfLabel74.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel74.ColumnName = "";
+            this.fPdfLabel74.ColumnName = "unitname06";
             this.fPdfLabel74.DBValue = "Đơn vị 6";
             this.fPdfLabel74.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties173.Rotation = 0;
-            fPdfProperties173.TableColumn = "";
-            fPdfProperties173.TableRow = 0;
-            this.fPdfLabel74.FPdfProperties = fPdfProperties173;
+            fPdfProperties175.Rotation = 0;
+            fPdfProperties175.TableColumn = "";
+            fPdfProperties175.TableRow = 0;
+            this.fPdfLabel74.FPdfProperties = fPdfProperties175;
             this.fPdfLabel74.IsShowLineBottom = true;
             this.fPdfLabel74.IsShowLineLeft = false;
             this.fPdfLabel74.IsShowLineRight = true;
@@ -1722,13 +1749,13 @@
             // fPdfLabel75
             // 
             this.fPdfLabel75.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel75.ColumnName = "";
+            this.fPdfLabel75.ColumnName = "productname06";
             this.fPdfLabel75.DBValue = "Tên hàng hóa, dịch vụ 6";
             this.fPdfLabel75.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties174.Rotation = 0;
-            fPdfProperties174.TableColumn = "";
-            fPdfProperties174.TableRow = 0;
-            this.fPdfLabel75.FPdfProperties = fPdfProperties174;
+            fPdfProperties176.Rotation = 0;
+            fPdfProperties176.TableColumn = "";
+            fPdfProperties176.TableRow = 0;
+            this.fPdfLabel75.FPdfProperties = fPdfProperties176;
             this.fPdfLabel75.IsShowLineBottom = true;
             this.fPdfLabel75.IsShowLineLeft = false;
             this.fPdfLabel75.IsShowLineRight = true;
@@ -1750,10 +1777,10 @@
             this.fPdfLabel76.ColumnName = "";
             this.fPdfLabel76.DBValue = "6";
             this.fPdfLabel76.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties175.Rotation = 0;
-            fPdfProperties175.TableColumn = "";
-            fPdfProperties175.TableRow = 0;
-            this.fPdfLabel76.FPdfProperties = fPdfProperties175;
+            fPdfProperties177.Rotation = 0;
+            fPdfProperties177.TableColumn = "";
+            fPdfProperties177.TableRow = 0;
+            this.fPdfLabel76.FPdfProperties = fPdfProperties177;
             this.fPdfLabel76.IsShowLineBottom = true;
             this.fPdfLabel76.IsShowLineLeft = false;
             this.fPdfLabel76.IsShowLineRight = true;
@@ -1772,13 +1799,13 @@
             // fPdfLabel65
             // 
             this.fPdfLabel65.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel65.ColumnName = "";
+            this.fPdfLabel65.ColumnName = "amount05";
             this.fPdfLabel65.DBValue = "100,000,000";
             this.fPdfLabel65.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties176.Rotation = 0;
-            fPdfProperties176.TableColumn = "";
-            fPdfProperties176.TableRow = 0;
-            this.fPdfLabel65.FPdfProperties = fPdfProperties176;
+            fPdfProperties178.Rotation = 0;
+            fPdfProperties178.TableColumn = "";
+            fPdfProperties178.TableRow = 0;
+            this.fPdfLabel65.FPdfProperties = fPdfProperties178;
             this.fPdfLabel65.IsShowLineBottom = true;
             this.fPdfLabel65.IsShowLineLeft = false;
             this.fPdfLabel65.IsShowLineRight = true;
@@ -1797,13 +1824,13 @@
             // fPdfLabel66
             // 
             this.fPdfLabel66.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel66.ColumnName = "";
+            this.fPdfLabel66.ColumnName = "price05";
             this.fPdfLabel66.DBValue = "100,000,000";
             this.fPdfLabel66.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties177.Rotation = 0;
-            fPdfProperties177.TableColumn = "";
-            fPdfProperties177.TableRow = 0;
-            this.fPdfLabel66.FPdfProperties = fPdfProperties177;
+            fPdfProperties179.Rotation = 0;
+            fPdfProperties179.TableColumn = "";
+            fPdfProperties179.TableRow = 0;
+            this.fPdfLabel66.FPdfProperties = fPdfProperties179;
             this.fPdfLabel66.IsShowLineBottom = true;
             this.fPdfLabel66.IsShowLineLeft = false;
             this.fPdfLabel66.IsShowLineRight = true;
@@ -1822,13 +1849,13 @@
             // fPdfLabel67
             // 
             this.fPdfLabel67.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel67.ColumnName = "";
+            this.fPdfLabel67.ColumnName = "quantity05";
             this.fPdfLabel67.DBValue = "5";
             this.fPdfLabel67.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties178.Rotation = 0;
-            fPdfProperties178.TableColumn = "";
-            fPdfProperties178.TableRow = 0;
-            this.fPdfLabel67.FPdfProperties = fPdfProperties178;
+            fPdfProperties180.Rotation = 0;
+            fPdfProperties180.TableColumn = "";
+            fPdfProperties180.TableRow = 0;
+            this.fPdfLabel67.FPdfProperties = fPdfProperties180;
             this.fPdfLabel67.IsShowLineBottom = true;
             this.fPdfLabel67.IsShowLineLeft = false;
             this.fPdfLabel67.IsShowLineRight = true;
@@ -1847,13 +1874,13 @@
             // fPdfLabel68
             // 
             this.fPdfLabel68.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel68.ColumnName = "";
+            this.fPdfLabel68.ColumnName = "unitname05";
             this.fPdfLabel68.DBValue = "Đơn vị 5";
             this.fPdfLabel68.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties179.Rotation = 0;
-            fPdfProperties179.TableColumn = "";
-            fPdfProperties179.TableRow = 0;
-            this.fPdfLabel68.FPdfProperties = fPdfProperties179;
+            fPdfProperties181.Rotation = 0;
+            fPdfProperties181.TableColumn = "";
+            fPdfProperties181.TableRow = 0;
+            this.fPdfLabel68.FPdfProperties = fPdfProperties181;
             this.fPdfLabel68.IsShowLineBottom = true;
             this.fPdfLabel68.IsShowLineLeft = false;
             this.fPdfLabel68.IsShowLineRight = true;
@@ -1872,13 +1899,13 @@
             // fPdfLabel69
             // 
             this.fPdfLabel69.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel69.ColumnName = "";
+            this.fPdfLabel69.ColumnName = "productname05";
             this.fPdfLabel69.DBValue = "Tên hàng hóa, dịch vụ 5";
             this.fPdfLabel69.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties180.Rotation = 0;
-            fPdfProperties180.TableColumn = "";
-            fPdfProperties180.TableRow = 0;
-            this.fPdfLabel69.FPdfProperties = fPdfProperties180;
+            fPdfProperties182.Rotation = 0;
+            fPdfProperties182.TableColumn = "";
+            fPdfProperties182.TableRow = 0;
+            this.fPdfLabel69.FPdfProperties = fPdfProperties182;
             this.fPdfLabel69.IsShowLineBottom = true;
             this.fPdfLabel69.IsShowLineLeft = false;
             this.fPdfLabel69.IsShowLineRight = true;
@@ -1900,10 +1927,10 @@
             this.fPdfLabel70.ColumnName = "";
             this.fPdfLabel70.DBValue = "5";
             this.fPdfLabel70.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties181.Rotation = 0;
-            fPdfProperties181.TableColumn = "";
-            fPdfProperties181.TableRow = 0;
-            this.fPdfLabel70.FPdfProperties = fPdfProperties181;
+            fPdfProperties183.Rotation = 0;
+            fPdfProperties183.TableColumn = "";
+            fPdfProperties183.TableRow = 0;
+            this.fPdfLabel70.FPdfProperties = fPdfProperties183;
             this.fPdfLabel70.IsShowLineBottom = true;
             this.fPdfLabel70.IsShowLineLeft = false;
             this.fPdfLabel70.IsShowLineRight = true;
@@ -1922,13 +1949,13 @@
             // fPdfLabel59
             // 
             this.fPdfLabel59.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel59.ColumnName = "";
+            this.fPdfLabel59.ColumnName = "amount04";
             this.fPdfLabel59.DBValue = "100,000,000";
             this.fPdfLabel59.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties182.Rotation = 0;
-            fPdfProperties182.TableColumn = "";
-            fPdfProperties182.TableRow = 0;
-            this.fPdfLabel59.FPdfProperties = fPdfProperties182;
+            fPdfProperties184.Rotation = 0;
+            fPdfProperties184.TableColumn = "";
+            fPdfProperties184.TableRow = 0;
+            this.fPdfLabel59.FPdfProperties = fPdfProperties184;
             this.fPdfLabel59.IsShowLineBottom = true;
             this.fPdfLabel59.IsShowLineLeft = false;
             this.fPdfLabel59.IsShowLineRight = true;
@@ -1947,13 +1974,13 @@
             // fPdfLabel60
             // 
             this.fPdfLabel60.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel60.ColumnName = "";
+            this.fPdfLabel60.ColumnName = "price04";
             this.fPdfLabel60.DBValue = "100,000,000";
             this.fPdfLabel60.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties183.Rotation = 0;
-            fPdfProperties183.TableColumn = "";
-            fPdfProperties183.TableRow = 0;
-            this.fPdfLabel60.FPdfProperties = fPdfProperties183;
+            fPdfProperties185.Rotation = 0;
+            fPdfProperties185.TableColumn = "";
+            fPdfProperties185.TableRow = 0;
+            this.fPdfLabel60.FPdfProperties = fPdfProperties185;
             this.fPdfLabel60.IsShowLineBottom = true;
             this.fPdfLabel60.IsShowLineLeft = false;
             this.fPdfLabel60.IsShowLineRight = true;
@@ -1972,13 +1999,13 @@
             // fPdfLabel61
             // 
             this.fPdfLabel61.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel61.ColumnName = "";
+            this.fPdfLabel61.ColumnName = "quantity04";
             this.fPdfLabel61.DBValue = "4";
             this.fPdfLabel61.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties184.Rotation = 0;
-            fPdfProperties184.TableColumn = "";
-            fPdfProperties184.TableRow = 0;
-            this.fPdfLabel61.FPdfProperties = fPdfProperties184;
+            fPdfProperties186.Rotation = 0;
+            fPdfProperties186.TableColumn = "";
+            fPdfProperties186.TableRow = 0;
+            this.fPdfLabel61.FPdfProperties = fPdfProperties186;
             this.fPdfLabel61.IsShowLineBottom = true;
             this.fPdfLabel61.IsShowLineLeft = false;
             this.fPdfLabel61.IsShowLineRight = true;
@@ -1997,13 +2024,13 @@
             // fPdfLabel62
             // 
             this.fPdfLabel62.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel62.ColumnName = "";
+            this.fPdfLabel62.ColumnName = "unitname04";
             this.fPdfLabel62.DBValue = "Đơn vị 4";
             this.fPdfLabel62.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties185.Rotation = 0;
-            fPdfProperties185.TableColumn = "";
-            fPdfProperties185.TableRow = 0;
-            this.fPdfLabel62.FPdfProperties = fPdfProperties185;
+            fPdfProperties187.Rotation = 0;
+            fPdfProperties187.TableColumn = "";
+            fPdfProperties187.TableRow = 0;
+            this.fPdfLabel62.FPdfProperties = fPdfProperties187;
             this.fPdfLabel62.IsShowLineBottom = true;
             this.fPdfLabel62.IsShowLineLeft = false;
             this.fPdfLabel62.IsShowLineRight = true;
@@ -2022,13 +2049,13 @@
             // fPdfLabel63
             // 
             this.fPdfLabel63.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel63.ColumnName = "";
+            this.fPdfLabel63.ColumnName = "productname04";
             this.fPdfLabel63.DBValue = "Tên hàng hóa, dịch vụ 4";
             this.fPdfLabel63.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties186.Rotation = 0;
-            fPdfProperties186.TableColumn = "";
-            fPdfProperties186.TableRow = 0;
-            this.fPdfLabel63.FPdfProperties = fPdfProperties186;
+            fPdfProperties188.Rotation = 0;
+            fPdfProperties188.TableColumn = "";
+            fPdfProperties188.TableRow = 0;
+            this.fPdfLabel63.FPdfProperties = fPdfProperties188;
             this.fPdfLabel63.IsShowLineBottom = true;
             this.fPdfLabel63.IsShowLineLeft = false;
             this.fPdfLabel63.IsShowLineRight = true;
@@ -2050,10 +2077,10 @@
             this.fPdfLabel64.ColumnName = "";
             this.fPdfLabel64.DBValue = "4";
             this.fPdfLabel64.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties187.Rotation = 0;
-            fPdfProperties187.TableColumn = "";
-            fPdfProperties187.TableRow = 0;
-            this.fPdfLabel64.FPdfProperties = fPdfProperties187;
+            fPdfProperties189.Rotation = 0;
+            fPdfProperties189.TableColumn = "";
+            fPdfProperties189.TableRow = 0;
+            this.fPdfLabel64.FPdfProperties = fPdfProperties189;
             this.fPdfLabel64.IsShowLineBottom = true;
             this.fPdfLabel64.IsShowLineLeft = false;
             this.fPdfLabel64.IsShowLineRight = true;
@@ -2072,13 +2099,13 @@
             // fPdfLabel53
             // 
             this.fPdfLabel53.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel53.ColumnName = "";
+            this.fPdfLabel53.ColumnName = "amount03";
             this.fPdfLabel53.DBValue = "100,000,000";
             this.fPdfLabel53.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties188.Rotation = 0;
-            fPdfProperties188.TableColumn = "";
-            fPdfProperties188.TableRow = 0;
-            this.fPdfLabel53.FPdfProperties = fPdfProperties188;
+            fPdfProperties190.Rotation = 0;
+            fPdfProperties190.TableColumn = "";
+            fPdfProperties190.TableRow = 0;
+            this.fPdfLabel53.FPdfProperties = fPdfProperties190;
             this.fPdfLabel53.IsShowLineBottom = true;
             this.fPdfLabel53.IsShowLineLeft = false;
             this.fPdfLabel53.IsShowLineRight = true;
@@ -2097,13 +2124,13 @@
             // fPdfLabel54
             // 
             this.fPdfLabel54.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel54.ColumnName = "";
+            this.fPdfLabel54.ColumnName = "price03";
             this.fPdfLabel54.DBValue = "100,000,000";
             this.fPdfLabel54.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties189.Rotation = 0;
-            fPdfProperties189.TableColumn = "";
-            fPdfProperties189.TableRow = 0;
-            this.fPdfLabel54.FPdfProperties = fPdfProperties189;
+            fPdfProperties191.Rotation = 0;
+            fPdfProperties191.TableColumn = "";
+            fPdfProperties191.TableRow = 0;
+            this.fPdfLabel54.FPdfProperties = fPdfProperties191;
             this.fPdfLabel54.IsShowLineBottom = true;
             this.fPdfLabel54.IsShowLineLeft = false;
             this.fPdfLabel54.IsShowLineRight = true;
@@ -2122,13 +2149,13 @@
             // fPdfLabel55
             // 
             this.fPdfLabel55.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel55.ColumnName = "";
+            this.fPdfLabel55.ColumnName = "quantity03";
             this.fPdfLabel55.DBValue = "3";
             this.fPdfLabel55.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties190.Rotation = 0;
-            fPdfProperties190.TableColumn = "";
-            fPdfProperties190.TableRow = 0;
-            this.fPdfLabel55.FPdfProperties = fPdfProperties190;
+            fPdfProperties192.Rotation = 0;
+            fPdfProperties192.TableColumn = "";
+            fPdfProperties192.TableRow = 0;
+            this.fPdfLabel55.FPdfProperties = fPdfProperties192;
             this.fPdfLabel55.IsShowLineBottom = true;
             this.fPdfLabel55.IsShowLineLeft = false;
             this.fPdfLabel55.IsShowLineRight = true;
@@ -2147,13 +2174,13 @@
             // fPdfLabel56
             // 
             this.fPdfLabel56.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel56.ColumnName = "";
+            this.fPdfLabel56.ColumnName = "unitname03";
             this.fPdfLabel56.DBValue = "Đơn vị 3";
             this.fPdfLabel56.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties191.Rotation = 0;
-            fPdfProperties191.TableColumn = "";
-            fPdfProperties191.TableRow = 0;
-            this.fPdfLabel56.FPdfProperties = fPdfProperties191;
+            fPdfProperties193.Rotation = 0;
+            fPdfProperties193.TableColumn = "";
+            fPdfProperties193.TableRow = 0;
+            this.fPdfLabel56.FPdfProperties = fPdfProperties193;
             this.fPdfLabel56.IsShowLineBottom = true;
             this.fPdfLabel56.IsShowLineLeft = false;
             this.fPdfLabel56.IsShowLineRight = true;
@@ -2172,13 +2199,13 @@
             // fPdfLabel57
             // 
             this.fPdfLabel57.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel57.ColumnName = "";
+            this.fPdfLabel57.ColumnName = "productname03";
             this.fPdfLabel57.DBValue = "Tên hàng hóa, dịch vụ 3";
             this.fPdfLabel57.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties192.Rotation = 0;
-            fPdfProperties192.TableColumn = "";
-            fPdfProperties192.TableRow = 0;
-            this.fPdfLabel57.FPdfProperties = fPdfProperties192;
+            fPdfProperties194.Rotation = 0;
+            fPdfProperties194.TableColumn = "";
+            fPdfProperties194.TableRow = 0;
+            this.fPdfLabel57.FPdfProperties = fPdfProperties194;
             this.fPdfLabel57.IsShowLineBottom = true;
             this.fPdfLabel57.IsShowLineLeft = false;
             this.fPdfLabel57.IsShowLineRight = true;
@@ -2200,10 +2227,10 @@
             this.fPdfLabel58.ColumnName = "";
             this.fPdfLabel58.DBValue = "3";
             this.fPdfLabel58.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties193.Rotation = 0;
-            fPdfProperties193.TableColumn = "";
-            fPdfProperties193.TableRow = 0;
-            this.fPdfLabel58.FPdfProperties = fPdfProperties193;
+            fPdfProperties195.Rotation = 0;
+            fPdfProperties195.TableColumn = "";
+            fPdfProperties195.TableRow = 0;
+            this.fPdfLabel58.FPdfProperties = fPdfProperties195;
             this.fPdfLabel58.IsShowLineBottom = true;
             this.fPdfLabel58.IsShowLineLeft = false;
             this.fPdfLabel58.IsShowLineRight = true;
@@ -2222,13 +2249,13 @@
             // fPdfLabel47
             // 
             this.fPdfLabel47.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel47.ColumnName = "";
+            this.fPdfLabel47.ColumnName = "amount02";
             this.fPdfLabel47.DBValue = "100,000,000";
             this.fPdfLabel47.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties194.Rotation = 0;
-            fPdfProperties194.TableColumn = "";
-            fPdfProperties194.TableRow = 0;
-            this.fPdfLabel47.FPdfProperties = fPdfProperties194;
+            fPdfProperties196.Rotation = 0;
+            fPdfProperties196.TableColumn = "";
+            fPdfProperties196.TableRow = 0;
+            this.fPdfLabel47.FPdfProperties = fPdfProperties196;
             this.fPdfLabel47.IsShowLineBottom = true;
             this.fPdfLabel47.IsShowLineLeft = false;
             this.fPdfLabel47.IsShowLineRight = true;
@@ -2247,13 +2274,13 @@
             // fPdfLabel48
             // 
             this.fPdfLabel48.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel48.ColumnName = "";
+            this.fPdfLabel48.ColumnName = "price02";
             this.fPdfLabel48.DBValue = "100,000,000";
             this.fPdfLabel48.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties195.Rotation = 0;
-            fPdfProperties195.TableColumn = "";
-            fPdfProperties195.TableRow = 0;
-            this.fPdfLabel48.FPdfProperties = fPdfProperties195;
+            fPdfProperties197.Rotation = 0;
+            fPdfProperties197.TableColumn = "";
+            fPdfProperties197.TableRow = 0;
+            this.fPdfLabel48.FPdfProperties = fPdfProperties197;
             this.fPdfLabel48.IsShowLineBottom = true;
             this.fPdfLabel48.IsShowLineLeft = false;
             this.fPdfLabel48.IsShowLineRight = true;
@@ -2272,13 +2299,13 @@
             // fPdfLabel49
             // 
             this.fPdfLabel49.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel49.ColumnName = "";
+            this.fPdfLabel49.ColumnName = "quantity02";
             this.fPdfLabel49.DBValue = "2";
             this.fPdfLabel49.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties196.Rotation = 0;
-            fPdfProperties196.TableColumn = "";
-            fPdfProperties196.TableRow = 0;
-            this.fPdfLabel49.FPdfProperties = fPdfProperties196;
+            fPdfProperties198.Rotation = 0;
+            fPdfProperties198.TableColumn = "";
+            fPdfProperties198.TableRow = 0;
+            this.fPdfLabel49.FPdfProperties = fPdfProperties198;
             this.fPdfLabel49.IsShowLineBottom = true;
             this.fPdfLabel49.IsShowLineLeft = false;
             this.fPdfLabel49.IsShowLineRight = true;
@@ -2297,13 +2324,13 @@
             // fPdfLabel50
             // 
             this.fPdfLabel50.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel50.ColumnName = "";
+            this.fPdfLabel50.ColumnName = "unitname02";
             this.fPdfLabel50.DBValue = "Đơn vị 2";
             this.fPdfLabel50.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties197.Rotation = 0;
-            fPdfProperties197.TableColumn = "";
-            fPdfProperties197.TableRow = 0;
-            this.fPdfLabel50.FPdfProperties = fPdfProperties197;
+            fPdfProperties199.Rotation = 0;
+            fPdfProperties199.TableColumn = "";
+            fPdfProperties199.TableRow = 0;
+            this.fPdfLabel50.FPdfProperties = fPdfProperties199;
             this.fPdfLabel50.IsShowLineBottom = true;
             this.fPdfLabel50.IsShowLineLeft = false;
             this.fPdfLabel50.IsShowLineRight = true;
@@ -2322,13 +2349,13 @@
             // fPdfLabel51
             // 
             this.fPdfLabel51.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel51.ColumnName = "";
+            this.fPdfLabel51.ColumnName = "productname02";
             this.fPdfLabel51.DBValue = "Tên hàng hóa, dịch vụ 2";
             this.fPdfLabel51.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties198.Rotation = 0;
-            fPdfProperties198.TableColumn = "";
-            fPdfProperties198.TableRow = 0;
-            this.fPdfLabel51.FPdfProperties = fPdfProperties198;
+            fPdfProperties200.Rotation = 0;
+            fPdfProperties200.TableColumn = "";
+            fPdfProperties200.TableRow = 0;
+            this.fPdfLabel51.FPdfProperties = fPdfProperties200;
             this.fPdfLabel51.IsShowLineBottom = true;
             this.fPdfLabel51.IsShowLineLeft = false;
             this.fPdfLabel51.IsShowLineRight = true;
@@ -2350,10 +2377,10 @@
             this.fPdfLabel52.ColumnName = "";
             this.fPdfLabel52.DBValue = "2";
             this.fPdfLabel52.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties199.Rotation = 0;
-            fPdfProperties199.TableColumn = "";
-            fPdfProperties199.TableRow = 0;
-            this.fPdfLabel52.FPdfProperties = fPdfProperties199;
+            fPdfProperties201.Rotation = 0;
+            fPdfProperties201.TableColumn = "";
+            fPdfProperties201.TableRow = 0;
+            this.fPdfLabel52.FPdfProperties = fPdfProperties201;
             this.fPdfLabel52.IsShowLineBottom = true;
             this.fPdfLabel52.IsShowLineLeft = false;
             this.fPdfLabel52.IsShowLineRight = true;
@@ -2372,13 +2399,13 @@
             // fPdfLabel46
             // 
             this.fPdfLabel46.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel46.ColumnName = "";
+            this.fPdfLabel46.ColumnName = "amount01";
             this.fPdfLabel46.DBValue = "100,000,000";
             this.fPdfLabel46.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties200.Rotation = 0;
-            fPdfProperties200.TableColumn = "";
-            fPdfProperties200.TableRow = 0;
-            this.fPdfLabel46.FPdfProperties = fPdfProperties200;
+            fPdfProperties202.Rotation = 0;
+            fPdfProperties202.TableColumn = "";
+            fPdfProperties202.TableRow = 0;
+            this.fPdfLabel46.FPdfProperties = fPdfProperties202;
             this.fPdfLabel46.IsShowLineBottom = true;
             this.fPdfLabel46.IsShowLineLeft = false;
             this.fPdfLabel46.IsShowLineRight = true;
@@ -2397,13 +2424,13 @@
             // fPdfLabel45
             // 
             this.fPdfLabel45.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel45.ColumnName = "";
+            this.fPdfLabel45.ColumnName = "price01";
             this.fPdfLabel45.DBValue = "100,000,000";
             this.fPdfLabel45.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties201.Rotation = 0;
-            fPdfProperties201.TableColumn = "";
-            fPdfProperties201.TableRow = 0;
-            this.fPdfLabel45.FPdfProperties = fPdfProperties201;
+            fPdfProperties203.Rotation = 0;
+            fPdfProperties203.TableColumn = "";
+            fPdfProperties203.TableRow = 0;
+            this.fPdfLabel45.FPdfProperties = fPdfProperties203;
             this.fPdfLabel45.IsShowLineBottom = true;
             this.fPdfLabel45.IsShowLineLeft = false;
             this.fPdfLabel45.IsShowLineRight = true;
@@ -2422,13 +2449,13 @@
             // fPdfLabel44
             // 
             this.fPdfLabel44.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel44.ColumnName = "";
+            this.fPdfLabel44.ColumnName = "quantity01";
             this.fPdfLabel44.DBValue = "1";
             this.fPdfLabel44.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties202.Rotation = 0;
-            fPdfProperties202.TableColumn = "";
-            fPdfProperties202.TableRow = 0;
-            this.fPdfLabel44.FPdfProperties = fPdfProperties202;
+            fPdfProperties204.Rotation = 0;
+            fPdfProperties204.TableColumn = "";
+            fPdfProperties204.TableRow = 0;
+            this.fPdfLabel44.FPdfProperties = fPdfProperties204;
             this.fPdfLabel44.IsShowLineBottom = true;
             this.fPdfLabel44.IsShowLineLeft = false;
             this.fPdfLabel44.IsShowLineRight = true;
@@ -2447,13 +2474,13 @@
             // fPdfLabel43
             // 
             this.fPdfLabel43.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel43.ColumnName = "";
+            this.fPdfLabel43.ColumnName = "unitname01";
             this.fPdfLabel43.DBValue = "Đơn vị 1";
             this.fPdfLabel43.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties203.Rotation = 0;
-            fPdfProperties203.TableColumn = "";
-            fPdfProperties203.TableRow = 0;
-            this.fPdfLabel43.FPdfProperties = fPdfProperties203;
+            fPdfProperties205.Rotation = 0;
+            fPdfProperties205.TableColumn = "";
+            fPdfProperties205.TableRow = 0;
+            this.fPdfLabel43.FPdfProperties = fPdfProperties205;
             this.fPdfLabel43.IsShowLineBottom = true;
             this.fPdfLabel43.IsShowLineLeft = false;
             this.fPdfLabel43.IsShowLineRight = true;
@@ -2472,13 +2499,13 @@
             // fPdfLabel42
             // 
             this.fPdfLabel42.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel42.ColumnName = "";
+            this.fPdfLabel42.ColumnName = "productname01";
             this.fPdfLabel42.DBValue = "Tên hàng hóa, dịch vụ 1";
             this.fPdfLabel42.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties204.Rotation = 0;
-            fPdfProperties204.TableColumn = "";
-            fPdfProperties204.TableRow = 0;
-            this.fPdfLabel42.FPdfProperties = fPdfProperties204;
+            fPdfProperties206.Rotation = 0;
+            fPdfProperties206.TableColumn = "";
+            fPdfProperties206.TableRow = 0;
+            this.fPdfLabel42.FPdfProperties = fPdfProperties206;
             this.fPdfLabel42.IsShowLineBottom = true;
             this.fPdfLabel42.IsShowLineLeft = false;
             this.fPdfLabel42.IsShowLineRight = true;
@@ -2500,10 +2527,10 @@
             this.fPdfLabel39.ColumnName = "";
             this.fPdfLabel39.DBValue = "4";
             this.fPdfLabel39.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties205.Rotation = 0;
-            fPdfProperties205.TableColumn = "";
-            fPdfProperties205.TableRow = 0;
-            this.fPdfLabel39.FPdfProperties = fPdfProperties205;
+            fPdfProperties207.Rotation = 0;
+            fPdfProperties207.TableColumn = "";
+            fPdfProperties207.TableRow = 0;
+            this.fPdfLabel39.FPdfProperties = fPdfProperties207;
             this.fPdfLabel39.IsShowLineBottom = true;
             this.fPdfLabel39.IsShowLineLeft = true;
             this.fPdfLabel39.IsShowLineRight = true;
@@ -2525,10 +2552,10 @@
             this.fPdfLabel40.ColumnName = "";
             this.fPdfLabel40.DBValue = "Số lượng";
             this.fPdfLabel40.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties206.Rotation = 0;
-            fPdfProperties206.TableColumn = "";
-            fPdfProperties206.TableRow = 0;
-            this.fPdfLabel40.FPdfProperties = fPdfProperties206;
+            fPdfProperties208.Rotation = 0;
+            fPdfProperties208.TableColumn = "";
+            fPdfProperties208.TableRow = 0;
+            this.fPdfLabel40.FPdfProperties = fPdfProperties208;
             this.fPdfLabel40.IsShowLineBottom = true;
             this.fPdfLabel40.IsShowLineLeft = true;
             this.fPdfLabel40.IsShowLineRight = true;
@@ -2550,10 +2577,10 @@
             this.fPdfLabel34.ColumnName = "";
             this.fPdfLabel34.DBValue = "6 = 4 x 5";
             this.fPdfLabel34.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties207.Rotation = 0;
-            fPdfProperties207.TableColumn = "";
-            fPdfProperties207.TableRow = 0;
-            this.fPdfLabel34.FPdfProperties = fPdfProperties207;
+            fPdfProperties209.Rotation = 0;
+            fPdfProperties209.TableColumn = "";
+            fPdfProperties209.TableRow = 0;
+            this.fPdfLabel34.FPdfProperties = fPdfProperties209;
             this.fPdfLabel34.IsShowLineBottom = true;
             this.fPdfLabel34.IsShowLineLeft = true;
             this.fPdfLabel34.IsShowLineRight = true;
@@ -2575,10 +2602,10 @@
             this.fPdfLabel35.ColumnName = "";
             this.fPdfLabel35.DBValue = "5";
             this.fPdfLabel35.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties208.Rotation = 0;
-            fPdfProperties208.TableColumn = "";
-            fPdfProperties208.TableRow = 0;
-            this.fPdfLabel35.FPdfProperties = fPdfProperties208;
+            fPdfProperties210.Rotation = 0;
+            fPdfProperties210.TableColumn = "";
+            fPdfProperties210.TableRow = 0;
+            this.fPdfLabel35.FPdfProperties = fPdfProperties210;
             this.fPdfLabel35.IsShowLineBottom = true;
             this.fPdfLabel35.IsShowLineLeft = true;
             this.fPdfLabel35.IsShowLineRight = true;
@@ -2600,10 +2627,10 @@
             this.fPdfLabel36.ColumnName = "";
             this.fPdfLabel36.DBValue = "3";
             this.fPdfLabel36.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties209.Rotation = 0;
-            fPdfProperties209.TableColumn = "";
-            fPdfProperties209.TableRow = 0;
-            this.fPdfLabel36.FPdfProperties = fPdfProperties209;
+            fPdfProperties211.Rotation = 0;
+            fPdfProperties211.TableColumn = "";
+            fPdfProperties211.TableRow = 0;
+            this.fPdfLabel36.FPdfProperties = fPdfProperties211;
             this.fPdfLabel36.IsShowLineBottom = true;
             this.fPdfLabel36.IsShowLineLeft = true;
             this.fPdfLabel36.IsShowLineRight = true;
@@ -2625,10 +2652,10 @@
             this.fPdfLabel37.ColumnName = "";
             this.fPdfLabel37.DBValue = "2";
             this.fPdfLabel37.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties210.Rotation = 0;
-            fPdfProperties210.TableColumn = "";
-            fPdfProperties210.TableRow = 0;
-            this.fPdfLabel37.FPdfProperties = fPdfProperties210;
+            fPdfProperties212.Rotation = 0;
+            fPdfProperties212.TableColumn = "";
+            fPdfProperties212.TableRow = 0;
+            this.fPdfLabel37.FPdfProperties = fPdfProperties212;
             this.fPdfLabel37.IsShowLineBottom = true;
             this.fPdfLabel37.IsShowLineLeft = true;
             this.fPdfLabel37.IsShowLineRight = true;
@@ -2650,10 +2677,10 @@
             this.fPdfLabel38.ColumnName = "";
             this.fPdfLabel38.DBValue = "1";
             this.fPdfLabel38.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties211.Rotation = 0;
-            fPdfProperties211.TableColumn = "";
-            fPdfProperties211.TableRow = 0;
-            this.fPdfLabel38.FPdfProperties = fPdfProperties211;
+            fPdfProperties213.Rotation = 0;
+            fPdfProperties213.TableColumn = "";
+            fPdfProperties213.TableRow = 0;
+            this.fPdfLabel38.FPdfProperties = fPdfProperties213;
             this.fPdfLabel38.IsShowLineBottom = true;
             this.fPdfLabel38.IsShowLineLeft = true;
             this.fPdfLabel38.IsShowLineRight = true;
@@ -2675,10 +2702,10 @@
             this.fPdfLabel33.ColumnName = "";
             this.fPdfLabel33.DBValue = "Thành tiền";
             this.fPdfLabel33.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties212.Rotation = 0;
-            fPdfProperties212.TableColumn = "";
-            fPdfProperties212.TableRow = 0;
-            this.fPdfLabel33.FPdfProperties = fPdfProperties212;
+            fPdfProperties214.Rotation = 0;
+            fPdfProperties214.TableColumn = "";
+            fPdfProperties214.TableRow = 0;
+            this.fPdfLabel33.FPdfProperties = fPdfProperties214;
             this.fPdfLabel33.IsShowLineBottom = true;
             this.fPdfLabel33.IsShowLineLeft = true;
             this.fPdfLabel33.IsShowLineRight = true;
@@ -2700,10 +2727,10 @@
             this.fPdfLabel32.ColumnName = "";
             this.fPdfLabel32.DBValue = "Đơn giá";
             this.fPdfLabel32.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties213.Rotation = 0;
-            fPdfProperties213.TableColumn = "";
-            fPdfProperties213.TableRow = 0;
-            this.fPdfLabel32.FPdfProperties = fPdfProperties213;
+            fPdfProperties215.Rotation = 0;
+            fPdfProperties215.TableColumn = "";
+            fPdfProperties215.TableRow = 0;
+            this.fPdfLabel32.FPdfProperties = fPdfProperties215;
             this.fPdfLabel32.IsShowLineBottom = true;
             this.fPdfLabel32.IsShowLineLeft = true;
             this.fPdfLabel32.IsShowLineRight = true;
@@ -2725,10 +2752,10 @@
             this.fPdfLabel31.ColumnName = "";
             this.fPdfLabel31.DBValue = "Đơn vị tính";
             this.fPdfLabel31.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties214.Rotation = 0;
-            fPdfProperties214.TableColumn = "";
-            fPdfProperties214.TableRow = 0;
-            this.fPdfLabel31.FPdfProperties = fPdfProperties214;
+            fPdfProperties216.Rotation = 0;
+            fPdfProperties216.TableColumn = "";
+            fPdfProperties216.TableRow = 0;
+            this.fPdfLabel31.FPdfProperties = fPdfProperties216;
             this.fPdfLabel31.IsShowLineBottom = true;
             this.fPdfLabel31.IsShowLineLeft = true;
             this.fPdfLabel31.IsShowLineRight = true;
@@ -2750,10 +2777,10 @@
             this.fPdfLabel30.ColumnName = "";
             this.fPdfLabel30.DBValue = "Tên hàng hóa, dịch vụ";
             this.fPdfLabel30.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties215.Rotation = 0;
-            fPdfProperties215.TableColumn = "";
-            fPdfProperties215.TableRow = 0;
-            this.fPdfLabel30.FPdfProperties = fPdfProperties215;
+            fPdfProperties217.Rotation = 0;
+            fPdfProperties217.TableColumn = "";
+            fPdfProperties217.TableRow = 0;
+            this.fPdfLabel30.FPdfProperties = fPdfProperties217;
             this.fPdfLabel30.IsShowLineBottom = true;
             this.fPdfLabel30.IsShowLineLeft = true;
             this.fPdfLabel30.IsShowLineRight = true;
@@ -2775,10 +2802,10 @@
             this.fPdfLabel29.ColumnName = "";
             this.fPdfLabel29.DBValue = "STT";
             this.fPdfLabel29.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties216.Rotation = 0;
-            fPdfProperties216.TableColumn = "";
-            fPdfProperties216.TableRow = 0;
-            this.fPdfLabel29.FPdfProperties = fPdfProperties216;
+            fPdfProperties218.Rotation = 0;
+            fPdfProperties218.TableColumn = "";
+            fPdfProperties218.TableRow = 0;
+            this.fPdfLabel29.FPdfProperties = fPdfProperties218;
             this.fPdfLabel29.IsShowLineBottom = true;
             this.fPdfLabel29.IsShowLineLeft = true;
             this.fPdfLabel29.IsShowLineRight = true;
@@ -2797,13 +2824,13 @@
             // lblCusBankAccount
             // 
             this.lblCusBankAccount.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusBankAccount.ColumnName = "";
+            this.lblCusBankAccount.ColumnName = "cusbankaccount";
             this.lblCusBankAccount.DBValue = "007.100.4482904";
             this.lblCusBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties217.Rotation = 0;
-            fPdfProperties217.TableColumn = "";
-            fPdfProperties217.TableRow = 0;
-            this.lblCusBankAccount.FPdfProperties = fPdfProperties217;
+            fPdfProperties219.Rotation = 0;
+            fPdfProperties219.TableColumn = "";
+            fPdfProperties219.TableRow = 0;
+            this.lblCusBankAccount.FPdfProperties = fPdfProperties219;
             this.lblCusBankAccount.IsShowLineBottom = true;
             this.lblCusBankAccount.IsShowLineLeft = false;
             this.lblCusBankAccount.IsShowLineRight = false;
@@ -2822,13 +2849,13 @@
             // lblCusPayment
             // 
             this.lblCusPayment.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusPayment.ColumnName = "";
+            this.lblCusPayment.ColumnName = "payment";
             this.lblCusPayment.DBValue = "Tiền mặt";
             this.lblCusPayment.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties218.Rotation = 0;
-            fPdfProperties218.TableColumn = "";
-            fPdfProperties218.TableRow = 0;
-            this.lblCusPayment.FPdfProperties = fPdfProperties218;
+            fPdfProperties220.Rotation = 0;
+            fPdfProperties220.TableColumn = "";
+            fPdfProperties220.TableRow = 0;
+            this.lblCusPayment.FPdfProperties = fPdfProperties220;
             this.lblCusPayment.IsShowLineBottom = true;
             this.lblCusPayment.IsShowLineLeft = false;
             this.lblCusPayment.IsShowLineRight = false;
@@ -2847,13 +2874,13 @@
             // lblCusAddress
             // 
             this.lblCusAddress.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusAddress.ColumnName = "";
+            this.lblCusAddress.ColumnName = "cusaddress";
             this.lblCusAddress.DBValue = "999 Võ Văn Tần, Phường 5, Quận 3, TP.Hồ Chí Minh, Việt Nam";
             this.lblCusAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties219.Rotation = 0;
-            fPdfProperties219.TableColumn = "";
-            fPdfProperties219.TableRow = 0;
-            this.lblCusAddress.FPdfProperties = fPdfProperties219;
+            fPdfProperties221.Rotation = 0;
+            fPdfProperties221.TableColumn = "";
+            fPdfProperties221.TableRow = 0;
+            this.lblCusAddress.FPdfProperties = fPdfProperties221;
             this.lblCusAddress.IsShowLineBottom = true;
             this.lblCusAddress.IsShowLineLeft = false;
             this.lblCusAddress.IsShowLineRight = false;
@@ -2872,13 +2899,13 @@
             // lblCusTaxcode
             // 
             this.lblCusTaxcode.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusTaxcode.ColumnName = "";
+            this.lblCusTaxcode.ColumnName = "custaxcode";
             this.lblCusTaxcode.DBValue = "0314210262";
             this.lblCusTaxcode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties220.Rotation = 0;
-            fPdfProperties220.TableColumn = "";
-            fPdfProperties220.TableRow = 0;
-            this.lblCusTaxcode.FPdfProperties = fPdfProperties220;
+            fPdfProperties222.Rotation = 0;
+            fPdfProperties222.TableColumn = "";
+            fPdfProperties222.TableRow = 0;
+            this.lblCusTaxcode.FPdfProperties = fPdfProperties222;
             this.lblCusTaxcode.IsShowLineBottom = true;
             this.lblCusTaxcode.IsShowLineLeft = false;
             this.lblCusTaxcode.IsShowLineRight = false;
@@ -2897,13 +2924,13 @@
             // lblCusCompany
             // 
             this.lblCusCompany.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusCompany.ColumnName = "";
+            this.lblCusCompany.ColumnName = "cuscompanyname";
             this.lblCusCompany.DBValue = "CÔNG TY TNHH TẦM NHÌN MỚI";
             this.lblCusCompany.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties221.Rotation = 0;
-            fPdfProperties221.TableColumn = "";
-            fPdfProperties221.TableRow = 0;
-            this.lblCusCompany.FPdfProperties = fPdfProperties221;
+            fPdfProperties223.Rotation = 0;
+            fPdfProperties223.TableColumn = "";
+            fPdfProperties223.TableRow = 0;
+            this.lblCusCompany.FPdfProperties = fPdfProperties223;
             this.lblCusCompany.IsShowLineBottom = true;
             this.lblCusCompany.IsShowLineLeft = false;
             this.lblCusCompany.IsShowLineRight = false;
@@ -2922,13 +2949,13 @@
             // lblCusName
             // 
             this.lblCusName.BackColor = System.Drawing.Color.Transparent;
-            this.lblCusName.ColumnName = "";
+            this.lblCusName.ColumnName = "cusname";
             this.lblCusName.DBValue = "Nguyễn Văn A";
             this.lblCusName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties222.Rotation = 0;
-            fPdfProperties222.TableColumn = "";
-            fPdfProperties222.TableRow = 0;
-            this.lblCusName.FPdfProperties = fPdfProperties222;
+            fPdfProperties224.Rotation = 0;
+            fPdfProperties224.TableColumn = "";
+            fPdfProperties224.TableRow = 0;
+            this.lblCusName.FPdfProperties = fPdfProperties224;
             this.lblCusName.IsShowLineBottom = true;
             this.lblCusName.IsShowLineLeft = false;
             this.lblCusName.IsShowLineRight = false;
@@ -2950,10 +2977,10 @@
             this.fPdfLabel22.ColumnName = "";
             this.fPdfLabel22.DBValue = "Số tài khoản:";
             this.fPdfLabel22.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties223.Rotation = 0;
-            fPdfProperties223.TableColumn = "";
-            fPdfProperties223.TableRow = 0;
-            this.fPdfLabel22.FPdfProperties = fPdfProperties223;
+            fPdfProperties225.Rotation = 0;
+            fPdfProperties225.TableColumn = "";
+            fPdfProperties225.TableRow = 0;
+            this.fPdfLabel22.FPdfProperties = fPdfProperties225;
             this.fPdfLabel22.IsShowLineBottom = false;
             this.fPdfLabel22.IsShowLineLeft = false;
             this.fPdfLabel22.IsShowLineRight = false;
@@ -2975,10 +3002,10 @@
             this.fPdfLabel21.ColumnName = "";
             this.fPdfLabel21.DBValue = "Hình thức thanh toán:";
             this.fPdfLabel21.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties224.Rotation = 0;
-            fPdfProperties224.TableColumn = "";
-            fPdfProperties224.TableRow = 0;
-            this.fPdfLabel21.FPdfProperties = fPdfProperties224;
+            fPdfProperties226.Rotation = 0;
+            fPdfProperties226.TableColumn = "";
+            fPdfProperties226.TableRow = 0;
+            this.fPdfLabel21.FPdfProperties = fPdfProperties226;
             this.fPdfLabel21.IsShowLineBottom = false;
             this.fPdfLabel21.IsShowLineLeft = false;
             this.fPdfLabel21.IsShowLineRight = false;
@@ -3000,10 +3027,10 @@
             this.fPdfLabel20.ColumnName = "";
             this.fPdfLabel20.DBValue = "Địa chỉ:";
             this.fPdfLabel20.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties225.Rotation = 0;
-            fPdfProperties225.TableColumn = "";
-            fPdfProperties225.TableRow = 0;
-            this.fPdfLabel20.FPdfProperties = fPdfProperties225;
+            fPdfProperties227.Rotation = 0;
+            fPdfProperties227.TableColumn = "";
+            fPdfProperties227.TableRow = 0;
+            this.fPdfLabel20.FPdfProperties = fPdfProperties227;
             this.fPdfLabel20.IsShowLineBottom = false;
             this.fPdfLabel20.IsShowLineLeft = false;
             this.fPdfLabel20.IsShowLineRight = false;
@@ -3025,10 +3052,10 @@
             this.fPdfLabel19.ColumnName = "";
             this.fPdfLabel19.DBValue = "Mã số thuế:";
             this.fPdfLabel19.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties226.Rotation = 0;
-            fPdfProperties226.TableColumn = "";
-            fPdfProperties226.TableRow = 0;
-            this.fPdfLabel19.FPdfProperties = fPdfProperties226;
+            fPdfProperties228.Rotation = 0;
+            fPdfProperties228.TableColumn = "";
+            fPdfProperties228.TableRow = 0;
+            this.fPdfLabel19.FPdfProperties = fPdfProperties228;
             this.fPdfLabel19.IsShowLineBottom = false;
             this.fPdfLabel19.IsShowLineLeft = false;
             this.fPdfLabel19.IsShowLineRight = false;
@@ -3050,10 +3077,10 @@
             this.fPdfLabel18.ColumnName = "";
             this.fPdfLabel18.DBValue = "Tên đơn vị:";
             this.fPdfLabel18.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties227.Rotation = 0;
-            fPdfProperties227.TableColumn = "";
-            fPdfProperties227.TableRow = 0;
-            this.fPdfLabel18.FPdfProperties = fPdfProperties227;
+            fPdfProperties229.Rotation = 0;
+            fPdfProperties229.TableColumn = "";
+            fPdfProperties229.TableRow = 0;
+            this.fPdfLabel18.FPdfProperties = fPdfProperties229;
             this.fPdfLabel18.IsShowLineBottom = false;
             this.fPdfLabel18.IsShowLineLeft = false;
             this.fPdfLabel18.IsShowLineRight = false;
@@ -3075,10 +3102,10 @@
             this.fPdfLabel17.ColumnName = "";
             this.fPdfLabel17.DBValue = "Họ tên người mua hàng:";
             this.fPdfLabel17.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties228.Rotation = 0;
-            fPdfProperties228.TableColumn = "";
-            fPdfProperties228.TableRow = 0;
-            this.fPdfLabel17.FPdfProperties = fPdfProperties228;
+            fPdfProperties230.Rotation = 0;
+            fPdfProperties230.TableColumn = "";
+            fPdfProperties230.TableRow = 0;
+            this.fPdfLabel17.FPdfProperties = fPdfProperties230;
             this.fPdfLabel17.IsShowLineBottom = false;
             this.fPdfLabel17.IsShowLineLeft = false;
             this.fPdfLabel17.IsShowLineRight = false;
@@ -3099,10 +3126,10 @@
             this.lblDateCreate.ColumnName = "";
             this.lblDateCreate.DBValue = "Ngày 26 tháng 07 năm 2017";
             this.lblDateCreate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties229.Rotation = 0;
-            fPdfProperties229.TableColumn = "";
-            fPdfProperties229.TableRow = 0;
-            this.lblDateCreate.FPdfProperties = fPdfProperties229;
+            fPdfProperties231.Rotation = 0;
+            fPdfProperties231.TableColumn = "";
+            fPdfProperties231.TableRow = 0;
+            this.lblDateCreate.FPdfProperties = fPdfProperties231;
             this.lblDateCreate.IsShowLineBottom = false;
             this.lblDateCreate.IsShowLineLeft = false;
             this.lblDateCreate.IsShowLineRight = false;
@@ -3123,10 +3150,10 @@
             this.lblToPaperTitle.ColumnName = "";
             this.lblToPaperTitle.DBValue = "(HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ)";
             this.lblToPaperTitle.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties230.Rotation = 0;
-            fPdfProperties230.TableColumn = "";
-            fPdfProperties230.TableRow = 0;
-            this.lblToPaperTitle.FPdfProperties = fPdfProperties230;
+            fPdfProperties232.Rotation = 0;
+            fPdfProperties232.TableColumn = "";
+            fPdfProperties232.TableRow = 0;
+            this.lblToPaperTitle.FPdfProperties = fPdfProperties232;
             this.lblToPaperTitle.IsShowLineBottom = false;
             this.lblToPaperTitle.IsShowLineLeft = false;
             this.lblToPaperTitle.IsShowLineRight = false;
@@ -3152,7 +3179,7 @@
             this.fPdfPanel1.Controls.Add(this.fPdfLabel12);
             this.fPdfPanel1.Controls.Add(this.lblInvoiceTempate);
             this.fPdfPanel1.Controls.Add(this.fPdfLabel9);
-            this.fPdfPanel1.Location = new System.Drawing.Point(515, 156);
+            this.fPdfPanel1.Location = new System.Drawing.Point(515, 154);
             this.fPdfPanel1.MaxRow = 1;
             this.fPdfPanel1.Name = "fPdfPanel1";
             this.fPdfPanel1.PageType = FOS_Utils.PDF.PDFLib.PageType.Custom;
@@ -3162,13 +3189,13 @@
             // 
             // lblInvoiceCode
             // 
-            this.lblInvoiceCode.ColumnName = "";
+            this.lblInvoiceCode.ColumnName = "invoicecode";
             this.lblInvoiceCode.DBValue = "0000001";
             this.lblInvoiceCode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties231.Rotation = 0;
-            fPdfProperties231.TableColumn = "";
-            fPdfProperties231.TableRow = 0;
-            this.lblInvoiceCode.FPdfProperties = fPdfProperties231;
+            fPdfProperties233.Rotation = 0;
+            fPdfProperties233.TableColumn = "";
+            fPdfProperties233.TableRow = 0;
+            this.lblInvoiceCode.FPdfProperties = fPdfProperties233;
             this.lblInvoiceCode.IsShowLineBottom = false;
             this.lblInvoiceCode.IsShowLineLeft = false;
             this.lblInvoiceCode.IsShowLineRight = false;
@@ -3177,9 +3204,9 @@
             this.lblInvoiceCode.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceCode.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceCode.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblInvoiceCode.Location = new System.Drawing.Point(61, 52);
+            this.lblInvoiceCode.Location = new System.Drawing.Point(60, 52);
             this.lblInvoiceCode.Name = "lblInvoiceCode";
-            this.lblInvoiceCode.Size = new System.Drawing.Size(113, 22);
+            this.lblInvoiceCode.Size = new System.Drawing.Size(96, 22);
             this.lblInvoiceCode.TabIndex = 9;
             this.lblInvoiceCode.Text = "0000001";
             this.lblInvoiceCode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3189,10 +3216,10 @@
             this.fPdfLabel14.ColumnName = "";
             this.fPdfLabel14.DBValue = "Số:";
             this.fPdfLabel14.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties232.Rotation = 0;
-            fPdfProperties232.TableColumn = "";
-            fPdfProperties232.TableRow = 0;
-            this.fPdfLabel14.FPdfProperties = fPdfProperties232;
+            fPdfProperties234.Rotation = 0;
+            fPdfProperties234.TableColumn = "";
+            fPdfProperties234.TableRow = 0;
+            this.fPdfLabel14.FPdfProperties = fPdfProperties234;
             this.fPdfLabel14.IsShowLineBottom = false;
             this.fPdfLabel14.IsShowLineLeft = false;
             this.fPdfLabel14.IsShowLineRight = false;
@@ -3201,7 +3228,7 @@
             this.fPdfLabel14.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel14.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel14.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel14.Location = new System.Drawing.Point(3, 52);
+            this.fPdfLabel14.Location = new System.Drawing.Point(2, 52);
             this.fPdfLabel14.Name = "fPdfLabel14";
             this.fPdfLabel14.Size = new System.Drawing.Size(62, 22);
             this.fPdfLabel14.TabIndex = 8;
@@ -3210,13 +3237,13 @@
             // 
             // lblInvoiceSymbol
             // 
-            this.lblInvoiceSymbol.ColumnName = "";
+            this.lblInvoiceSymbol.ColumnName = "invoicesymbol";
             this.lblInvoiceSymbol.DBValue = "TS/17E";
             this.lblInvoiceSymbol.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties233.Rotation = 0;
-            fPdfProperties233.TableColumn = "";
-            fPdfProperties233.TableRow = 0;
-            this.lblInvoiceSymbol.FPdfProperties = fPdfProperties233;
+            fPdfProperties235.Rotation = 0;
+            fPdfProperties235.TableColumn = "";
+            fPdfProperties235.TableRow = 0;
+            this.lblInvoiceSymbol.FPdfProperties = fPdfProperties235;
             this.lblInvoiceSymbol.IsShowLineBottom = false;
             this.lblInvoiceSymbol.IsShowLineLeft = false;
             this.lblInvoiceSymbol.IsShowLineRight = false;
@@ -3225,9 +3252,9 @@
             this.lblInvoiceSymbol.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceSymbol.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceSymbol.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblInvoiceSymbol.Location = new System.Drawing.Point(61, 27);
+            this.lblInvoiceSymbol.Location = new System.Drawing.Point(60, 27);
             this.lblInvoiceSymbol.Name = "lblInvoiceSymbol";
-            this.lblInvoiceSymbol.Size = new System.Drawing.Size(113, 22);
+            this.lblInvoiceSymbol.Size = new System.Drawing.Size(96, 22);
             this.lblInvoiceSymbol.TabIndex = 7;
             this.lblInvoiceSymbol.Text = "TS/17E";
             this.lblInvoiceSymbol.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3237,10 +3264,10 @@
             this.fPdfLabel12.ColumnName = "";
             this.fPdfLabel12.DBValue = "Ký hiệu:";
             this.fPdfLabel12.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties234.Rotation = 0;
-            fPdfProperties234.TableColumn = "";
-            fPdfProperties234.TableRow = 0;
-            this.fPdfLabel12.FPdfProperties = fPdfProperties234;
+            fPdfProperties236.Rotation = 0;
+            fPdfProperties236.TableColumn = "";
+            fPdfProperties236.TableRow = 0;
+            this.fPdfLabel12.FPdfProperties = fPdfProperties236;
             this.fPdfLabel12.IsShowLineBottom = false;
             this.fPdfLabel12.IsShowLineLeft = false;
             this.fPdfLabel12.IsShowLineRight = false;
@@ -3249,7 +3276,7 @@
             this.fPdfLabel12.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel12.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel12.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel12.Location = new System.Drawing.Point(3, 27);
+            this.fPdfLabel12.Location = new System.Drawing.Point(2, 27);
             this.fPdfLabel12.Name = "fPdfLabel12";
             this.fPdfLabel12.Size = new System.Drawing.Size(62, 22);
             this.fPdfLabel12.TabIndex = 6;
@@ -3258,13 +3285,13 @@
             // 
             // lblInvoiceTempate
             // 
-            this.lblInvoiceTempate.ColumnName = "";
+            this.lblInvoiceTempate.ColumnName = "invoicetemplate";
             this.lblInvoiceTempate.DBValue = "01GTKT0/001";
             this.lblInvoiceTempate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties235.Rotation = 0;
-            fPdfProperties235.TableColumn = "";
-            fPdfProperties235.TableRow = 0;
-            this.lblInvoiceTempate.FPdfProperties = fPdfProperties235;
+            fPdfProperties237.Rotation = 0;
+            fPdfProperties237.TableColumn = "";
+            fPdfProperties237.TableRow = 0;
+            this.lblInvoiceTempate.FPdfProperties = fPdfProperties237;
             this.lblInvoiceTempate.IsShowLineBottom = false;
             this.lblInvoiceTempate.IsShowLineLeft = false;
             this.lblInvoiceTempate.IsShowLineRight = false;
@@ -3273,9 +3300,9 @@
             this.lblInvoiceTempate.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceTempate.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.lblInvoiceTempate.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.lblInvoiceTempate.Location = new System.Drawing.Point(61, 2);
+            this.lblInvoiceTempate.Location = new System.Drawing.Point(60, 2);
             this.lblInvoiceTempate.Name = "lblInvoiceTempate";
-            this.lblInvoiceTempate.Size = new System.Drawing.Size(113, 22);
+            this.lblInvoiceTempate.Size = new System.Drawing.Size(98, 22);
             this.lblInvoiceTempate.TabIndex = 5;
             this.lblInvoiceTempate.Text = "01GTKT0/001";
             this.lblInvoiceTempate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -3285,10 +3312,10 @@
             this.fPdfLabel9.ColumnName = "";
             this.fPdfLabel9.DBValue = "Mẫu số:";
             this.fPdfLabel9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties236.Rotation = 0;
-            fPdfProperties236.TableColumn = "";
-            fPdfProperties236.TableRow = 0;
-            this.fPdfLabel9.FPdfProperties = fPdfProperties236;
+            fPdfProperties238.Rotation = 0;
+            fPdfProperties238.TableColumn = "";
+            fPdfProperties238.TableRow = 0;
+            this.fPdfLabel9.FPdfProperties = fPdfProperties238;
             this.fPdfLabel9.IsShowLineBottom = false;
             this.fPdfLabel9.IsShowLineLeft = false;
             this.fPdfLabel9.IsShowLineRight = false;
@@ -3297,7 +3324,7 @@
             this.fPdfLabel9.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel9.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
             this.fPdfLabel9.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel9.Location = new System.Drawing.Point(3, 2);
+            this.fPdfLabel9.Location = new System.Drawing.Point(2, 2);
             this.fPdfLabel9.Name = "fPdfLabel9";
             this.fPdfLabel9.Size = new System.Drawing.Size(62, 22);
             this.fPdfLabel9.TabIndex = 4;
@@ -3309,10 +3336,10 @@
             this.fPdfLabel8.ColumnName = "";
             this.fPdfLabel8.DBValue = "HÓA ĐƠN GIÁ TRỊ GIA TĂNG";
             this.fPdfLabel8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties237.Rotation = 0;
-            fPdfProperties237.TableColumn = "";
-            fPdfProperties237.TableRow = 0;
-            this.fPdfLabel8.FPdfProperties = fPdfProperties237;
+            fPdfProperties239.Rotation = 0;
+            fPdfProperties239.TableColumn = "";
+            fPdfProperties239.TableRow = 0;
+            this.fPdfLabel8.FPdfProperties = fPdfProperties239;
             this.fPdfLabel8.IsShowLineBottom = false;
             this.fPdfLabel8.IsShowLineLeft = false;
             this.fPdfLabel8.IsShowLineRight = false;
@@ -3331,7 +3358,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::FOS_Einvoice.Properties.Resources.barcode;
+            this.pictureBox2.Image = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo;
             this.pictureBox2.Location = new System.Drawing.Point(13, 88);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(102, 54);
@@ -3342,7 +3369,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Image = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo;
+            this.pictureBox1.Image = global::FOS_Einvoice.Properties.Resources.barcode;
             this.pictureBox1.Location = new System.Drawing.Point(13, 14);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(102, 68);
@@ -3355,10 +3382,10 @@
             this.fPdfLabel7.ColumnName = "";
             this.fPdfLabel7.DBValue = "";
             this.fPdfLabel7.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties238.Rotation = 0;
-            fPdfProperties238.TableColumn = "";
-            fPdfProperties238.TableRow = 0;
-            this.fPdfLabel7.FPdfProperties = fPdfProperties238;
+            fPdfProperties240.Rotation = 0;
+            fPdfProperties240.TableColumn = "";
+            fPdfProperties240.TableRow = 0;
+            this.fPdfLabel7.FPdfProperties = fPdfProperties240;
             this.fPdfLabel7.IsShowLineBottom = false;
             this.fPdfLabel7.IsShowLineLeft = false;
             this.fPdfLabel7.IsShowLineRight = false;
@@ -3375,13 +3402,13 @@
             // 
             // lblBankAddress
             // 
-            this.lblBankAddress.ColumnName = "";
+            this.lblBankAddress.ColumnName = "mybankaddress";
             this.lblBankAddress.DBValue = "tại ngân hàng Công thương Việt Nam - CN TP.HCM (VietinBank)";
             this.lblBankAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties239.Rotation = 0;
-            fPdfProperties239.TableColumn = "";
-            fPdfProperties239.TableRow = 0;
-            this.lblBankAddress.FPdfProperties = fPdfProperties239;
+            fPdfProperties241.Rotation = 0;
+            fPdfProperties241.TableColumn = "";
+            fPdfProperties241.TableRow = 0;
+            this.lblBankAddress.FPdfProperties = fPdfProperties241;
             this.lblBankAddress.IsShowLineBottom = false;
             this.lblBankAddress.IsShowLineLeft = false;
             this.lblBankAddress.IsShowLineRight = false;
@@ -3402,10 +3429,10 @@
             this.fPdfLabel5.ColumnName = "";
             this.fPdfLabel5.DBValue = "Số tài khoản:";
             this.fPdfLabel5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties240.Rotation = 0;
-            fPdfProperties240.TableColumn = "";
-            fPdfProperties240.TableRow = 0;
-            this.fPdfLabel5.FPdfProperties = fPdfProperties240;
+            fPdfProperties242.Rotation = 0;
+            fPdfProperties242.TableColumn = "";
+            fPdfProperties242.TableRow = 0;
+            this.fPdfLabel5.FPdfProperties = fPdfProperties242;
             this.fPdfLabel5.IsShowLineBottom = false;
             this.fPdfLabel5.IsShowLineLeft = false;
             this.fPdfLabel5.IsShowLineRight = false;
@@ -3426,10 +3453,10 @@
             this.fPdfLabel4.ColumnName = "";
             this.fPdfLabel4.DBValue = "Điện thoại:";
             this.fPdfLabel4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties241.Rotation = 0;
-            fPdfProperties241.TableColumn = "";
-            fPdfProperties241.TableRow = 0;
-            this.fPdfLabel4.FPdfProperties = fPdfProperties241;
+            fPdfProperties243.Rotation = 0;
+            fPdfProperties243.TableColumn = "";
+            fPdfProperties243.TableRow = 0;
+            this.fPdfLabel4.FPdfProperties = fPdfProperties243;
             this.fPdfLabel4.IsShowLineBottom = false;
             this.fPdfLabel4.IsShowLineLeft = false;
             this.fPdfLabel4.IsShowLineRight = false;
@@ -3450,10 +3477,10 @@
             this.fPdfLabel3.ColumnName = "";
             this.fPdfLabel3.DBValue = "Địa chỉ: ";
             this.fPdfLabel3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties242.Rotation = 0;
-            fPdfProperties242.TableColumn = "";
-            fPdfProperties242.TableRow = 0;
-            this.fPdfLabel3.FPdfProperties = fPdfProperties242;
+            fPdfProperties244.Rotation = 0;
+            fPdfProperties244.TableColumn = "";
+            fPdfProperties244.TableRow = 0;
+            this.fPdfLabel3.FPdfProperties = fPdfProperties244;
             this.fPdfLabel3.IsShowLineBottom = false;
             this.fPdfLabel3.IsShowLineLeft = false;
             this.fPdfLabel3.IsShowLineRight = false;
@@ -3469,53 +3496,53 @@
             this.fPdfLabel3.Text = "Địa chỉ: ";
             this.fPdfLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // fPdfLabel2
+            // lblMasothue
             // 
-            this.fPdfLabel2.ColumnName = "";
-            this.fPdfLabel2.DBValue = "Mã số thuế: 0314210262";
-            this.fPdfLabel2.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties243.Rotation = 0;
-            fPdfProperties243.TableColumn = "";
-            fPdfProperties243.TableRow = 0;
-            this.fPdfLabel2.FPdfProperties = fPdfProperties243;
-            this.fPdfLabel2.IsShowLineBottom = false;
-            this.fPdfLabel2.IsShowLineLeft = false;
-            this.fPdfLabel2.IsShowLineRight = false;
-            this.fPdfLabel2.IsShowLineTop = false;
-            this.fPdfLabel2.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel2.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel2.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel2.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel2.Location = new System.Drawing.Point(-1, 29);
-            this.fPdfLabel2.Name = "fPdfLabel2";
-            this.fPdfLabel2.Size = new System.Drawing.Size(680, 28);
-            this.fPdfLabel2.TabIndex = 1;
-            this.fPdfLabel2.Text = "Mã số thuế: 0314210262";
-            this.fPdfLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblMasothue.ColumnName = "";
+            this.lblMasothue.DBValue = "Mã số thuế:";
+            this.lblMasothue.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fPdfProperties245.Rotation = 0;
+            fPdfProperties245.TableColumn = "";
+            fPdfProperties245.TableRow = 0;
+            this.lblMasothue.FPdfProperties = fPdfProperties245;
+            this.lblMasothue.IsShowLineBottom = false;
+            this.lblMasothue.IsShowLineLeft = false;
+            this.lblMasothue.IsShowLineRight = false;
+            this.lblMasothue.IsShowLineTop = false;
+            this.lblMasothue.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblMasothue.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblMasothue.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblMasothue.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblMasothue.Location = new System.Drawing.Point(260, 29);
+            this.lblMasothue.Name = "lblMasothue";
+            this.lblMasothue.Size = new System.Drawing.Size(96, 28);
+            this.lblMasothue.TabIndex = 1;
+            this.lblMasothue.Text = "Mã số thuế:";
+            this.lblMasothue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // fPdfLabel1
+            // lblCompanyName
             // 
-            this.fPdfLabel1.ColumnName = "";
-            this.fPdfLabel1.DBValue = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
-            this.fPdfLabel1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties244.Rotation = 0;
-            fPdfProperties244.TableColumn = "";
-            fPdfProperties244.TableRow = 0;
-            this.fPdfLabel1.FPdfProperties = fPdfProperties244;
-            this.fPdfLabel1.IsShowLineBottom = false;
-            this.fPdfLabel1.IsShowLineLeft = false;
-            this.fPdfLabel1.IsShowLineRight = false;
-            this.fPdfLabel1.IsShowLineTop = false;
-            this.fPdfLabel1.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel1.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel1.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel1.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel1.Location = new System.Drawing.Point(-1, 2);
-            this.fPdfLabel1.Name = "fPdfLabel1";
-            this.fPdfLabel1.Size = new System.Drawing.Size(680, 32);
-            this.fPdfLabel1.TabIndex = 0;
-            this.fPdfLabel1.Text = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
-            this.fPdfLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblCompanyName.ColumnName = "mycompanyname";
+            this.lblCompanyName.DBValue = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
+            this.lblCompanyName.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fPdfProperties246.Rotation = 0;
+            fPdfProperties246.TableColumn = "";
+            fPdfProperties246.TableRow = 0;
+            this.lblCompanyName.FPdfProperties = fPdfProperties246;
+            this.lblCompanyName.IsShowLineBottom = false;
+            this.lblCompanyName.IsShowLineLeft = false;
+            this.lblCompanyName.IsShowLineRight = false;
+            this.lblCompanyName.IsShowLineTop = false;
+            this.lblCompanyName.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblCompanyName.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblCompanyName.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblCompanyName.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.lblCompanyName.Location = new System.Drawing.Point(-1, 2);
+            this.lblCompanyName.Name = "lblCompanyName";
+            this.lblCompanyName.Size = new System.Drawing.Size(680, 32);
+            this.lblCompanyName.TabIndex = 0;
+            this.lblCompanyName.Text = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
+            this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // invoiceGTGT
             // 
@@ -3537,8 +3564,8 @@
 
         public FOS_Utils.PDF.PDFControl.FPdfPanel pnlDetail;
         public FOS_Utils.PDF.PDFControl.FPdfPanel pnlMain;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel1;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel2;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyName;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblMasothue;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel3;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel4;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel5;
@@ -3662,7 +3689,8 @@
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel119;
         private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyBankAccount;
         private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyPhone;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyName;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAddress;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel1;
 
     }
 }

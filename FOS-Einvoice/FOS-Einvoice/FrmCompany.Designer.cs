@@ -130,7 +130,7 @@
             this.note.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.note.CheckMinMaxChar = false;
-            this.note.ColumnName = "note";
+            this.note.ColumnName = "companynote";
             this.note.DBNullValueWhenBlank = false;
             this.note.DBValue = "";
             this.note.Enabled = false;
@@ -165,7 +165,7 @@
             this.bankname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.bankname.CheckMinMaxChar = false;
-            this.bankname.ColumnName = "bankname";
+            this.bankname.ColumnName = "companybankname";
             this.bankname.DBNullValueWhenBlank = false;
             this.bankname.DBValue = "";
             this.bankname.Enabled = false;
@@ -198,7 +198,7 @@
             // bankaccount
             // 
             this.bankaccount.CheckMinMaxChar = true;
-            this.bankaccount.ColumnName = "bankaccount";
+            this.bankaccount.ColumnName = "companybankaccount";
             this.bankaccount.DBNullValueWhenBlank = false;
             this.bankaccount.DBValue = "";
             this.bankaccount.Enabled = false;
@@ -231,7 +231,7 @@
             // phone
             // 
             this.phone.CheckMinMaxChar = false;
-            this.phone.ColumnName = "phone";
+            this.phone.ColumnName = "companyphone";
             this.phone.DBNullValueWhenBlank = false;
             this.phone.DBValue = "";
             this.phone.Enabled = false;
@@ -264,7 +264,7 @@
             // email
             // 
             this.email.CheckMinMaxChar = false;
-            this.email.ColumnName = "email";
+            this.email.ColumnName = "companyemail";
             this.email.DBNullValueWhenBlank = false;
             this.email.DBValue = "";
             this.email.Enabled = false;
@@ -297,7 +297,7 @@
             // website
             // 
             this.website.CheckMinMaxChar = false;
-            this.website.ColumnName = "website";
+            this.website.ColumnName = "companywebsite";
             this.website.DBNullValueWhenBlank = false;
             this.website.DBValue = "";
             this.website.Enabled = false;
@@ -330,7 +330,7 @@
             // fax
             // 
             this.fax.CheckMinMaxChar = false;
-            this.fax.ColumnName = "fax";
+            this.fax.ColumnName = "companyfax";
             this.fax.DBNullValueWhenBlank = false;
             this.fax.DBValue = "";
             this.fax.Enabled = false;
@@ -398,7 +398,7 @@
             // taxcode
             // 
             this.taxcode.CheckMinMaxChar = false;
-            this.taxcode.ColumnName = "taxcode";
+            this.taxcode.ColumnName = "companytaxcode";
             this.taxcode.DBNullValueWhenBlank = false;
             this.taxcode.DBValue = "";
             this.taxcode.Enabled = false;
