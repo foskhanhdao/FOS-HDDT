@@ -15,13 +15,12 @@ namespace FOS_Einvoice
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            invoiceGTGT1.SetValue(CreateDataSource(), 0);
+            invoiceGTGT1.pnlMain.DataSource = CreateDataSource();
         }
-
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            PdfHelper.BeginPrint(@"D:/output.pdf", new PagePdf(PageType.A4));
-            PdfHelper.PrintPdfFile(invoiceGTGT1.pnlMain,new PagePdf(PageType.A4));
+            PdfHelper.BeginPrint(@"D:/output.pdf",invoiceGTGT1.pnlMain);
+            PdfHelper.PrintPdfFile();
             PdfHelper.EndPrint();
 
             PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
@@ -33,8 +32,8 @@ namespace FOS_Einvoice
         {
             DataTable dt = new DataTable();
             dt.Columns.Add("cusname", typeof(string));
-
-            dt.Rows.Add(new object[] {"Trần Văn Tý"});
+            dt.Rows.Add(new object[] {"1"});
+            dt.Rows.Add(new object[] { "2" });
             return dt;
         }
     }

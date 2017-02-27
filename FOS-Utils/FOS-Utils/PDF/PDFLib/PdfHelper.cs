@@ -19,12 +19,13 @@ namespace FOS_Utils.PDF.PDFLib
         public static Document doc = null;
         //dang nhu mot cay viet de ve
         public static PdfWriter writer = null;
+        //Panel Chinh de ve
+        private static FPdfPanel panelMain;
         //tong so trang Pdf
         private static int NumberPage = 1;
         //trang Pdf hien tai
         private static int CurPage = 1;
-        //tong so dong detail co trong mot trang
-        private static int MaxRow = 0; 
+      
         //Tong hop tat ca cac line trong trang
         private static List<FosLine> lsLineInpage = new List<FosLine>();
         #endregion
@@ -230,42 +231,38 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="FPdfText"></param>
         /// <param name="curPage"></param>
-        public static void GetDataFPdfText(FPdfText FPdfText, int curPage)
+        public static string GetDataFPdfText(FPdfText FPdfText)
         {
-            if (FPdfText.Parent is FPdfPanel && (FPdfText.Parent as FPdfPanel).DataSource != null
-                && (FPdfText.Parent as FPdfPanel).DataSource.Rows.Count != 0
-                && (FPdfText.Parent as FPdfPanel).DataSource.Columns.Contains(FPdfText.FPdfProperties.TableColumn))
+            string text = FPdfText.Text;
+            DataTable dt = panelMain.DataSource;
+            if (dt != null&&dt.Rows.Count != 0
+                && dt.Columns.Contains(FPdfText.FPdfProperties.TableColumn))
             {
-                DataTable dt = (FPdfText.Parent as FPdfPanel).DataSource;
-                int row = ((curPage - 1) * MaxRow + FPdfText.FPdfProperties.TableRow);
-                if (row >= dt.Rows.Count)
-                {
-                    FPdfText.Text = "";
-                    return;
-                }
-                FPdfText.Text = dt.Rows[row][FPdfText.FPdfProperties.TableColumn] + "";
+                
+                
+                text = dt.Rows[CurPage][FPdfText.FPdfProperties.TableColumn] + "";
             }
+            return text;
         }
         /// <summary>
         /// Lay du lieu cho Label dua vao DataSource cua Detail
         /// </summary>
         /// <param name="FPdfText"></param>
         /// <param name="curPage"></param>
-        public static void GetDataFPdfLabel(FPdfLabel FPdfLabel, int curPage)
+        public static string GetDataFPdfLabel(FPdfLabel FPdfLabel)
         {
-            if (FPdfLabel.Parent is FPdfPanel && (FPdfLabel.Parent as FPdfPanel).DataSource != null
-                && (FPdfLabel.Parent as FPdfPanel).DataSource.Rows.Count != 0
-                && (FPdfLabel.Parent as FPdfPanel).DataSource.Columns.Contains(FPdfLabel.FPdfProperties.TableColumn))
+            string text = FPdfLabel.Text;
+            if (panelMain.DataSource == null)
+                return text;
+            DataTable dt = panelMain.DataSource;
+            if (dt != null && dt.Rows.Count != 0
+                && dt.Columns.Contains(FPdfLabel.FPdfProperties.TableColumn))
             {
-                DataTable dt = (FPdfLabel.Parent as FPdfPanel).DataSource;
-                int row = ((curPage - 1) * MaxRow + FPdfLabel.FPdfProperties.TableRow);
-                if (row >= dt.Rows.Count)
-                {
-                    FPdfLabel.Text = "";
-                    return;
-                }
-                FPdfLabel.Text = dt.Rows[row][FPdfLabel.FPdfProperties.TableColumn] + "";
+
+
+                text = dt.Rows[CurPage][FPdfLabel.FPdfProperties.TableColumn] + "";
             }
+            return text;
         }
         /// <summary>
         /// tao border cho cac control
@@ -364,20 +361,18 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="output"></param>
         /// <param name="pagePdf"></param>
-        public static void BeginPrint(string output, PagePdf pagePdf)
+        public static void BeginPrint(string output, FPdfPanel panel)
         {
             if (doc == null && writer == null)
             {
                 doc = new Document();
+                doc.SetPageSize(new iTextSharp.text.Rectangle(panel.Width, panel.Height));
                 writer = PdfWriter.GetInstance(doc, new FileStream(output, FileMode.Create));
-                switch (pagePdf.PageType)
+                panelMain = panel;
+                if (panel.DataSource != null && panel.DataSource.Rows.Count > 0)
                 {
-                    case PageType.A4:
-                        doc.SetPageSize(new iTextSharp.text.Rectangle(800,1100));
-                        break;
-                    case PageType.A3:
-                        doc.SetPageSize(new iTextSharp.text.Rectangle(PageSize.A3));
-                        break;
+                    NumberPage = panel.DataSource.Rows.Count;
+
                 }
                 doc.Open();
             }
@@ -392,8 +387,7 @@ namespace FOS_Utils.PDF.PDFLib
                 doc.Close();
                 doc = null;
                 writer = null;
-                NumberPage = 1;
-                MaxRow = 0;
+                NumberPage = 1;               
                 CurPage = 1;
                 lsLineInpage = new List<FosLine>();
             }
@@ -408,28 +402,23 @@ namespace FOS_Utils.PDF.PDFLib
                 doc.NewPage();
             }
         }
-        public static void PrintPdfFile(FPdfPanel panel, PagePdf pagePdf)
+        public static void PrintPdfFile()
         {
             if (doc != null)
             {
-                if(panel.pnDetail!=null&&panel.pnDetail.DataSource!=null)
-                {
-                    FPdfPanel detail = panel.pnDetail;
-                    NumberPage = detail.DataSource.Rows.Count / detail.MaxRow;
-                    if ((detail.DataSource.Rows.Count % detail.MaxRow) != 0)
-                        NumberPage++;
-                    MaxRow = detail.MaxRow;
-                }
+                
                 for (int i = 1; i <= NumberPage; i++)
                 {
+                    //Tao kho giay
+                    PagePdf page = new PagePdf(panelMain.Width, panelMain.Height);
                     // moi vong lap la in mot trang Pdf
                     CurPage = i;
                     // In het cac control trong trang
-                    PrintAllControlInPanel(panel, pagePdf, CurPage, new FosPoint(0, 0));
+                    PrintAllControlInPanel(panelMain, page, CurPage, new FosPoint(0, 0));
                     //In het cac line trong trang sau cung
                     foreach (FosLine line in lsLineInpage)
                     {
-                        PrintPdfLine(line, pagePdf);
+                        PrintPdfLine(line, page);
                     }
                     //Neu khong phai trang cuoi thi tao moi trang de in tiep
                     if (i != NumberPage)
@@ -547,8 +536,8 @@ namespace FOS_Utils.PDF.PDFLib
             //canh chinh lai toa do cho phu hop
             PdfHelper.ConvertToPointPdf(point, page);
             //Lay du lieu cua dataSource bo vao text
-            GetDataFPdfText(FPdfText, curPage);
-            string text = FPdfText.Text;
+
+            string text = GetDataFPdfText(FPdfText);
             //if (text.Trim() == "")
             //    return;
             //canh lai center hoac right
@@ -606,10 +595,7 @@ namespace FOS_Utils.PDF.PDFLib
             //canh chinh lai toa do cho phu hop
             PdfHelper.ConvertToPointPdf(point, page);
             //Lay du lieu cua dataSource bo vao text
-            GetDataFPdfLabel(FPdfLabel, curPage);
-            string text = FPdfLabel.Text;
-            //if (text.Trim() == "")
-            //    return;
+            string text = GetDataFPdfLabel(FPdfLabel);          
             //canh lai center hoac right
             point.XPoint += AlignforFPdfLabel(FPdfLabel as FPdfLabel);
             cb.BeginText();

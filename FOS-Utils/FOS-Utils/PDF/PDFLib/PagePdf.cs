@@ -16,7 +16,7 @@ namespace FOS_Utils.PDF.PDFLib
         #region Variable
         private float with;
         private float height;
-        private PageType pageType;
+        //private PageType pageType;
         #endregion
         #region Field
         public float Height
@@ -27,39 +27,23 @@ namespace FOS_Utils.PDF.PDFLib
         {
             get { return with; }
         }
-        public PageType PageType
-        {
-            get { return pageType; }
-            set
-            {
-                pageType = value;
-            }
-        }
+       
         #endregion
         #region Contructer
         public PagePdf()
         { }
         public PagePdf(PageType pageType)
         {
-            this.pageType = pageType;
-            SetSizePageByType();
+            
+        }
+        public PagePdf(float with, float height)
+        {
+            this.with = with;
+            this.height = height;
         }
         #endregion
         #region Fun
-        private void SetSizePageByType()
-        {
-            switch (pageType)
-            {
-                case PageType.A4:
-                    this.with = 800;
-                    this.height = 1100;
-                    break;
-                case PageType.A3:
-                    this.with = 100;
-                    this.height = 100;
-                    break;
-            }
-        }
+        
         #endregion
 
     }
