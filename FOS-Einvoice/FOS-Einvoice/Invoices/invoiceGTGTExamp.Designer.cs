@@ -1,6 +1,6 @@
 ﻿namespace FOS_Einvoice.Invoices
 {
-    partial class invoiceGTGT
+    partial class invoiceGTGTExamp
     {
         /// <summary> 
         /// Required designer variable.
@@ -144,7 +144,7 @@
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties114 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties115 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties116 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceGTGT));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceGTGTExamp));
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties117 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties118 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties119 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
@@ -298,7 +298,7 @@
             this.pnlMain.PageType = FOS_Utils.PDF.PDFLib.PageType.Custom;
             this.pnlMain.PnDetail = this.pnlDetail;
             this.pnlMain.Size = new System.Drawing.Size(750, 1120);
-            this.pnlMain.TabIndex = 0;
+            this.pnlMain.TabIndex = 1;
             // 
             // pnlDetail
             // 
@@ -944,7 +944,7 @@
             // fPdfPanel2
             // 
             this.fPdfPanel2.BackColor = System.Drawing.Color.White;
-            this.fPdfPanel2.BackgroundImage = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo_detail1;
+            this.fPdfPanel2.BackgroundImage = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo_detail_mauphathanh;
             this.fPdfPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.fPdfPanel2.Controls.Add(this.fPdfLabel95);
             this.fPdfPanel2.Controls.Add(this.fPdfLabel41);
@@ -3461,11 +3461,12 @@
             this.lblCompanyName.Text = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
             this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // invoiceGTGT
+            // invoiceGTGTExamp
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
-            this.Name = "invoiceGTGT";
+            this.Name = "invoiceGTGTExamp";
             this.Size = new System.Drawing.Size(750, 1120);
             this.pnlMain.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
@@ -3478,52 +3479,34 @@
 
         #endregion
 
-        public FOS_Utils.PDF.PDFControl.FPdfPanel pnlDetail;
         public FOS_Utils.PDF.PDFControl.FPdfPanel pnlMain;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyName;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblMasothue;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel3;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel4;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel5;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblBankAddress;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel7;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel8;
-        private FOS_Utils.PDF.PDFControl.FPdfPanel fPdfPanel1;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceTempate;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel9;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceSymbol;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel12;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceCode;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel14;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblToPaperTitle;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblDateCreate;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel17;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel20;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel19;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel18;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel21;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel22;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusCompany;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusName;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusAddress;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusTaxcode;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusBankAccount;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusPayment;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel29;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel30;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel33;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel32;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel31;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel34;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel35;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel36;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel37;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel38;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel39;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel40;
+        public FOS_Utils.PDF.PDFControl.FPdfPanel pnlDetail;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel1;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyBankAccount;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyPhone;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAddress;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel119;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel118;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblDateSigned;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel116;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel115;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel114;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel113;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel112;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel111;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAmountinwords;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel109;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTaxRate;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel107;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAmount;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTax;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTotal;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel103;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel102;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel101;
         private FOS_Utils.PDF.PDFControl.FPdfPanel fPdfPanel2;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel95;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel41;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel96;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel97;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel98;
@@ -3582,30 +3565,48 @@
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel44;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel43;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel42;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel41;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel103;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel102;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel101;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAmount;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTax;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTotal;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel107;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblTaxRate;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel109;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAmountinwords;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel112;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel111;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel114;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel113;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel115;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblDateSigned;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel116;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel118;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel119;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyBankAccount;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyPhone;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel lblAddress;
-        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel1;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel39;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel40;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel34;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel35;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel36;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel37;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel38;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel33;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel32;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel31;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel30;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel29;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusBankAccount;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusPayment;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusAddress;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusTaxcode;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusCompany;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCusName;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel22;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel21;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel20;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel19;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel18;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel17;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblDateCreate;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblToPaperTitle;
+        private FOS_Utils.PDF.PDFControl.FPdfPanel fPdfPanel1;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceCode;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel14;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceSymbol;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel12;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblInvoiceTempate;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel9;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel8;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel7;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblBankAddress;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel5;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel4;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel3;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblMasothue;
+        private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyName;
 
     }
 }

@@ -86,3 +86,4 @@ D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.Inv
 D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.Properties.Resources.resources
 D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.UserControls.Footer.resources
 D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS-Einvoice.csproj.GenerateResource.Cache
+D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.Invoices.invoiceGTGTExamp.resources

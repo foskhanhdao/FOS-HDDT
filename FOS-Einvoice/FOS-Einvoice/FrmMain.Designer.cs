@@ -37,6 +37,7 @@
             this.btnTax = new FOS_Utils.FButton();
             this.btnUnit = new FOS_Utils.FButton();
             this.btnPaymentType = new FOS_Utils.FButton();
+            this.btMauPhatHanh = new FOS_Utils.FButton();
             this.SuspendLayout();
             // 
             // btnInvoiceCreate
@@ -129,11 +130,22 @@
             this.btnPaymentType.UseVisualStyleBackColor = true;
             this.btnPaymentType.Click += new System.EventHandler(this.btnPaymentType_Click);
             // 
+            // btMauPhatHanh
+            // 
+            this.btMauPhatHanh.Location = new System.Drawing.Point(663, 12);
+            this.btMauPhatHanh.Name = "btMauPhatHanh";
+            this.btMauPhatHanh.Size = new System.Drawing.Size(123, 23);
+            this.btMauPhatHanh.TabIndex = 9;
+            this.btMauPhatHanh.Text = "In mẫu phát hành";
+            this.btMauPhatHanh.UseVisualStyleBackColor = true;
+            this.btMauPhatHanh.Click += new System.EventHandler(this.btMauPhatHanh_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.btMauPhatHanh);
             this.Controls.Add(this.btnPaymentType);
             this.Controls.Add(this.btnUnit);
             this.Controls.Add(this.btnTax);
@@ -163,6 +175,7 @@
         private FOS_Utils.FButton btnTax;
         private FOS_Utils.FButton btnUnit;
         private FOS_Utils.FButton btnPaymentType;
+        private FOS_Utils.FButton btMauPhatHanh;
     }
 }
 

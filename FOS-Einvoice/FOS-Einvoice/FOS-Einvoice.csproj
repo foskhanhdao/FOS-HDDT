@@ -160,6 +160,12 @@
     <Compile Include="Invoices\invoiceGTGT.Designer.cs">
       <DependentUpon>invoiceGTGT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Invoices\invoiceGTGTExamp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Invoices\invoiceGTGTExamp.Designer.cs">
+      <DependentUpon>invoiceGTGTExamp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DataBase\FrmConnection.resx">
@@ -234,6 +240,10 @@
       <DependentUpon>invoiceGTGT.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices\invoiceGTGTExamp.resx">
+      <DependentUpon>invoiceGTGTExamp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -287,6 +297,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dll\FOS-Utils.dll" />
+    <None Include="Resources\fos-invoice-logo-detail-mauphathanh.png" />
+    <None Include="Resources\fos-invoice-logo-detail.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\FOS-Utils\FOS-Utils\FOS-Utils.csproj">

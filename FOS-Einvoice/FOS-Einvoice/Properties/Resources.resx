@@ -118,22 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="fos-invoice-logo-detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\fos-invoice-logo-detail.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="fos-web-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\fos-web-logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="barcode" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\barcode.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="saveexport" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\saveexport.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fos-invoice-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\fos-invoice-logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\save.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fos-invoice-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\fos-invoice-logo.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="saveexport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\saveexport.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fos-invoice-logo-detail" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\fos-invoice-logo-detail.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fos-invoice-logo-detail1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fos-invoice-logo-detail.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fos-invoice-logo-detail-mauphathanh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fos-invoice-logo-detail-mauphathanh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

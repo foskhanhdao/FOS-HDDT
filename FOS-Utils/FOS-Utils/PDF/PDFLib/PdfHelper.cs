@@ -487,13 +487,16 @@ namespace FOS_Utils.PDF.PDFLib
                 //in Panel con
                 if (c is FPdfPanel)
                 {
-                    FPdfPanel FPdfPanelChirld = c as FPdfPanel;
-                    // InBackgroundImage
-                    PrinBackgroundImage(FPdfPanelChirld, page, rootPoint);
-                    //inborder
-                    if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
-                        PrintBorderForControl(FPdfPanelChirld, page, rootPoint);
-                    PrintAllControlInPanel(FPdfPanelChirld, page, curPage, new FosPoint(rootPoint.XPoint + FPdfPanelChirld.Location.X, rootPoint.YPoint + FPdfPanelChirld.Location.Y));
+                    if (c.Enabled)
+                    {
+                        FPdfPanel FPdfPanelChirld = c as FPdfPanel;
+                        // InBackgroundImage
+                        PrinBackgroundImage(FPdfPanelChirld, page, rootPoint);
+                        //inborder
+                        if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
+                            PrintBorderForControl(FPdfPanelChirld, page, rootPoint);
+                        PrintAllControlInPanel(FPdfPanelChirld, page, curPage, new FosPoint(rootPoint.XPoint + FPdfPanelChirld.Location.X, rootPoint.YPoint + FPdfPanelChirld.Location.Y));
+                    }
                 }
             }
         }
@@ -506,6 +509,8 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="curPage"></param>
         public static void PrintPdfString(FPdfText FPdfText, PagePdf page, FosPoint rootPoint, int curPage)
         {
+            if (!FPdfText.Enabled)
+                return;
             //inborder
             if (FPdfText.BorderStyle == BorderStyle.FixedSingle)
                 PrintBorderForControl(FPdfText, page, rootPoint);
@@ -562,6 +567,8 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="curPage"></param>
         public static void PrintPdfString(FPdfLabel FPdfLabel, PagePdf page, FosPoint rootPoint, int curPage)
         {
+            if(!FPdfLabel.Enabled)
+                return;
             //Inborder
             PrintBorderLabel(FPdfLabel, page, rootPoint);
             //InBackColor
@@ -650,6 +657,8 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="rootPoint"></param>
         public static void PrinPdfImage(PictureBox pB, PagePdf page, FosPoint rootPoint)
         {
+            if (!pB.Enabled)
+                return;
             BaseColor bc = new BaseColor(255, 255, 255);
             try
             {

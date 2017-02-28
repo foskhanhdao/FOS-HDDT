@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using FOS_Einvoice.Invoices;
+using FOS_Utils.PDF.PDFLib;
 
 namespace FOS_Einvoice
 {
@@ -64,6 +66,14 @@ namespace FOS_Einvoice
         private void btnPaymentType_Click(object sender, EventArgs e)
         {
             new FrmPaymentType().ShowDialog();
+        }
+
+        private void btMauPhatHanh_Click(object sender, EventArgs e)
+        {
+            invoiceGTGTExamp ex = new invoiceGTGTExamp();
+            PrintHelper.BeginPrint(ex.pnlMain);
+            PrintHelper.ViewBeforPrint();
+            PrintHelper.EndPrint();
         }
     }
 }

@@ -35,7 +35,7 @@ namespace FOS_Utils.PDF.PDFLib
             panelMain = panelMainInput;
             if (doc == null && prDialog == null)
             {
-                if (panelMain != null && panelMain.DataSource.Rows.Count>0)
+                if (panelMain != null &&panelMain.DataSource!=null&& panelMain.DataSource.Rows.Count>0)
                 {                    
                     NumberPage = panelMain.DataSource.Rows.Count;
                 }
@@ -166,12 +166,15 @@ namespace FOS_Utils.PDF.PDFLib
                 if (c is FPdfPanel)
                 {
                     FPdfPanel FPdfPanelChirld = c as FPdfPanel;
-                    //In BackGround Image
-                    PrintBackGroundImage(g, FPdfPanelChirld, rootPoint);
-                    //inborder
-                    if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
-                        PrintBorderForControl(FPdfPanelChirld, rootPoint);
-                    PrintAllControlInPanel(g, FPdfPanelChirld, curPage, new FosPoint(rootPoint.XPoint + FPdfPanelChirld.Location.X, rootPoint.YPoint + FPdfPanelChirld.Location.Y));
+                    if (FPdfPanelChirld.Enabled == true)
+                    {
+                        //In BackGround Image
+                        PrintBackGroundImage(g, FPdfPanelChirld, rootPoint);
+                        //inborder
+                        if (FPdfPanelChirld.BorderStyle == BorderStyle.FixedSingle)
+                            PrintBorderForControl(FPdfPanelChirld, rootPoint);
+                        PrintAllControlInPanel(g, FPdfPanelChirld, curPage, new FosPoint(rootPoint.XPoint + FPdfPanelChirld.Location.X, rootPoint.YPoint + FPdfPanelChirld.Location.Y));
+                    }
                 }
             }
         }
@@ -184,6 +187,8 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="curPage"></param>
         private static void PrintString(Graphics g, FPdfLabel FPdfLabel, FosPoint rootPoint, int curPage)
         {
+            if (!FPdfLabel.Enabled)
+                return;
             //In Backcolor
             PrintBackColor(g, FPdfLabel, rootPoint);
             //Inborder
@@ -223,6 +228,8 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="rootPoint"></param>
         public static void PrintImage(Graphics g, PictureBox pB, FosPoint rootPoint)
         {
+            if (!pB.Enabled)
+                return;
             try
             {
                 Image img = pB.Image;
@@ -432,7 +439,7 @@ namespace FOS_Utils.PDF.PDFLib
                 lb.TextAlign == ContentAlignment.MiddleLeft ||
                 lb.TextAlign == ContentAlignment.BottomLeft)
             {
-                align = 0;
+                align = 4;
             }
             if (lb.TextAlign == ContentAlignment.TopRight ||
                 lb.TextAlign == ContentAlignment.MiddleRight ||

@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using FOS_Utils.PDF.PDFLib;
 using System.Data;
+using FOS_Einvoice.Invoices;
 
 namespace FOS_Einvoice
 {
@@ -15,14 +16,14 @@ namespace FOS_Einvoice
         protected override void OnShown(EventArgs e)
         {
             base.OnShown(e);
-            invoiceGTGT1.pnlMain.DataSource = CreateDataSource();
+            //invoiceGTGT1.pnlMain.DataSource = CreateDataSource();
         }
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            PdfHelper.BeginPrint(@"D:/output.pdf",invoiceGTGT1.pnlMain);
-            PdfHelper.PrintPdfFile();
-            PdfHelper.EndPrint();
-
+            //PdfHelper.BeginPrint(@"F:/output.pdf", invoiceGTGT1.pnlMain);
+            //PdfHelper.PrintPdfFile();
+            //PdfHelper.EndPrint();
+            //invoiceGTGTExamp ex = new invoiceGTGTExamp();
             PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
             PrintHelper.ViewBeforPrint();
             PrintHelper.EndPrint();
