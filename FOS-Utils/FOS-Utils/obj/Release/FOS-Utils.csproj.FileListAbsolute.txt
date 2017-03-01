@@ -25,3 +25,12 @@ D:\GithupFullFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS_Utils.FNumberTextB
 D:\GithupFullFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.csproj.GenerateResource.Cache
 D:\GithupFullFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.dll
 D:\GithupFullFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.pdb
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\bin\Release\FOS-Utils.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\bin\Release\FOS-Utils.pdb
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\bin\Release\itextsharp.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\ResolveAssemblyReference.cache
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS_Utils.FInputControl.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS_Utils.FNumberTextBox.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.csproj.GenerateResource.Cache
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.pdb
