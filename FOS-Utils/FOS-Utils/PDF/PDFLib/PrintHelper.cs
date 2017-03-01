@@ -257,8 +257,14 @@ namespace FOS_Utils.PDF.PDFLib
                 Size size = new Size(ct.Width,ct.Height);
                 if (ct.BackgroundImageLayout == ImageLayout.Center)
                 {
-                    point.XPoint += (ct.Width - img.Width) / 2;
-                    point.YPoint += (ct.Height - img.Height) / 2;
+                    if (ct.Width > img.Width)
+                    {
+                        point.XPoint += (ct.Width - img.Width) / 2;
+                    }
+                    if (ct.Height > img.Height)
+                    {
+                        point.YPoint += (ct.Height - img.Height) / 2;
+                    }
                     size.Width = img.Width;
                     size.Height = img.Height;
                 }
