@@ -781,23 +781,23 @@ namespace FOS_Utils.PDF.PDFLib
         //        }
         //    }
         //}
-        public static void signPdfFile(string pathToBasePdf, int numberOfPage)
-        {            
+        public static void signPdfFile(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage)
+        {
             X509Store store = new X509Store(StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
             X509Certificate2Collection sel = store.Certificates;
-            X509Certificate2 cert = sel[0];
+            X509Certificate2 cert = sel[sel.Count-1];
             Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
             Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
             cp.ReadCertificate(cert.RawData)};
             IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
             PdfReader pdfReader = new PdfReader(pathToBasePdf);
-            FileStream signedPdf = new FileStream(pathToBasePdf, FileMode.Create);
+            FileStream signedPdf = new FileStream(pathToBasePdfDest, FileMode.Create);
             PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
             PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
             //signatureAppearance.SignatureGraphic = Image.GetInstance(pathToSignatureImage);
-            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(100, 100, 250, 150), numberOfPage, "Signature");
-            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
+            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(100, 100, 250, 150), 1, "Signature");
+            //signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
             MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
         }     
        
