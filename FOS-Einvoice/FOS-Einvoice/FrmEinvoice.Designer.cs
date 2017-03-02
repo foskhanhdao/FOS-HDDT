@@ -821,6 +821,7 @@
             this.btnPreview.TabIndex = 5;
             this.btnPreview.Text = "Xem trước Hóa Đơn";
             this.btnPreview.UseVisualStyleBackColor = true;
+            this.btnPreview.Click += new System.EventHandler(this.btnPreview_Click);
             // 
             // btnClose
             // 

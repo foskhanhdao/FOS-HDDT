@@ -12,7 +12,7 @@ namespace FOS_Einvoice
     {
         public FrmEinvoice()
         {
-            InitializeComponent();
+            InitializeComponent();         
         }
 
         protected override void OnShown(EventArgs e)
@@ -116,6 +116,11 @@ namespace FOS_Einvoice
         private void btnCuscode_Click(object sender, EventArgs e)
         {
             new FrmSearchCustomer().ShowDialog();
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

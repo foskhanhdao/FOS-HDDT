@@ -48,6 +48,7 @@ namespace FOS_Einvoice
                 companycode.Text = frm.result.Cells["companycode"].Value.ToString();
                 GetData();
             }
+           
         }
     }
 }

@@ -12,6 +12,7 @@ using System.IO;
 using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.X509;
 using iTextSharp.text.pdf.security;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace FOS_Utils.PDF.PDFLib
@@ -744,42 +745,61 @@ namespace FOS_Utils.PDF.PDFLib
             over.RestoreState();
         }
         #endregion
-        public static void signPdfFile(string sourceDocument, string destinationPath, Stream privateKeyStream, string keyPassword, string reason, string location)
-        {
-            //Pkcs12Store store = new Pkcs12Store(new FileStream(@"D:\test.pfx", FileMode.Open), PASSWORD);
-            Pkcs12Store pk12 = new Pkcs12Store(privateKeyStream, keyPassword.ToCharArray());
-            privateKeyStream.Dispose();
+        //public static void signPdfFile(string sourceDocument, string destinationPath, Stream privateKeyStream, string keyPassword, string reason, string location)
+        //{
+        //    //Pkcs12Store store = new Pkcs12Store(new FileStream(@"D:\test.pfx", FileMode.Open), PASSWORD);
+        //    Pkcs12Store pk12 = new Pkcs12Store(privateKeyStream, keyPassword.ToCharArray());
+        //    privateKeyStream.Dispose();
 
-            //then Iterate throught certificate entries to find the private key entry
-            string alias = null;
-            foreach (string tAlias in pk12.Aliases)
-            {
-                if (pk12.IsKeyEntry(tAlias))
-                {
-                    alias = tAlias;
-                    break;
-                }
-            }
-            var pk = pk12.GetKey(alias).Key;
-            // reader and stamper
-            PdfReader reader = new PdfReader(sourceDocument);
-            using (FileStream fout = new FileStream(destinationPath, FileMode.Create, FileAccess.ReadWrite))
-            {
-                using (PdfStamper stamper = PdfStamper.CreateSignature(reader, fout, '\0'))
-                {
-                    // appearance
-                    PdfSignatureAppearance appearance = stamper.SignatureAppearance;
-                    //appearance.Image = new iTextSharp.text.pdf.PdfImage();
-                    appearance.Reason = reason;
-                    appearance.Location = location;
-                    appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(20, 10, 170, 60), 1, "Icsi-Vendor");
-                    // digital signature
-                    IExternalSignature es = new PrivateKeySignature(pk, "SHA-256");
-                    MakeSignature.SignDetached(appearance, es, new X509Certificate[] { pk12.GetCertificate(alias).Certificate }, null, null, null, 0, CryptoStandard.CMS);
-                    stamper.Close();
-                }
-            }
-        }
+        //    //then Iterate throught certificate entries to find the private key entry
+        //    string alias = null;
+        //    foreach (string tAlias in pk12.Aliases)
+        //    {
+        //        if (pk12.IsKeyEntry(tAlias))
+        //        {
+        //            alias = tAlias;
+        //            break;
+        //        }
+        //    }
+        //    var pk = pk12.GetKey(alias).Key;
+        //    // reader and stamper
+        //    PdfReader reader = new PdfReader(sourceDocument);
+        //    using (FileStream fout = new FileStream(destinationPath, FileMode.Create, FileAccess.ReadWrite))
+        //    {
+        //        using (PdfStamper stamper = PdfStamper.CreateSignature(reader, fout, '\0'))
+        //        {
+        //            // appearance
+        //            PdfSignatureAppearance appearance = stamper.SignatureAppearance;
+        //            //appearance.Image = new iTextSharp.text.pdf.PdfImage();
+        //            appearance.Reason = reason;
+        //            appearance.Location = location;
+        //            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(20, 10, 170, 60), 1, "Icsi-Vendor");
+        //            // digital signature
+        //            IExternalSignature es = new PrivateKeySignature(pk, "SHA-256");
+        //            MakeSignature.SignDetached(appearance, es, new X509Certificate[] { pk12.GetCertificate(alias).Certificate }, null, null, null, 0, CryptoStandard.CMS);
+        //            stamper.Close();
+        //        }
+        //    }
+        //}
+        public static void signPdfFile(string pathToBasePdf, int numberOfPage)
+        {            
+            X509Store store = new X509Store(StoreLocation.CurrentUser);
+            store.Open(OpenFlags.ReadOnly);
+            X509Certificate2Collection sel = store.Certificates;
+            X509Certificate2 cert = sel[0];
+            Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
+            Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
+            cp.ReadCertificate(cert.RawData)};
+            IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
+            PdfReader pdfReader = new PdfReader(pathToBasePdf);
+            FileStream signedPdf = new FileStream(pathToBasePdf, FileMode.Create);
+            PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
+            PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
+            //signatureAppearance.SignatureGraphic = Image.GetInstance(pathToSignatureImage);
+            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(100, 100, 250, 150), numberOfPage, "Signature");
+            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
+            MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
+        }     
        
     }
 }
