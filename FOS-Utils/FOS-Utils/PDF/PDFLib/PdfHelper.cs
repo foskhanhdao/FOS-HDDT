@@ -39,7 +39,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="point"></param>
         /// <param name="page"></param>
-        public static void ConvertToPointPdf(FosPoint point, PagePdf page)
+        private static void ConvertToPointPdf(FosPoint point, PagePdf page)
         {
             point.YPoint = page.Height - point.YPoint;
         }
@@ -48,7 +48,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static FosPoint CreatePointFromControl(FPdfText textbox)
+        private static FosPoint CreatePointFromControl(FPdfText textbox)
         {
             int height = textbox.Size.Height;
             int size = (int)textbox.Font.Size;
@@ -62,7 +62,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static FosPoint CreatePointFromLabel(FPdfLabel label)
+        private static FosPoint CreatePointFromLabel(FPdfLabel label)
         {
             int height = label.Size.Height;
             int size = (int)label.Font.Size;
@@ -97,7 +97,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="tb"></param>
         /// <returns></returns>
-        public static int AlignforFPdfText(FPdfText tb)
+        private static int AlignforFPdfText(FPdfText tb)
         {
             double align;
             double width = tb.Size.Width;
@@ -121,7 +121,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="lb"></param>
         /// <returns></returns>
-        public static int AlignforFPdfLabel(FPdfLabel lb)
+        private static int AlignforFPdfLabel(FPdfLabel lb)
         {
             double align;
             double width = lb.Size.Width;
@@ -154,7 +154,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// Ve cac dong detail
         /// </summary>
         /// <param name="panel"></param>
-        public static void DrawAllDetail(FPdfPanel panel)
+        private static void DrawAllDetail(FPdfPanel panel)
         {
             if(panel.pnDetail!=null)
             {
@@ -169,7 +169,7 @@ namespace FOS_Utils.PDF.PDFLib
                 }                
             }
         }
-        public static void CoppyFPFPanelDetail(FPdfPanel panelSource, FPdfPanel panelDest, int row)
+        private static void CoppyFPFPanelDetail(FPdfPanel panelSource, FPdfPanel panelDest, int row)
         {
             panelDest.Size = panelSource.Size;
             panelDest.DataSource = panelSource.DataSource;
@@ -195,7 +195,7 @@ namespace FOS_Utils.PDF.PDFLib
                 }
             }
         }
-        public static void CopyFPdfText(FPdfText tbSource, FPdfText tbDest, int row)
+        private static void CopyFPdfText(FPdfText tbSource, FPdfText tbDest, int row)
         {
             tbDest.Size = tbSource.Size;
             tbDest.Font = tbSource.Font;
@@ -207,7 +207,7 @@ namespace FOS_Utils.PDF.PDFLib
             tbDest.FPdfProperties.TableRow = row;
             tbDest.FPdfProperties.TableColumn = tbSource.FPdfProperties.TableColumn;
         }
-        public static void CopyFPdfLabel(FPdfLabel lbSource, FPdfLabel lbDest, int row)
+        private static void CopyFPdfLabel(FPdfLabel lbSource, FPdfLabel lbDest, int row)
         {
             lbDest.Size = lbSource.Size;
             lbDest.Font = lbSource.Font;
@@ -235,7 +235,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="FPdfText"></param>
         /// <param name="curPage"></param>
-        public static string GetDataFPdfText(FPdfText FPdfText)
+        private static string GetDataFPdfText(FPdfText FPdfText)
         {
             string text = FPdfText.Text;
             DataTable dt = panelMain.DataSource;
@@ -253,7 +253,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="FPdfText"></param>
         /// <param name="curPage"></param>
-        public static string GetDataFPdfLabel(FPdfLabel FPdfLabel)
+        private static string GetDataFPdfLabel(FPdfLabel FPdfLabel)
         {
             string text = FPdfLabel.Text;
             if (panelMain.DataSource == null)
@@ -274,7 +274,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="ct"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBorderForControl(Control ct, PagePdf page, FosPoint rootPoint)
+        private static void PrintBorderForControl(Control ct, PagePdf page, FosPoint rootPoint)
         {
             FosLine line1 = new FosLine();
             line1.PointStart = new FosPoint(rootPoint.XPoint + ct.Location.X, rootPoint.YPoint + ct.Location.Y);
@@ -307,7 +307,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="tb"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBorderLabel(FPdfLabel tb, PagePdf page, FosPoint rootPoint)
+        private static void PrintBorderLabel(FPdfLabel tb, PagePdf page, FosPoint rootPoint)
         {
             if (tb.IsShowLineTop)
             {
@@ -399,7 +399,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <summary>
         /// Neu dang in ma muon in qua mot trang pdf moi thi goi ham nay
         /// </summary>
-        public static void CreateNewPage()
+        private static void CreateNewPage()
         {
             if (doc != null)
             {
@@ -443,7 +443,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="page"></param>
         /// <param name="curPage"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintAllControlInPanel(FPdfPanel panel, PagePdf page, int curPage, FosPoint rootPoint)
+        private static void PrintAllControlInPanel(FPdfPanel panel, PagePdf page, int curPage, FosPoint rootPoint)
         {
             //Add line
             if (panel.lsPdfLine.Count > 0)
@@ -508,7 +508,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
         /// <param name="curPage"></param>
-        public static void PrintPdfString(FPdfText FPdfText, PagePdf page, FosPoint rootPoint, int curPage)
+        private static void PrintPdfString(FPdfText FPdfText, PagePdf page, FosPoint rootPoint, int curPage)
         {
             if (!FPdfText.Enabled)
                 return;
@@ -566,7 +566,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
         /// <param name="curPage"></param>
-        public static void PrintPdfString(FPdfLabel FPdfLabel, PagePdf page, FosPoint rootPoint, int curPage)
+        private static void PrintPdfString(FPdfLabel FPdfLabel, PagePdf page, FosPoint rootPoint, int curPage)
         {
             if(!FPdfLabel.Enabled)
                 return;
@@ -623,7 +623,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="line"></param>
         /// <param name="page"></param>
-        public static void PrintPdfLine(FosLine line, PagePdf page)
+        private static void PrintPdfLine(FosLine line, PagePdf page)
         {
             PdfContentByte cb = writer.DirectContent;
             cb.SaveState();
@@ -656,7 +656,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="pB"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrinPdfImage(PictureBox pB, PagePdf page, FosPoint rootPoint)
+        private static void PrinPdfImage(PictureBox pB, PagePdf page, FosPoint rootPoint)
         {
             if (!pB.Enabled)
                 return;
@@ -684,7 +684,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="pB"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrinBackgroundImage(Control control, PagePdf page, FosPoint rootPoint)
+        private static void PrinBackgroundImage(Control control, PagePdf page, FosPoint rootPoint)
         {
             if (control.BackgroundImage == null)
                 return;
@@ -744,44 +744,8 @@ namespace FOS_Utils.PDF.PDFLib
             over.Fill();
             over.RestoreState();
         }
-        #endregion
-        //public static void signPdfFile(string sourceDocument, string destinationPath, Stream privateKeyStream, string keyPassword, string reason, string location)
-        //{
-        //    //Pkcs12Store store = new Pkcs12Store(new FileStream(@"D:\test.pfx", FileMode.Open), PASSWORD);
-        //    Pkcs12Store pk12 = new Pkcs12Store(privateKeyStream, keyPassword.ToCharArray());
-        //    privateKeyStream.Dispose();
-
-        //    //then Iterate throught certificate entries to find the private key entry
-        //    string alias = null;
-        //    foreach (string tAlias in pk12.Aliases)
-        //    {
-        //        if (pk12.IsKeyEntry(tAlias))
-        //        {
-        //            alias = tAlias;
-        //            break;
-        //        }
-        //    }
-        //    var pk = pk12.GetKey(alias).Key;
-        //    // reader and stamper
-        //    PdfReader reader = new PdfReader(sourceDocument);
-        //    using (FileStream fout = new FileStream(destinationPath, FileMode.Create, FileAccess.ReadWrite))
-        //    {
-        //        using (PdfStamper stamper = PdfStamper.CreateSignature(reader, fout, '\0'))
-        //        {
-        //            // appearance
-        //            PdfSignatureAppearance appearance = stamper.SignatureAppearance;
-        //            //appearance.Image = new iTextSharp.text.pdf.PdfImage();
-        //            appearance.Reason = reason;
-        //            appearance.Location = location;
-        //            appearance.SetVisibleSignature(new iTextSharp.text.Rectangle(20, 10, 170, 60), 1, "Icsi-Vendor");
-        //            // digital signature
-        //            IExternalSignature es = new PrivateKeySignature(pk, "SHA-256");
-        //            MakeSignature.SignDetached(appearance, es, new X509Certificate[] { pk12.GetCertificate(alias).Certificate }, null, null, null, 0, CryptoStandard.CMS);
-        //            stamper.Close();
-        //        }
-        //    }
-        //}
-        public static void signPdfFile(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage,FosPoint pointAdd,int witdh,int height)
+        #endregion        
+        public static void DigitalSignaturePdf(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage,FosPoint pointAdd,int witdh,int height)
         {
             X509Store store = new X509Store(StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
@@ -803,7 +767,7 @@ namespace FOS_Utils.PDF.PDFLib
             signatureAppearance.Layer2Text = text;
             MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
         }
-        public static void signPdfFileImage(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage, int numberOfPage, FosPoint pointAdd, int witdh, int height)
+        public static void DigitalSignatureImagePdf(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage, int numberOfPage, FosPoint pointAdd, int witdh, int height)
         {
             X509Store store = new X509Store(StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);

@@ -120,7 +120,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="page"></param>
         /// <param name="curPage"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintAllControlInPanel(Graphics g,FPdfPanel panel, int curPage, FosPoint rootPoint)
+        private static void PrintAllControlInPanel(Graphics g,FPdfPanel panel, int curPage, FosPoint rootPoint)
         {
             //Add line
             if (panel.lsPdfLine.Count > 0)
@@ -208,7 +208,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="g"></param>
         /// <param name="line"></param>   
-        public static void PrintLine(Graphics g, FosLine line)
+        private static void PrintLine(Graphics g, FosLine line)
         {
            
             Pen blackPen = new Pen(Color.Black, 1);
@@ -226,7 +226,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="g"></param>
         /// <param name="pB"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintImage(Graphics g, PictureBox pB, FosPoint rootPoint)
+        private static void PrintImage(Graphics g, PictureBox pB, FosPoint rootPoint)
         {
             if (!pB.Enabled)
                 return;
@@ -246,7 +246,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="g"></param>
         /// <param name="pB"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBackGroundImage(Graphics g, Control ct, FosPoint rootPoint)
+        private static void PrintBackGroundImage(Graphics g, Control ct, FosPoint rootPoint)
         {
             if (ct.BackgroundImage == null)
                 return;
@@ -281,7 +281,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="g"></param>
         /// <param name="FPdfLabel"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBackColor(Graphics g,FPdfLabel FPdfLabel, FosPoint rootPoint)
+        private static void PrintBackColor(Graphics g, FPdfLabel FPdfLabel, FosPoint rootPoint)
         {
             if (FPdfLabel.BackColor == Color.White || FPdfLabel.BackColor == Color.Transparent)
                 return;
@@ -302,7 +302,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="ct"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBorderForControl(Control ct, FosPoint rootPoint)
+        private static void PrintBorderForControl(Control ct, FosPoint rootPoint)
         {
             FosLine line1 = new FosLine();
             line1.PointStart = new FosPoint(rootPoint.XPoint + ct.Location.X, rootPoint.YPoint + ct.Location.Y);
@@ -335,7 +335,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="tb"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBorderLabel(FPdfLabel tb, FosPoint rootPoint)
+        private static void PrintBorderLabel(FPdfLabel tb, FosPoint rootPoint)
         {
             if (tb.IsShowLineTop)
             {
@@ -391,7 +391,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static FosPoint CreatePointFromLabel(FPdfLabel label)
+        private static FosPoint CreatePointFromLabel(FPdfLabel label)
         {
             int height = label.Size.Height;
             int size = (int)label.Font.Size;
@@ -426,7 +426,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="lb"></param>
         /// <returns></returns>
-        public static int AlignforFPdfLabel(FPdfLabel lb)
+        private static int AlignforFPdfLabel(FPdfLabel lb)
         {
             double align;
             double width = lb.Size.Width;
@@ -460,7 +460,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="FPdfText"></param>
         /// <param name="curPage"></param>
-        public static string GetDataFPdfLabel(FPdfLabel FPdfLabel, int curPage)
+        private static string GetDataFPdfLabel(FPdfLabel FPdfLabel, int curPage)
         {
             
             string text = FPdfLabel.Text;
