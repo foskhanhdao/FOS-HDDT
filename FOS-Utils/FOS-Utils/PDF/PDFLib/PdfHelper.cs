@@ -781,7 +781,7 @@ namespace FOS_Utils.PDF.PDFLib
         //        }
         //    }
         //}
-        public static void signPdfFile(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage)
+        public static void signPdfFile(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage,FosPoint pointAdd,int witdh,int height)
         {
             X509Store store = new X509Store(StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
@@ -796,10 +796,35 @@ namespace FOS_Utils.PDF.PDFLib
             PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
             PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
             //signatureAppearance.SignatureGraphic = Image.GetInstance(pathToSignatureImage);
-            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(100, 100, 250, 150), 1, "Signature");
-            //signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
+            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(pointAdd.XPoint, pointAdd.YPoint, witdh, height), numberOfPage, "Signature");
+            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.DESCRIPTION;
+            string text = "Duoc ky boi :" + "\n" + cert.Subject.Replace("CN=", "") + "\n"
+                + "Ngay :" + cert.NotAfter;
+            signatureAppearance.Layer2Text = text;
             MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
-        }     
+        }
+        public static void signPdfFileImage(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage, int numberOfPage, FosPoint pointAdd, int witdh, int height)
+        {
+            X509Store store = new X509Store(StoreLocation.CurrentUser);
+            store.Open(OpenFlags.ReadOnly);
+            X509Certificate2Collection sel = store.Certificates;
+            X509Certificate2 cert = sel[sel.Count - 1];
+            Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
+            Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
+            cp.ReadCertificate(cert.RawData)};
+            IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
+            PdfReader pdfReader = new PdfReader(pathToBasePdf);
+            FileStream signedPdf = new FileStream(pathToBasePdfDest, FileMode.Create);
+            PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
+            PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
+            signatureAppearance.SignatureGraphic = iTextSharp.text.Image.GetInstance(pathToSignatureImage);
+            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(pointAdd.XPoint, pointAdd.YPoint, witdh, height), numberOfPage, "Signature");
+            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
+            string text = "Duoc ky boi :" + "\n" + cert.Subject.Replace("CN=", "") + "\n"
+                + "Ngay :" + cert.NotAfter;
+            signatureAppearance.Layer2Text = text;
+            MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
+        }    
        
     }
 }
