@@ -20,13 +20,14 @@ namespace FOS_Einvoice
         }
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            //PdfHelper.BeginPrint(@"F:/output.pdf", invoiceGTGT1.pnlMain);
-            //PdfHelper.PrintPdfFile();
-            //PdfHelper.EndPrint();
+            PdfHelper.BeginPrint(@"D:/output.pdf", invoiceGTGT1.pnlMain);
+            PdfHelper.PrintPdfFile();
+            PdfHelper.EndPrint();
+            PdfHelper.DigitalSignaturePdf(@"D:/output.pdf", @"D:/outputSign.pdf", 1, new FosPoint(100,0), 300, 50);
             //invoiceGTGTExamp ex = new invoiceGTGTExamp();
-            PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
-            PrintHelper.ViewBeforPrint();
-            PrintHelper.EndPrint();
+            //PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
+            //PrintHelper.ViewBeforPrint();
+            //PrintHelper.EndPrint();
         }
 
         private DataTable CreateDataSource()

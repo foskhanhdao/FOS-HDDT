@@ -750,7 +750,7 @@ namespace FOS_Utils.PDF.PDFLib
             X509Store store = new X509Store(StoreLocation.CurrentUser);
             store.Open(OpenFlags.ReadOnly);
             X509Certificate2Collection sel = store.Certificates;
-            X509Certificate2 cert = sel[sel.Count-1];
+            X509Certificate2 cert = sel[sel.Count-2];
             Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
             Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
             cp.ReadCertificate(cert.RawData)};

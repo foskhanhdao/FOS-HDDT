@@ -15,12 +15,12 @@ namespace FOS_Einvoice
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            string[] info = CommonFunctions.ReadConnectionFileInfo();
-            DataBase.SetConnectionInfo(info);
-            if (!DataBase.TestConnection())
-            {
-                MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
-            }            
+            //string[] info = CommonFunctions.ReadConnectionFileInfo();
+            //DataBase.SetConnectionInfo(info);
+            //if (!DataBase.TestConnection())
+            //{
+            //    MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
+            //}            
         }
 
         private void btnInvoiceCreate_Click(object sender, EventArgs e)
