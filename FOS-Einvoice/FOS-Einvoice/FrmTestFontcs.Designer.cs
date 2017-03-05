@@ -142,7 +142,8 @@
             // 
             this.fPdfLabel1.ColumnName = "";
             this.fPdfLabel1.DBValue = "Điện thoại:";
-            this.fPdfLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fPdfLabel1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fPdfLabel1.ForeColor = System.Drawing.Color.Blue;
             fPdfProperties4.Rotation = 0;
             fPdfProperties4.TableColumn = "";
             fPdfProperties4.TableRow = 0;

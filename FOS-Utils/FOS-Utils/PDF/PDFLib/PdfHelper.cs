@@ -364,10 +364,10 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="font"></param>
         /// <returns></returns>
-        private static string GetSystemFontFileName(System.Drawing.Font font)
+        public static string GetSystemFontFileName(System.Drawing.Font font)
         {
             string fontname = "";
-            if (font.Style == FontStyle.Italic)
+            if (font.Style == FontStyle.Italic||font.Style==FontStyle.Bold)
             {
                 fontname = font.Name + " " + font.Style + " (TrueType)";
             }
@@ -622,25 +622,16 @@ namespace FOS_Utils.PDF.PDFLib
             //khoi tao bien de in text  
             PdfContentByte cb = writer.DirectContent;
             cb.SaveState();
+            // Lấy Font
             BaseFont bf;
-            string diskWin = Path.GetPathRoot(Environment.SystemDirectory);
-            string fullPatch = diskWin + @"WINDOWS\Fonts";
+            
+            string fullPatch = Path.GetPathRoot(Environment.SystemDirectory) + @"WINDOWS\Fonts";
             string fontName = GetSystemFontFileName(FPdfLabel.Font);
             bf = BaseFont.CreateFont(fullPatch+@"\"+fontName, BaseFont.IDENTITY_H, true);
             
             float size = (float)FPdfLabel.Font.Size + (float)FPdfLabel.Font.Size / 3;
             cb.SetFontAndSize(bf, size);
-            if (FPdfLabel.Font.Bold)
-            {
-                cb.SetLineWidth(0.5);
-                cb.SetTextRenderingMode(PdfContentByte.TEXT_RENDER_MODE_FILL_STROKE);
-            }
-            else
-            {
-                cb.SetLineWidth(0);
-                cb.SetTextRenderingMode(PdfContentByte.ALIGN_LEFT);
-            }
-
+            
             // tao bien tao do
             FosPoint point = CreatePointFromLabel(FPdfLabel);
             // Tuy vao control cha la gi ma chinh lai toa do
@@ -653,6 +644,9 @@ namespace FOS_Utils.PDF.PDFLib
             //canh lai center hoac right
             point.XPoint += AlignforFPdfLabel(FPdfLabel as FPdfLabel);
             cb.BeginText();
+            //chinh lai force Color
+            BaseColor bc = new BaseColor(FPdfLabel.ForeColor);
+            cb.SetColorFill(bc);
             cb.ShowTextAligned(0, text, point.XPoint, point.YPoint, FPdfLabel.FPdfProperties.Rotation);
             cb.EndText();
             cb.RestoreState();

@@ -8,6 +8,7 @@ using Org.BouncyCastle.X509;
 using iTextSharp.text;
 using FOS_Utils.Forms;
 using System.Xml;
+using FOS_Utils.PDF.PDFControl;
 
 namespace FOS_Utils.PDF.PDFLib
 {
@@ -256,6 +257,82 @@ namespace FOS_Utils.PDF.PDFLib
             {
             }
             return "";
+        }
+        #endregion
+        #region Test
+        public bool SignPdf(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage
+            , int numberOfPage, FPdfLabel ctPrint, FPdfPanel panelMain
+            )
+        {
+            bool result = false;
+            try
+            {
+                Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
+                Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
+                cp.ReadCertificate(cert.RawData)};
+                IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
+                PdfReader pdfReader = new PdfReader(pathToBasePdf);
+                FileStream signedPdf = new FileStream(pathToBasePdfDest, FileMode.Create);
+                PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
+                PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
+
+                string text = "";
+                if (File.Exists(pathToSignatureImage))
+                {
+                    signatureAppearance.SignatureGraphic = iTextSharp.text.Image.GetInstance(pathToSignatureImage);
+                    signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC;
+                }
+                else
+                {
+                    signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.DESCRIPTION;
+
+                    DateTime curDate = DateTime.Now;
+
+                    text = "Được ký bởi: " + GetPartOfSubject(cert.Subject, "CN=") + "\n"
+                    + "Ngày ký: Ngày " + curDate.Day.ToString("00")
+                    + " tháng " + curDate.Month.ToString("00")
+                    + " năm " + curDate.Year
+                    + "  " + curDate.ToString("HH:mm:ss")
+                    ;
+                    signatureAppearance.Layer2Text = text;
+                }
+
+                FosPoint point = new FosPoint(ctPrint.Location.X,ctPrint.Location.Y);
+                var sigX = point.XPoint;
+                var sigY = point.YPoint;
+                var sigW = ctPrint.Size.Width;
+                var sigH = ctPrint.Size.Height;
+                // Lay font
+
+                string fullPatch = Path.GetPathRoot(Environment.SystemDirectory) + @"WINDOWS\Fonts";
+                string fontName = PdfHelper.GetSystemFontFileName(ctPrint.Font);
+                BaseFont bf = BaseFont.CreateFont(fullPatch + @"\" + fontName, BaseFont.IDENTITY_H, true);
+                //tm.SetFontAndSize(bf,11);
+                //tm.SetColorStroke(BaseColor.BLACK);
+
+                iTextSharp.text.Rectangle rec = new iTextSharp.text.Rectangle(sigX, sigY, sigX + sigW, sigY + sigH);
+
+                signatureAppearance.SetVisibleSignature(rec, numberOfPage, "Signature");
+
+                signatureAppearance.Layer2Font = new Font(bf, 12);
+
+                MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
+
+                //VerifyPdfSignature(pathToBasePdfDest, cert.RawData);
+
+                signatureAppearance = null;
+
+                pdfStamper.Close();
+                pdfReader.Close();
+                signedPdf.Close();
+                chain = null;
+                cp = null;
+                result = File.Exists(pathToBasePdfDest);
+            }
+            catch (Exception ex)
+            {
+            }
+            return result;
         }
         #endregion
     }
