@@ -624,10 +624,17 @@ namespace FOS_Utils.PDF.PDFLib
             cb.SaveState();
             // Lấy Font
             BaseFont bf;
-            
-            string fullPatch = Path.GetPathRoot(Environment.SystemDirectory) + @"WINDOWS\Fonts";
-            string fontName = GetSystemFontFileName(FPdfLabel.Font);
-            bf = BaseFont.CreateFont(fullPatch+@"\"+fontName, BaseFont.IDENTITY_H, true);
+            try
+            {
+
+                string fullPatch = Path.GetPathRoot(Environment.SystemDirectory) + @"WINDOWS\Fonts";
+                string fontName = GetSystemFontFileName(FPdfLabel.Font);
+                bf = BaseFont.CreateFont(fullPatch + @"\" + fontName, BaseFont.IDENTITY_H, true);
+            }
+            catch 
+            {
+                bf = BaseFont.CreateFont(@"C:\WINDOWS\Fonts\Arial.TTF", BaseFont.IDENTITY_H, true);
+            }
             
             float size = (float)FPdfLabel.Font.Size + (float)FPdfLabel.Font.Size / 3;
             cb.SetFontAndSize(bf, size);
