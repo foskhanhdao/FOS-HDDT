@@ -368,7 +368,7 @@
             // 
             this.fPdfLabel1.ColumnName = "mytaxcode";
             this.fPdfLabel1.DBValue = "0314210262";
-            this.fPdfLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fPdfLabel1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties1.Rotation = 0;
             fPdfProperties1.TableColumn = "";
             fPdfProperties1.TableRow = 0;

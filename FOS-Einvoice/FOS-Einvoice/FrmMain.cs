@@ -70,10 +70,15 @@ namespace FOS_Einvoice
 
         private void btMauPhatHanh_Click(object sender, EventArgs e)
         {
-            invoiceGTGTExamp ex = new invoiceGTGTExamp();
-            PrintHelper.BeginPrint(ex.pnlMain);
-            PrintHelper.ViewBeforPrint();
-            PrintHelper.EndPrint();
+            invoiceGTGTExamp ex = new invoiceGTGTExamp();            
+            PrintHelper.Print(ex.pnlMain,true);
+            
+        }
+
+        private void fButton1_Click(object sender, EventArgs e)
+        {
+            FrmTestFontcs f = new FrmTestFontcs();
+            f.ShowDialog();
         }
     }
 }

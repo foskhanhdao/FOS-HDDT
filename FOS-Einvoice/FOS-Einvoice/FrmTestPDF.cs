@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using FOS_Utils.PDF.PDFLib;
 using System.Data;
 using FOS_Einvoice.Invoices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace FOS_Einvoice
 {
@@ -20,10 +21,10 @@ namespace FOS_Einvoice
         }
         private void btnPDF_Click(object sender, EventArgs e)
         {
-            PdfHelper.BeginPrint(@"D:/output.pdf", invoiceGTGT1.pnlMain);
-            PdfHelper.PrintPdfFile();
-            PdfHelper.EndPrint();
-            PdfHelper.DigitalSignaturePdf(@"D:/output.pdf", @"D:/outputSign.pdf", 1, new FosPoint(100,0), 300, 50);
+          
+            PdfHelper.PrintPdfFile(@"F:/output.pdf", invoiceGTGT1.pnlMain);            
+           
+            //PdfHelper.DigitalSignaturePdf(@"D:/output.pdf", @"D:/outputSign.pdf", 1, new FosPoint(100,0), 300, 50);
             //invoiceGTGTExamp ex = new invoiceGTGTExamp();
             //PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
             //PrintHelper.ViewBeforPrint();

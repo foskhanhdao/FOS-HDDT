@@ -34,3 +34,4 @@ D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS_Utils.FNumberText
 D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.csproj.GenerateResource.Cache
 D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.dll
 D:\Work\GitHupFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS-Utils.pdb
+D:\GithupFullFos\FOS-HDDT\FOS-Utils\FOS-Utils\obj\Release\FOS_Utils.Forms.FrmTokenList.resources

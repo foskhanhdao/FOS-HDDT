@@ -38,6 +38,7 @@
             this.btnUnit = new FOS_Utils.FButton();
             this.btnPaymentType = new FOS_Utils.FButton();
             this.btMauPhatHanh = new FOS_Utils.FButton();
+            this.fButton1 = new FOS_Utils.FButton();
             this.SuspendLayout();
             // 
             // btnInvoiceCreate
@@ -140,11 +141,22 @@
             this.btMauPhatHanh.UseVisualStyleBackColor = true;
             this.btMauPhatHanh.Click += new System.EventHandler(this.btMauPhatHanh_Click);
             // 
+            // fButton1
+            // 
+            this.fButton1.Location = new System.Drawing.Point(380, 59);
+            this.fButton1.Name = "fButton1";
+            this.fButton1.Size = new System.Drawing.Size(75, 23);
+            this.fButton1.TabIndex = 10;
+            this.fButton1.Text = "fButton1";
+            this.fButton1.UseVisualStyleBackColor = true;
+            this.fButton1.Click += new System.EventHandler(this.fButton1_Click);
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.fButton1);
             this.Controls.Add(this.btMauPhatHanh);
             this.Controls.Add(this.btnPaymentType);
             this.Controls.Add(this.btnUnit);
@@ -176,6 +188,7 @@
         private FOS_Utils.FButton btnUnit;
         private FOS_Utils.FButton btnPaymentType;
         private FOS_Utils.FButton btMauPhatHanh;
+        private FOS_Utils.FButton fButton1;
     }
 }
 

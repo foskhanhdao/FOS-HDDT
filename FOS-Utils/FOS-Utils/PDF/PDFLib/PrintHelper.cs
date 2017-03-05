@@ -30,7 +30,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// Bat dau in Document
         /// </summary>
         /// <param name="panelMain"></param>
-        public static void BeginPrint(FPdfPanel panelMainInput)
+        private static void BeginPrint(FPdfPanel panelMainInput)
         {
             panelMain = panelMainInput;
             if (doc == null && prDialog == null)
@@ -44,8 +44,7 @@ namespace FOS_Utils.PDF.PDFLib
                 doc = new PrintDocument();                
                 doc.DefaultPageSettings.PaperSize = pageSize;
                 //doc.DefaultPageSettings.Landscape = true;
-                doc.PrintPage += new PrintPageEventHandler(On_PrintPage);
-                
+                doc.PrintPage += new PrintPageEventHandler(On_PrintPage);                
              
                 prDialog = new PrintPreviewDialog();
                 prDialog.Document = doc;
@@ -54,25 +53,29 @@ namespace FOS_Utils.PDF.PDFLib
                
             }
         }
-        public static void ViewBeforPrint()
+       
+        public static void Print(FPdfPanel panelMainInput,bool review)
         {
+            BeginPrint(panelMainInput);
             if (doc != null && prDialog != null)
             {
-                prDialog.ShowDialog();
+                if (!review)
+                {
+                    doc.Print();
+                    doc.Dispose();
+                }
+                else
+                {
+                    prDialog.ShowDialog();
+                }
+
             }
-        }
-        public static void Print()
-        {
-            if (doc != null)
-            {
-                doc.Print();
-                doc.Dispose();
-            }
+            EndPrint();
         }
         /// <summary>
         /// Sau khi in xong goi ham nay de reset lai cac bien dung de in lan sau
         /// </summary>
-        public static void EndPrint()
+        private static void EndPrint()
         {
             doc = null;
             prDialog = null;

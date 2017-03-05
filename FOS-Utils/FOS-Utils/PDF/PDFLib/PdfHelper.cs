@@ -13,6 +13,7 @@ using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.X509;
 using iTextSharp.text.pdf.security;
 using System.Security.Cryptography.X509Certificates;
+using Microsoft.Win32;
 
 
 namespace FOS_Utils.PDF.PDFLib
@@ -358,6 +359,45 @@ namespace FOS_Utils.PDF.PDFLib
                     lsLineInpage.Add(lineRight); 
             }
         }
+        /// <summary>
+        /// Lay ra ten font thuc su trong register
+        /// </summary>
+        /// <param name="font"></param>
+        /// <returns></returns>
+        private static string GetSystemFontFileName(System.Drawing.Font font)
+        {
+            string fontname = "";
+            if (font.Style == FontStyle.Italic)
+            {
+                fontname = font.Name + " " + font.Style + " (TrueType)";
+            }
+            else
+            {
+                fontname = font.Name + " (TrueType)";
+            }
+            //string fontname = font.Name + "\" (TrueType)";
+            RegistryKey fonts = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows NT\CurrentVersion\Fonts", false);
+
+            if (fonts != null)
+            {
+                return
+                    (from fntkey in fonts.GetValueNames()
+                     where fntkey == fontname
+                     select fonts.GetValue(fntkey).ToString())
+                        .FirstOrDefault();
+            }
+
+            fonts = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\Fonts", false);
+
+            if (fonts == null)
+            {
+                throw new Exception("Can't find font registry database.");
+            }
+
+            return
+                (from fntkey in fonts.GetValueNames() where fntkey == fontname select fonts.GetValue(fntkey).ToString())
+                    .FirstOrDefault();
+        }
         #endregion
         #region PDFFun
         /// <summary>
@@ -365,7 +405,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="output"></param>
         /// <param name="pagePdf"></param>
-        public static void BeginPrint(string output, FPdfPanel panel)
+        private static void BeginPrint(string output, FPdfPanel panel)
         {
             if (doc == null && writer == null)
             {
@@ -384,7 +424,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <summary>
         /// Sau khi in xong thi goi ham nay de ket thuc
         /// </summary>
-        public static void EndPrint()
+        private static void EndPrint()
         {
             if (doc != null && writer != null)
             {
@@ -401,16 +441,19 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         private static void CreateNewPage()
         {
+           
             if (doc != null)
             {
                 doc.NewPage();
             }
+           
         }
         /// <summary>
         /// Ham in Pdf chinh
         /// </summary>
-        public static void PrintPdfFile()
+        public static void PrintPdfFile(string output, FPdfPanel panel)
         {
+            BeginPrint(output, panel);
             if (doc != null)
             {
                 
@@ -435,6 +478,7 @@ namespace FOS_Utils.PDF.PDFLib
                 }
 
             }
+            EndPrint();
         }
         /// <summary>
         /// In tat ca cac control co trong Panel
@@ -579,15 +623,11 @@ namespace FOS_Utils.PDF.PDFLib
             PdfContentByte cb = writer.DirectContent;
             cb.SaveState();
             BaseFont bf;
-            if (FPdfLabel.Font.Italic)
-            {
-                bf = BaseFont.CreateFont(@"C:\WINDOWS\Fonts\ariali.TTF", BaseFont.IDENTITY_H, true);
-            }
-            else
-            {
-                bf = BaseFont.CreateFont(@"C:\WINDOWS\Fonts\Arial.TTF", BaseFont.IDENTITY_H, true);
-            }
-            //set Font
+            string diskWin = Path.GetPathRoot(Environment.SystemDirectory);
+            string fullPatch = diskWin + @"WINDOWS\Fonts";
+            string fontName = GetSystemFontFileName(FPdfLabel.Font);
+            bf = BaseFont.CreateFont(fullPatch+@"\"+fontName, BaseFont.IDENTITY_H, true);
+            
             float size = (float)FPdfLabel.Font.Size + (float)FPdfLabel.Font.Size / 3;
             cb.SetFontAndSize(bf, size);
             if (FPdfLabel.Font.Bold)
@@ -701,9 +741,15 @@ namespace FOS_Utils.PDF.PDFLib
                     {
                         point.XPoint += (control.Width - control.BackgroundImage.Width) / 2;
                     }
+                    else
+                    { }
                     if (control.Height > control.BackgroundImage.Height)
                     {
                         point.YPoint -= (control.Height - control.BackgroundImage.Height) / 2;
+                    }
+                    else
+                    {
+                        point.YPoint = control.Location.Y + control.BackgroundImage.Height + rootPoint.YPoint;
                     }
                     size.Width = control.BackgroundImage.Width;
                     size.Height = control.BackgroundImage.Height;
@@ -728,7 +774,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// <param name="ct"></param>
         /// <param name="page"></param>
         /// <param name="rootPoint"></param>
-        public static void PrintBackColor(Control ct,PagePdf page, FosPoint rootPoint)
+        private static void PrintBackColor(Control ct, PagePdf page, FosPoint rootPoint)
         {
             if (ct.BackColor == Color.White||ct.BackColor==Color.Transparent)
                 return;
@@ -744,51 +790,9 @@ namespace FOS_Utils.PDF.PDFLib
             over.Fill();
             over.RestoreState();
         }
-        #endregion        
-        public static void DigitalSignaturePdf(string pathToBasePdf,string pathToBasePdfDest, int numberOfPage,FosPoint pointAdd,int witdh,int height)
-        {
-            X509Store store = new X509Store(StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly);
-            X509Certificate2Collection sel = store.Certificates;
-            X509Certificate2 cert = sel[0];
-            Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
-            Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
-            cp.ReadCertificate(cert.RawData)};
-            IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
-            PdfReader pdfReader = new PdfReader(pathToBasePdf);
-            FileStream signedPdf = new FileStream(pathToBasePdfDest, FileMode.Create);
-            PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
-            PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
-            //signatureAppearance.SignatureGraphic = Image.GetInstance(pathToSignatureImage);
-            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(pointAdd.XPoint, pointAdd.YPoint, witdh, height), numberOfPage, "Signature");
-            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.DESCRIPTION;
-            string text = "Duoc ky boi :" + "\n" + cert.Subject.Replace("CN=", "") + "\n"
-                + "Ngay :" + cert.NotAfter;
-            signatureAppearance.Layer2Text = text;
-            MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
-        }
-        public static void DigitalSignatureImagePdf(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage, int numberOfPage, FosPoint pointAdd, int witdh, int height)
-        {
-            X509Store store = new X509Store(StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly);
-            X509Certificate2Collection sel = store.Certificates;
-            X509Certificate2 cert = sel[0];
-            Org.BouncyCastle.X509.X509CertificateParser cp = new Org.BouncyCastle.X509.X509CertificateParser();
-            Org.BouncyCastle.X509.X509Certificate[] chain = new Org.BouncyCastle.X509.X509Certificate[] {
-            cp.ReadCertificate(cert.RawData)};
-            IExternalSignature externalSignature = new X509Certificate2Signature(cert, "SHA-1");
-            PdfReader pdfReader = new PdfReader(pathToBasePdf);
-            FileStream signedPdf = new FileStream(pathToBasePdfDest, FileMode.Create);
-            PdfStamper pdfStamper = PdfStamper.CreateSignature(pdfReader, signedPdf, '\0');
-            PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
-            signatureAppearance.SignatureGraphic = iTextSharp.text.Image.GetInstance(pathToSignatureImage);
-            signatureAppearance.SetVisibleSignature(new iTextSharp.text.Rectangle(pointAdd.XPoint, pointAdd.YPoint, witdh, height), numberOfPage, "Signature");
-            signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC_AND_DESCRIPTION;
-            string text = "Duoc ky boi :" + "\n" + cert.Subject.Replace("CN=", "") + "\n"
-                + "Ngay :" + cert.NotAfter;
-            signatureAppearance.Layer2Text = text;
-            MakeSignature.SignDetached(signatureAppearance, externalSignature, chain, null, null, null, 0, CryptoStandard.CMS);
-        }    
+        #endregion             
+
+        
        
     }
 }
