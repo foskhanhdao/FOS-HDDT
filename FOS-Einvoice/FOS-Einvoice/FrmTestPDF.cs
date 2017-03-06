@@ -22,7 +22,13 @@ namespace FOS_Einvoice
         private void btnPDF_Click(object sender, EventArgs e)
         {
           
-            PdfHelper.PrintPdfFile(@"F:/output.pdf", invoiceGTGT1.pnlMain);            
+            PdfHelper.PrintPdfFile(@"D:/output.pdf", invoiceGTGT1.pnlMain);
+            DigitalSignature d = new DigitalSignature();
+            if (d.IsUSBTokenExists()&& d.IsUSBTokenSelected())
+            {
+                d.SignPdf(@"D:/output.pdf", @"D:/outputSign.pdf", 1, invoiceGTGT1.panelSign, invoiceGTGT1.pnlMain);
+            }
+            
            
             //PdfHelper.DigitalSignaturePdf(@"D:/output.pdf", @"D:/outputSign.pdf", 1, new FosPoint(100,0), 300, 50);
             //invoiceGTGTExamp ex = new invoiceGTGTExamp();

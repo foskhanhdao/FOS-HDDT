@@ -274,6 +274,7 @@
             this.fPdfLabel3 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblMasothue = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblCompanyName = new FOS_Utils.PDF.PDFControl.FPdfLabel();
+            this.panelSign = new FOS_Utils.PDF.PDFControl.FPdfPanel();
             this.pnlMain.SuspendLayout();
             this.pnlDetail.SuspendLayout();
             this.fPdfPanel2.SuspendLayout();
@@ -299,6 +300,7 @@
             this.pnlDetail.BackColor = System.Drawing.Color.White;
             this.pnlDetail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnlDetail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDetail.Controls.Add(this.panelSign);
             this.pnlDetail.Controls.Add(this.fPdfLabel1);
             this.pnlDetail.Controls.Add(this.lblCompanyBankAccount);
             this.pnlDetail.Controls.Add(this.lblCompanyPhone);
@@ -3377,6 +3379,17 @@
             this.lblCompanyName.Text = "CÔNG TY TNHH GIẢI PHÁP CÔNG NGHỆ FOS";
             this.lblCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelSign
+            // 
+            this.panelSign.BackColor = System.Drawing.Color.White;
+            this.panelSign.Location = new System.Drawing.Point(472, 888);
+            this.panelSign.MaxRow = 1;
+            this.panelSign.Name = "panelSign";
+            this.panelSign.PageType = FOS_Utils.PDF.PDFLib.PageType.Custom;
+            this.panelSign.PnDetail = null;
+            this.panelSign.Size = new System.Drawing.Size(189, 61);
+            this.panelSign.TabIndex = 112;
+            // 
             // invoiceGTGT
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -3519,6 +3532,7 @@
         private FOS_Utils.PDF.PDFControl.FPdfLabel lblCompanyPhone;
         private FOS_Utils.PDF.PDFControl.FPdfLabel lblAddress;
         private FOS_Utils.PDF.PDFControl.FPdfLabel fPdfLabel1;
+        public FOS_Utils.PDF.PDFControl.FPdfPanel panelSign;
 
     }
 }
