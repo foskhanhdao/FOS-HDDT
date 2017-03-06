@@ -260,8 +260,7 @@ namespace FOS_Utils.PDF.PDFLib
         }
         #endregion
         #region Test
-        public bool SignPdf(string pathToBasePdf, string pathToBasePdfDest, string pathToSignatureImage
-            , int numberOfPage, FPdfLabel ctPrint, FPdfPanel panelMain
+        public bool SignPdf(string pathToBasePdf, string pathToBasePdfDest, int numberOfPage, FPdfPanel ctPrint, FPdfPanel panelMain
             )
         {
             bool result = false;
@@ -277,9 +276,10 @@ namespace FOS_Utils.PDF.PDFLib
                 PdfSignatureAppearance signatureAppearance = pdfStamper.SignatureAppearance;
 
                 string text = "";
-                if (File.Exists(pathToSignatureImage))
+                if (ctPrint.BackgroundImage!=null)
                 {
-                    signatureAppearance.SignatureGraphic = iTextSharp.text.Image.GetInstance(pathToSignatureImage);
+                    BaseColor bc = new BaseColor(255, 255, 255);
+                    signatureAppearance.SignatureGraphic = iTextSharp.text.Image.GetInstance(ctPrint.BackgroundImage,bc);
                     signatureAppearance.SignatureRenderingMode = PdfSignatureAppearance.RenderingMode.GRAPHIC;
                 }
                 else
@@ -296,8 +296,10 @@ namespace FOS_Utils.PDF.PDFLib
                     ;
                     signatureAppearance.Layer2Text = text;
                 }
-
-                FosPoint point = new FosPoint(ctPrint.Location.X,ctPrint.Location.Y);
+                FosPoint rootPoint = new FosPoint(0, 0);
+                GetRootPoint(rootPoint, ctPrint, panelMain);
+                FosPoint point = new FosPoint(rootPoint.XPoint + ctPrint.Location.X,rootPoint.YPoint+ ctPrint.Location.Y+ctPrint.Height);
+                PdfHelper.ConvertToPointPdf(point,new PagePdf(panelMain.Width,panelMain.Height));
                 var sigX = point.XPoint;
                 var sigY = point.YPoint;
                 var sigW = ctPrint.Size.Width;
@@ -333,6 +335,17 @@ namespace FOS_Utils.PDF.PDFLib
             {
             }
             return result;
+        }
+        private void GetRootPoint (FosPoint rootPoint,Control ct,FPdfPanel panelMain)
+        {
+            if (ct.Parent == panelMain)
+                return;
+            else
+            {
+                rootPoint.XPoint += ct.Parent.Location.X;
+                rootPoint.YPoint += ct.Parent.Location.Y;
+                GetRootPoint(rootPoint,ct.Parent,panelMain);
+            }
         }
         #endregion
     }

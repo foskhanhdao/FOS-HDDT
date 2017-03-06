@@ -40,7 +40,7 @@ namespace FOS_Utils.PDF.PDFLib
         /// </summary>
         /// <param name="point"></param>
         /// <param name="page"></param>
-        private static void ConvertToPointPdf(FosPoint point, PagePdf page)
+        public static void ConvertToPointPdf(FosPoint point, PagePdf page)
         {
             point.YPoint = page.Height - point.YPoint;
         }
@@ -367,7 +367,7 @@ namespace FOS_Utils.PDF.PDFLib
         public static string GetSystemFontFileName(System.Drawing.Font font)
         {
             string fontname = "";
-            if (font.Style == FontStyle.Italic||font.Style==FontStyle.Bold)
+            if (font.Style != FontStyle.Regular)
             {
                 fontname = font.Name + " " + font.Style + " (TrueType)";
             }
