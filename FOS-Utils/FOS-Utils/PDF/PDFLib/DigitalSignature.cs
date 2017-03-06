@@ -260,8 +260,7 @@ namespace FOS_Utils.PDF.PDFLib
         }
         #endregion
         #region Test
-        public bool SignPdf(string pathToBasePdf, string pathToBasePdfDest, int numberOfPage, FPdfPanel ctPrint, FPdfPanel panelMain
-            )
+        public bool SignPdf(string pathToBasePdf, string pathToBasePdfDest, int numberOfPage, FPdfPanel ctPrint, FPdfPanel panelMain)
         {
             bool result = false;
             try
