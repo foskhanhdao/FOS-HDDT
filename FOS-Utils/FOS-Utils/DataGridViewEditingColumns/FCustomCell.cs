@@ -4,15 +4,15 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class CustomCell : DataGridViewTextBoxCell
+    public class FCustomCell : DataGridViewTextBoxCell
     {
         private String type = "";
-        public CustomCell()
+        public FCustomCell()
             : base()
         {
             //this.Style.Format = "d";
         }
-        public CustomCell(String type)
+        public FCustomCell(String type)
             : base()
         {
             this.type = type;
@@ -25,8 +25,8 @@ namespace FOS_Utils
             base.InitializeEditingControl(rowIndex, initialFormattedValue,
                 dataGridViewCellStyle);
 
-            CustomEditingControl ctl = 
-                DataGridView.EditingControl as CustomEditingControl;
+            FCustomEditingControl ctl = 
+                DataGridView.EditingControl as FCustomEditingControl;
             
             if (this.Value != null)
             {
@@ -40,7 +40,7 @@ namespace FOS_Utils
         {
             get
             {
-                return typeof(CustomEditingControl);
+                return typeof(FCustomEditingControl);
             }
         }
 

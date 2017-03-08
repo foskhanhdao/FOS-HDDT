@@ -208,6 +208,7 @@ namespace FOS_Einvoice
 
         public virtual void SetDefaultFocus()
         {
+           
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -277,6 +278,42 @@ namespace FOS_Einvoice
                         return true;
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+            }
+            return false;
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn muốn xóa bỏ thông tin hiện tại?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (Delete()) Clear();
+            }
+        }
+
+        public virtual bool Delete()
+        {
+            try
+            {
+                string sql = " delete from " + TableName + " where 1 = 1 ";
+                IControl c = null;
+
+                ArrayList paramNames = new ArrayList();
+                ArrayList paramValues = new ArrayList();
+                for (int i = 0; i < ctrlPrimaryKey.Count; i++)
+                {
+                    c = ctrlPrimaryKey[i] as IControl;
+                    if (c != null) {
+                        sql += " and ";
+                        sql += c.ColumnName + " = @" + c.ColumnName;
+                        paramNames.Add("@" + c.ColumnName);
+                        paramValues.Add(c.DBValue);
+                    }                    
+                }
+
+                return DataBase.ExecuteSQL(sql, paramNames, paramValues, con, tran) > 0;
             }
             catch (Exception ex)
             {

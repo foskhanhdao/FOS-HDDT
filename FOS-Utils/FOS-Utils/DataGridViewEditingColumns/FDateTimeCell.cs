@@ -4,15 +4,15 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class DateTimeCell : DataGridViewTextBoxCell
+    public class FDateTimeCell : DataGridViewTextBoxCell
     {
-        public DateTimeCell()
+        public FDateTimeCell()
             : base()
         {
             //this.Style.Format = "#,##0";
             
         }
-        public DateTimeCell(string format)
+        public FDateTimeCell(string format)
             : base()
         {
             //this.Style.Format = format;

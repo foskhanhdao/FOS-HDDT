@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace FOS_Utils
 {
-    public class CellTypes
+    public class FCellTypes
     {
         public static String STRING = "STRING";
         public static String DATE = "DATE";

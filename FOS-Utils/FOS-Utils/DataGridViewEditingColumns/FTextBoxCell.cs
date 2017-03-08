@@ -4,15 +4,15 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class TextBoxCell : DataGridViewTextBoxCell
+    public class FTextBoxCell : DataGridViewTextBoxCell
     {
        
-        public TextBoxCell()
+        public FTextBoxCell()
             : base()
         {
             //this.Style.Format = "d";
         }
-        public TextBoxCell(int maxLength)
+        public FTextBoxCell(int maxLength)
             : base()
         {
             this.MaxInputLength = maxLength;

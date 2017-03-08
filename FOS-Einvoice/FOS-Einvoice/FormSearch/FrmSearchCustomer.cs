@@ -27,29 +27,29 @@ namespace FOS_Einvoice
                     ,"Fax"
                     ,"Ghi chú"
                 };
-                string sql = " select cuscode,taxcode,cusname,cusbirthday ";
-                sql += " ,(case when cussex = '1' then 'Nam' when cussex = '0' then 'Nữ' else '' end) as 'cussex' ";
-                sql += " ,companyname,cusaddress,email,phone,fax,note from customer ";
-                sql += " where isnull(cusstate,'0') = 0 ";
+                string sql = " select customercode,customertaxcode,customername,customerbirthday ";
+                sql += " ,(case when customersex = '1' then 'Nam' when customersex = '0' then 'Nữ' else '' end) as 'customersex' ";
+                sql += " ,customercompanyname,customeraddress,customeremail,customerphone,customerfax,customernote from customer ";
+                sql += " where isnull(customerstate,'0') = 0 ";
                 if (txtCuscode.Text != "")
                 {
-                    sql += " and cuscode like '%' + @cuscode + '%' ";
+                    sql += " and customercode like '%' + @customercode + '%' ";
                 }
                 if (txtCusname.Text != "")
                 {
-                    sql += " and cusname like '%' + @cusname + '%' ";
+                    sql += " and customername like '%' + @customername + '%' ";
                 }
                 if (txtTaxcode.Text != "")
                 {
-                    sql += " and taxcode like '%' + @taxcode + '%' ";
+                    sql += " and customertaxcode like '%' + @customertaxcode + '%' ";
                 }
                 if (txtAddress.Text != "")
                 {
-                    sql += " and cusaddress like '%' + @cusaddress + '%' ";
+                    sql += " and customeraddress like '%' + @customeraddress + '%' ";
                 }
 
                 return DataBase.GetData(sql
-                    , new object[] { "@cuscode", "@cusname", "@taxcode", "@cusaddress" }
+                    , new object[] { "@customercode", "@customername", "@customertaxcode", "@customeraddress" }
                     ,new object[] {txtCuscode.Text,txtCusname.Text,txtTaxcode.Text,txtAddress.Text}
                     ).Tables[0];
                 
@@ -76,11 +76,11 @@ namespace FOS_Einvoice
             {
                 if (dgvData.ColumnCount > 0)
                 {
-                    dgvData.Columns["cusbirthday"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                    dgvData.Columns["cusbirthday"].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                    dgvData.Columns["cuscode"].Width = 150;
-                    dgvData.Columns["cusname"].Width = 150;
-                    dgvData.Columns["companyname"].Width = 150;
+                    dgvData.Columns["customerbirthday"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                    dgvData.Columns["customerbirthday"].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                    dgvData.Columns["customercode"].Width = 150;
+                    dgvData.Columns["customername"].Width = 150;
+                    dgvData.Columns["customercompanyname"].Width = 150;
                 }
             }
             catch (Exception ex)

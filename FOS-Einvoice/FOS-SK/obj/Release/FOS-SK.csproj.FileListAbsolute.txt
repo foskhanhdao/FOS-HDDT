@@ -1,0 +1,5 @@
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-SK\bin\Release\FOS-SK.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-SK\bin\Release\FOS-SK.pdb
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-SK\obj\Release\ResolveAssemblyReference.cache
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-SK\obj\Release\FOS-SK.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-SK\obj\Release\FOS-SK.pdb

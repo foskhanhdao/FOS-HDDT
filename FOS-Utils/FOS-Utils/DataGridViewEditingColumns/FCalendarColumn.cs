@@ -2,14 +2,14 @@ using System;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class CalendarColumn : DataGridViewColumn
+    public class FCalendarColumn : DataGridViewColumn
     {
-        public CalendarColumn(String format)
-            : base(new CalendarCell(format))
+        public FCalendarColumn(String format)
+            : base(new FCalendarCell(format))
         {
         }
-        public CalendarColumn()
-            : base(new CalendarCell())
+        public FCalendarColumn()
+            : base(new FCalendarCell())
         {
         }
 
@@ -22,9 +22,9 @@ namespace FOS_Utils
             set
         {
             if (value != null &&
-                !value.GetType().IsAssignableFrom(typeof(CalendarCell)))
+                !value.GetType().IsAssignableFrom(typeof(FCalendarCell)))
             {
-                throw new InvalidCastException("Must be a CalendarCell");
+                throw new InvalidCastException("Must be a FCalendarCell");
             }
             base.CellTemplate = value;
         }

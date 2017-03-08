@@ -38,7 +38,9 @@
             this.btnUnit = new FOS_Utils.FButton();
             this.btnPaymentType = new FOS_Utils.FButton();
             this.btMauPhatHanh = new FOS_Utils.FButton();
-            this.fButton1 = new FOS_Utils.FButton();
+            this.btnSerialNumber = new FOS_Utils.FButton();
+            this.btnProducttype = new FOS_Utils.FButton();
+            this.btnProduct = new FOS_Utils.FButton();
             this.SuspendLayout();
             // 
             // btnInvoiceCreate
@@ -141,22 +143,44 @@
             this.btMauPhatHanh.UseVisualStyleBackColor = true;
             this.btMauPhatHanh.Click += new System.EventHandler(this.btMauPhatHanh_Click);
             // 
-            // fButton1
+            // btnSerialNumber
             // 
-            this.fButton1.Location = new System.Drawing.Point(380, 59);
-            this.fButton1.Name = "fButton1";
-            this.fButton1.Size = new System.Drawing.Size(75, 23);
-            this.fButton1.TabIndex = 10;
-            this.fButton1.Text = "fButton1";
-            this.fButton1.UseVisualStyleBackColor = true;
-            this.fButton1.Click += new System.EventHandler(this.fButton1_Click);
+            this.btnSerialNumber.Location = new System.Drawing.Point(324, 12);
+            this.btnSerialNumber.Name = "btnSerialNumber";
+            this.btnSerialNumber.Size = new System.Drawing.Size(150, 150);
+            this.btnSerialNumber.TabIndex = 10;
+            this.btnSerialNumber.Text = "Serial Number";
+            this.btnSerialNumber.UseVisualStyleBackColor = true;
+            this.btnSerialNumber.Click += new System.EventHandler(this.btnSerialNumber_Click);
+            // 
+            // btnProducttype
+            // 
+            this.btnProducttype.Location = new System.Drawing.Point(324, 324);
+            this.btnProducttype.Name = "btnProducttype";
+            this.btnProducttype.Size = new System.Drawing.Size(150, 150);
+            this.btnProducttype.TabIndex = 11;
+            this.btnProducttype.Text = "Loại hàng hóa";
+            this.btnProducttype.UseVisualStyleBackColor = true;
+            this.btnProducttype.Click += new System.EventHandler(this.btnProducttype_Click);
+            // 
+            // btnProduct
+            // 
+            this.btnProduct.Location = new System.Drawing.Point(480, 324);
+            this.btnProduct.Name = "btnProduct";
+            this.btnProduct.Size = new System.Drawing.Size(150, 150);
+            this.btnProduct.TabIndex = 12;
+            this.btnProduct.Text = "Sản phẩm";
+            this.btnProduct.UseVisualStyleBackColor = true;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
-            this.Controls.Add(this.fButton1);
+            this.Controls.Add(this.btnProduct);
+            this.Controls.Add(this.btnProducttype);
+            this.Controls.Add(this.btnSerialNumber);
             this.Controls.Add(this.btMauPhatHanh);
             this.Controls.Add(this.btnPaymentType);
             this.Controls.Add(this.btnUnit);
@@ -188,7 +212,9 @@
         private FOS_Utils.FButton btnUnit;
         private FOS_Utils.FButton btnPaymentType;
         private FOS_Utils.FButton btMauPhatHanh;
-        private FOS_Utils.FButton fButton1;
+        private FOS_Utils.FButton btnSerialNumber;
+        private FOS_Utils.FButton btnProducttype;
+        private FOS_Utils.FButton btnProduct;
     }
 }
 

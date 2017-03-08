@@ -6,14 +6,14 @@ using System.Data;
 
 namespace FOS_Utils
 {
-    public class ComboBoxEditingControl : ComboBox, IDataGridViewEditingControl
+    public class FComboBoxEditingControl : ComboBox, IDataGridViewEditingControl
     {
         DataGridView dataGridView;
         private bool valueChanged = false;
         int rowIndex;
         private bool maxLengthFromByte = false;
       
-        public ComboBoxEditingControl()
+        public FComboBoxEditingControl()
         {            
             this.DropDownStyle = ComboBoxStyle.DropDown;
             this.ImeMode = ImeMode.Hiragana;

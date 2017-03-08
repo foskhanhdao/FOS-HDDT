@@ -6,7 +6,7 @@ namespace FOS_Utils
 {
     public class TimeColumn : DataGridViewColumn
     {
-        public String cellType = CellTypes.STRING;
+        public String cellType = FCellTypes.STRING;
         public TimeColumn()
             : base(new TimeCell())
         {

@@ -5,15 +5,15 @@ using System.Windows.Forms;
 
 namespace FOS_Utils
 {
-    public class HourMinuteCell : DataGridViewTextBoxCell
+    public class FHourMinuteCell : DataGridViewTextBoxCell
     {
         private String format = "HH:mm";
-        public HourMinuteCell()
+        public FHourMinuteCell()
             : base()
         {
             this.Style.Format = format;            
         }
-        public HourMinuteCell(String strFormat)
+        public FHourMinuteCell(String strFormat)
             : base()
         {
             this.format = strFormat;
@@ -28,8 +28,8 @@ namespace FOS_Utils
             {
                 base.InitializeEditingControl(rowIndex, initialFormattedValue,
                     dataGridViewCellStyle);
-                HourMinuteEditingControl ctl =
-                    DataGridView.EditingControl as HourMinuteEditingControl;
+                FHourMinuteEditingControl ctl =
+                    DataGridView.EditingControl as FHourMinuteEditingControl;
                 if (this.Value != null && !this.Value.ToString().Equals(""))
                 {                    
                     ctl.Value =  (DateTime)this.Value;
@@ -45,7 +45,7 @@ namespace FOS_Utils
         {
             get
             {
-                return typeof(HourMinuteEditingControl);
+                return typeof(FHourMinuteEditingControl);
             }
         }
 

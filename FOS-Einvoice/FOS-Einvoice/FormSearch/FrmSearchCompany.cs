@@ -27,8 +27,8 @@ namespace FOS_Einvoice
                     ,"Tên ngân hàng"
                     ,"Ghi chú"
                 };
-                string sql = " select companycode,taxcode,companyname,companyaddress,phone ";
-                sql += " ,fax,website,email,bankaccount,bankname,note from company ";
+                string sql = " select companycode,companytaxcode,companyname,companyaddress,companyphone ";
+                sql += " ,companyfax,companywebsite,companyemail,companybankaccount,companybankname,companynote from company ";
                 sql += " where 1 = 1 ";
                 if (companycode.Text != "")
                 {
@@ -40,7 +40,7 @@ namespace FOS_Einvoice
                 }
                 if (taxcode.Text != "")
                 {
-                    sql += " and taxcode like '%' + @taxcode + '%' ";
+                    sql += " and companytaxcode like '%' + @companytaxcode + '%' ";
                 }
                 if (companyaddress.Text != "")
                 {
@@ -48,7 +48,7 @@ namespace FOS_Einvoice
                 }
 
                 return DataBase.GetData(sql
-                    , new object[] { "@companycode", "@companyname", "@taxcode", "@companyaddress" }
+                    , new object[] { "@companycode", "@companyname", "@companytaxcode", "@companyaddress" }
                     ,new object[] {companycode.Text,companyname.Text,taxcode.Text,companyaddress.Text}
                     ).Tables[0];
                 
@@ -73,14 +73,14 @@ namespace FOS_Einvoice
         {
             try
             {
-                if (dgvData.ColumnCount > 0)
-                {
-                    dgvData.Columns["cusbirthday"].DefaultCellStyle.Format = "dd/MM/yyyy";
-                    dgvData.Columns["cusbirthday"].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-                    dgvData.Columns["cuscode"].Width = 150;
-                    dgvData.Columns["cusname"].Width = 150;
-                    dgvData.Columns["companyname"].Width = 150;
-                }
+                //if (dgvData.ColumnCount > 0)
+                //{
+                //    dgvData.Columns["cusbirthday"].DefaultCellStyle.Format = "dd/MM/yyyy";
+                //    dgvData.Columns["cusbirthday"].DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+                //    dgvData.Columns["cuscode"].Width = 150;
+                //    dgvData.Columns["cusname"].Width = 150;
+                //    dgvData.Columns["companyname"].Width = 150;
+                //}
             }
             catch (Exception ex)
             {

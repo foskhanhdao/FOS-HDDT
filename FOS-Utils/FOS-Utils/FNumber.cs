@@ -7,7 +7,7 @@ using System.Globalization;
 
 namespace FOS_Utils
 {
-    public class FNumber : TextBox
+    public class FNumber : TextBox,IControl
     {
         
         private int maxLength = 8;
@@ -419,6 +419,24 @@ namespace FOS_Utils
                 MessageBox.Show(ex.ToString());
             }
         }
-     
+
+
+        #region IControl Members
+
+
+        public object DBValue
+        {
+            get
+            {
+                return Value;
+            }
+            set
+            {
+                if (value != null)
+                    Text = value.ToString();
+            }
+        }
+
+        #endregion
     }
 }

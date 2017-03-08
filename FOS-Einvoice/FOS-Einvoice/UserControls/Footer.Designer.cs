@@ -65,7 +65,6 @@
             this.lblHelp.OutputControl = null;
             this.lblHelp.Size = new System.Drawing.Size(784, 25);
             this.lblHelp.TabIndex = 15;
-            this.lblHelp.Text = "Show Help When control Focus";
             this.lblHelp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Footer

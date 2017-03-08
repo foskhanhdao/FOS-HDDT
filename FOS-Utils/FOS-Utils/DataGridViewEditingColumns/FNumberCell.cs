@@ -5,14 +5,14 @@ using System.Windows.Forms;
 using System.Globalization;
 namespace FOS_Utils
 {
-    public class NumberCell : DataGridViewTextBoxCell
+    public class FNumberCell : DataGridViewTextBoxCell
     {
-        public NumberCell()
+        public FNumberCell()
             : base()
         {
             this.Style.Format = "#,##0";            
         }
-        public NumberCell(string format)
+        public FNumberCell(string format)
             : base()
         {
             this.Style.Format = format;

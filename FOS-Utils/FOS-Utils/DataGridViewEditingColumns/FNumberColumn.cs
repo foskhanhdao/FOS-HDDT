@@ -4,15 +4,15 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class NumberColumn : DataGridViewColumn
+    public class FNumberColumn : DataGridViewColumn
     {
-        public NumberColumn()
-            : base(new NumberCell())
+        public FNumberColumn()
+            : base(new FNumberCell())
         {
         }
 
-        public NumberColumn(string format)
-            : base(new NumberCell(format))
+        public FNumberColumn(string format)
+            : base(new FNumberCell(format))
         {
         }
         public override DataGridViewCell CellTemplate
@@ -24,7 +24,7 @@ namespace FOS_Utils
             set
             {
                 if (value != null &&
-                    !value.GetType().IsAssignableFrom(typeof(NumberCell)))
+                    !value.GetType().IsAssignableFrom(typeof(FNumberCell)))
                 {
                     throw new InvalidCastException("Must be a TextBoxCell");
                 }

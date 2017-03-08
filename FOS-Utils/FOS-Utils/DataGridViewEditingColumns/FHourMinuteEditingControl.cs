@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace FOS_Utils
 {
-    class HourMinuteEditingControl : DateTimePicker, IDataGridViewEditingControl
+    class FHourMinuteEditingControl : DateTimePicker, IDataGridViewEditingControl
     {
         DataGridView dataGridView;
         private bool valueChanged = false;
         int rowIndex;        
         private String format = "HH:mm";
 
-        public HourMinuteEditingControl()
+        public FHourMinuteEditingControl()
         {
             this.ShowCheckBox = false;
             this.ShowUpDown = true;
@@ -21,7 +21,7 @@ namespace FOS_Utils
             this.CustomFormat = format;
             this.Leave += new EventHandler(calenda_Leave);
         }
-        public HourMinuteEditingControl(String format)
+        public FHourMinuteEditingControl(String format)
         {
             this.ShowCheckBox = false;
             this.ShowUpDown = true;

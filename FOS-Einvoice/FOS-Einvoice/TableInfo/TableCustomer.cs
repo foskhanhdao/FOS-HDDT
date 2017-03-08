@@ -9,20 +9,20 @@ namespace FOS_Einvoice.TableInfo
     public class TableCustomer
     {
         public const string TableName = "customer";
-        public const string Col_cuscode = "cuscode";
-        public const string Col_cuspass = "cuspass";
-        public const string Col_cusname = "cusname";
-        public const string Col_cusbirthday = "cusbirthday";
-        public const string Col_cussex = "cussex";
-        public const string Col_companyname = "companyname";
-        public const string Col_taxcode = "taxcode";
-        public const string Col_cusaddress = "cusaddress";
-        public const string Col_email = "email";
-        public const string Col_phone = "phone";
-        public const string Col_fax = "fax";
-        public const string Col_cusstate = "cusstate";
-        public const string Col_datecreate = "datecreate";
-        public const string Col_dateupdate = "dateupdate";
+        public const string Col_cuscode = "customercode";
+        public const string Col_cuspass = "customerpass";
+        public const string Col_cusname = "customername";
+        public const string Col_cusbirthday = "customerbirthday";
+        public const string Col_cussex = "customersex";
+        public const string Col_companyname = "customercompanyname";
+        public const string Col_taxcode = "customertaxcode";
+        public const string Col_cusaddress = "customeraddress";
+        public const string Col_email = "customeremail";
+        public const string Col_phone = "customerphone";
+        public const string Col_fax = "customerfax";
+        public const string Col_cusstate = "customerstate";
+        public const string Col_datecreate = "customerdatecreate";
+        public const string Col_dateupdate = "customerdateupdate";
 
         public TableCustomer()
         {

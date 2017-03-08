@@ -14,7 +14,7 @@ namespace FOS_Einvoice.Invoices
 
         public void SetValue(DataTable dt,int idx)
         {
-            SetValue(dt, idx, pnlDetail);
+            SetValue(dt, idx, pnlContents);
         }
         public void SetValue(DataTable dt,int idx,FPdfPanel pnl)
         {
@@ -36,6 +36,6 @@ namespace FOS_Einvoice.Invoices
             catch (Exception ex)
             {
             }
-        }
+        }      
     }
 }

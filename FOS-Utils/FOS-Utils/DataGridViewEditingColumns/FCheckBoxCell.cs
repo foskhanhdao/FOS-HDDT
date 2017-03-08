@@ -4,9 +4,9 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class CheckBoxCell : DataGridViewCheckBoxCell
+    public class FCheckBoxCell : DataGridViewCheckBoxCell
     {
-        public CheckBoxCell()
+        public FCheckBoxCell()
             : base()
         {
             //this.Style.Format = "d";
@@ -17,8 +17,8 @@ namespace FOS_Utils
         {
             base.InitializeEditingControl(rowIndex, initialFormattedValue,
                 dataGridViewCellStyle);
-            CheckBoxEditingControl ctl =
-                DataGridView.EditingControl as CheckBoxEditingControl;
+            FCheckBoxEditingControl ctl =
+                DataGridView.EditingControl as FCheckBoxEditingControl;
             if (this.Value != null)
             {
                 ctl.Checked = (bool)this.Value;
@@ -29,7 +29,7 @@ namespace FOS_Utils
         {
             get
             {
-                return typeof(CheckBoxEditingControl);
+                return typeof(FCheckBoxEditingControl);
             }
         }
 

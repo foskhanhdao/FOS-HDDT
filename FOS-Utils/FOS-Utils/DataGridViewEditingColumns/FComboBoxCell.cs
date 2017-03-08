@@ -25,8 +25,8 @@ namespace FOS_Utils
         {
             base.InitializeEditingControl(rowIndex, initialFormattedValue,
                 dataGridViewCellStyle);
-            ComboBoxEditingControl ctl =
-                DataGridView.EditingControl as ComboBoxEditingControl;
+            FComboBoxEditingControl ctl =
+                DataGridView.EditingControl as FComboBoxEditingControl;
 
             if (this.Value != null)
             {
@@ -38,7 +38,7 @@ namespace FOS_Utils
         {
             get
             {
-                return typeof(ComboBoxEditingControl);
+                return typeof(FComboBoxEditingControl);
             }
         }
 

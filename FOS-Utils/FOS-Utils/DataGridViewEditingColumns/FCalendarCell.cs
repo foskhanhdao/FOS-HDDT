@@ -5,15 +5,15 @@ using System.Windows.Forms;
 
 namespace FOS_Utils
 {
-    public class CalendarCell : DataGridViewTextBoxCell
+    public class FCalendarCell : DataGridViewTextBoxCell
     {
         private String format = "dd/MM/yyyy";
-        public CalendarCell()
+        public FCalendarCell()
             : base()
         {
             this.Style.Format = format;
         }
-        public CalendarCell(String strFormat)
+        public FCalendarCell(String strFormat)
             : base()
         {
             this.format = strFormat;

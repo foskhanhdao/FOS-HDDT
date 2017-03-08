@@ -4,16 +4,16 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class DateTimeColumn : DataGridViewColumn
+    public class FDateTimeColumn : DataGridViewColumn
     {
-        public DateTimeColumn()
-            : base(new DateTimeCell())
+        public FDateTimeColumn()
+            : base(new FDateTimeCell())
         {
             
         }
 
-        public DateTimeColumn(string format)
-            : base(new DateTimeCell(format))
+        public FDateTimeColumn(string format)
+            : base(new FDateTimeCell(format))
         {
         }
         public override DataGridViewCell CellTemplate
@@ -25,7 +25,7 @@ namespace FOS_Utils
             set
             {
                 if (value != null &&
-                    !value.GetType().IsAssignableFrom(typeof(DateTimeCell)))
+                    !value.GetType().IsAssignableFrom(typeof(FDateTimeCell)))
                 {
                     throw new InvalidCastException("Must be a TextBoxCell");
                 }

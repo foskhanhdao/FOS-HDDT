@@ -119,4 +119,9 @@ D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.Pr
 D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.UserControls.Footer.resources
 D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS-Einvoice.csproj.GenerateResource.Cache
 D:\GithupFullFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmTestFontcs.resources
-D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmTestFontcs.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmProduct.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmProducttype.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmSearchProduct.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\obj\Release\FOS_Einvoice.FrmLicenseConfirm.resources
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\bin\Release\FOS-SK.dll
+D:\Work\GitHupFos\FOS-HDDT\FOS-Einvoice\FOS-Einvoice\bin\Release\FOS-SK.pdb

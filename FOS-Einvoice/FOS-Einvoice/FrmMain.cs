@@ -15,12 +15,12 @@ namespace FOS_Einvoice
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            //string[] info = CommonFunctions.ReadConnectionFileInfo();
-            //DataBase.SetConnectionInfo(info);
-            //if (!DataBase.TestConnection())
-            //{
-            //    MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
-            //}            
+            string[] info = CommonFunctions.ReadConnectionFileInfo();
+            DataBase.SetConnectionInfo(info);
+            if (!DataBase.TestConnection())
+            {
+                MessageBox.Show("Không thể truy cập cơ sở dữ liệu. \nHãy kiểm tra lại thông số kết nối !");
+            }            
         }
 
         private void btnInvoiceCreate_Click(object sender, EventArgs e)
@@ -70,15 +70,25 @@ namespace FOS_Einvoice
 
         private void btMauPhatHanh_Click(object sender, EventArgs e)
         {
-            invoiceGTGTExamp ex = new invoiceGTGTExamp();            
-            PrintHelper.Print(ex.pnlMain,true);
-            
+            //invoiceGTGTExamp ex = new invoiceGTGTExamp();
+            //PrintHelper.BeginPrint(ex.pnlMain);
+            //PrintHelper.ViewBeforPrint();
+            //PrintHelper.EndPrint();
         }
 
-        private void fButton1_Click(object sender, EventArgs e)
+        private void btnSerialNumber_Click(object sender, EventArgs e)
         {
-            FrmTestFontcs f = new FrmTestFontcs();
-            f.ShowDialog();
+            new FrmLicenseConfirm().ShowDialog();
+        }
+
+        private void btnProducttype_Click(object sender, EventArgs e)
+        {
+            new FrmProducttype().ShowDialog();
+        }
+
+        private void btnProduct_Click(object sender, EventArgs e)
+        {
+            new FrmProduct().ShowDialog();
         }
     }
 }

@@ -4,14 +4,14 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class TextBoxColumn : DataGridViewColumn
+    public class FTextBoxColumn : DataGridViewColumn
     {
-        public TextBoxColumn()
-            : base(new TextBoxCell())
+        public FTextBoxColumn()
+            : base(new FTextBoxCell())
         {
         }
-        public TextBoxColumn(int maxLength)
-            : base(new TextBoxCell(maxLength))
+        public FTextBoxColumn(int maxLength)
+            : base(new FTextBoxCell(maxLength))
         {
         }     
 
@@ -24,9 +24,9 @@ namespace FOS_Utils
             set
             {
                 if (value != null &&
-                    !value.GetType().IsAssignableFrom(typeof(TextBoxCell)))
+                    !value.GetType().IsAssignableFrom(typeof(FTextBoxCell)))
                 {
-                    throw new InvalidCastException("Must be a TextBoxCell");
+                    throw new InvalidCastException("Must be a FTextBoxCell");
                 }
                 base.CellTemplate = value;
             }

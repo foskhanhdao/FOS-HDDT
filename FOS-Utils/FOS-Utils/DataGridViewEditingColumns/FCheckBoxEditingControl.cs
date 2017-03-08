@@ -5,13 +5,13 @@ using System.Windows.Forms;
 
 namespace FOS_Utils
 {
-    class CheckBoxEditingControl : CheckBox, IDataGridViewEditingControl
+    class FCheckBoxEditingControl : CheckBox, IDataGridViewEditingControl
     {
         DataGridView dataGridView;
         private bool valueChanged = false;
         int rowIndex;
 
-        public CheckBoxEditingControl()
+        public FCheckBoxEditingControl()
         {
             //this.Format = DateTimePickerFormat.Short;
         }

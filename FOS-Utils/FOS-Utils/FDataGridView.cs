@@ -20,14 +20,14 @@ namespace FOS_Utils
                 return true;
             }
             if (keyData == Keys.Up && this.EditingControl != null
-                && !(this.EditingControl is ComboBoxEditingControl)
+                && !(this.EditingControl is FComboBoxEditingControl)
                 && !(this.EditingControl is DataGridViewComboBoxEditingControl))
             {
                 DoUpKeyPressed();
                 return true;
             }
             if (keyData == Keys.Down && this.EditingControl != null
-                && !(this.EditingControl is ComboBoxEditingControl)
+                && !(this.EditingControl is FComboBoxEditingControl)
                 && !(this.EditingControl is DataGridViewComboBoxEditingControl))
             {
                 DoDownKeyPressed();

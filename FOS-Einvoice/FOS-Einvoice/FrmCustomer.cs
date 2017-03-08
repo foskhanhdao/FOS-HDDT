@@ -30,13 +30,13 @@ namespace FOS_Einvoice
         private void InitData()
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("cussex", typeof(string));
-            dt.Columns.Add("cussexname", typeof(string));
+            dt.Columns.Add("customersex", typeof(string));
+            dt.Columns.Add("customersexname", typeof(string));
             dt.Rows.Add(new object[] {"0","Nữ"});
             dt.Rows.Add(new object[] { "1", "Nam" });
             cussex.DataSource = dt;
-            cussex.DisplayMember = "cussexname";
-            cussex.ValueMember = "cussex";
+            cussex.DisplayMember = "customersexname";
+            cussex.ValueMember = "customersex";
         }
 
         public override void SetEnableControls(bool en, bool isNew)

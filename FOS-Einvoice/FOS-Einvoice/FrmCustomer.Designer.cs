@@ -169,6 +169,7 @@
             // 
             this.companyname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.companyname.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.companyname.CheckMinMaxChar = false;
             this.companyname.ColumnName = "customercompanyname";
             this.companyname.DBNullValueWhenBlank = false;

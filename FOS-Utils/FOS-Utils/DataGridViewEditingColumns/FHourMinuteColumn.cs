@@ -2,14 +2,14 @@ using System;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class HourMinuteColumn : DataGridViewColumn
+    public class FHourMinuteColumn : DataGridViewColumn
     {
-        public HourMinuteColumn(String format)
-            : base(new HourMinuteCell(format))
+        public FHourMinuteColumn(String format)
+            : base(new FHourMinuteCell(format))
         {
         }
-        public HourMinuteColumn()
-            : base(new HourMinuteCell())
+        public FHourMinuteColumn()
+            : base(new FHourMinuteCell())
         {
         }
 
@@ -22,7 +22,7 @@ namespace FOS_Utils
             set
         {
             if (value != null &&
-                !value.GetType().IsAssignableFrom(typeof(HourMinuteCell)))
+                !value.GetType().IsAssignableFrom(typeof(FHourMinuteCell)))
             {
                 throw new InvalidCastException("Must be a CalendarCell");
             }

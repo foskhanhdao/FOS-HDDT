@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.fTextBox3 = new FOS_Utils.FTextBox();
+            this.unitname = new FOS_Utils.FTextBox();
             this.fLabel2 = new FOS_Utils.FLabel();
-            this.fTextBox1 = new FOS_Utils.FTextBox();
+            this.unitcode = new FOS_Utils.FTextBox();
             this.fLabel3 = new FOS_Utils.FLabel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -42,9 +42,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.fTextBox3);
+            this.groupBox1.Controls.Add(this.unitname);
             this.groupBox1.Controls.Add(this.fLabel2);
-            this.groupBox1.Controls.Add(this.fTextBox1);
+            this.groupBox1.Controls.Add(this.unitcode);
             this.groupBox1.Controls.Add(this.fLabel3);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -53,25 +53,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin chi tiết về đơn vị tính";
             // 
-            // fTextBox3
+            // unitname
             // 
-            this.fTextBox3.CheckMinMaxChar = false;
-            this.fTextBox3.ColumnName = "unitname";
-            this.fTextBox3.DBNullValueWhenBlank = false;
-            this.fTextBox3.DBValue = "";
-            this.fTextBox3.Enabled = false;
-            this.fTextBox3.FillZeroWhenHavingText = false;
-            this.fTextBox3.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.fTextBox3.Location = new System.Drawing.Point(157, 62);
-            this.fTextBox3.MaxChar = '9';
-            this.fTextBox3.MaxLength = 50;
-            this.fTextBox3.MaxLengthFromByte = false;
-            this.fTextBox3.MinChar = '0';
-            this.fTextBox3.Name = "fTextBox3";
-            this.fTextBox3.OldText = "";
-            this.fTextBox3.OutputControl = null;
-            this.fTextBox3.Size = new System.Drawing.Size(360, 25);
-            this.fTextBox3.TabIndex = 16;
+            this.unitname.CheckMinMaxChar = false;
+            this.unitname.ColumnName = "unitname";
+            this.unitname.DBNullValueWhenBlank = false;
+            this.unitname.DBValue = "";
+            this.unitname.Enabled = false;
+            this.unitname.FillZeroWhenHavingText = false;
+            this.unitname.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.unitname.Location = new System.Drawing.Point(157, 62);
+            this.unitname.MaxChar = '9';
+            this.unitname.MaxLength = 50;
+            this.unitname.MaxLengthFromByte = false;
+            this.unitname.MinChar = '0';
+            this.unitname.Name = "unitname";
+            this.unitname.OldText = "";
+            this.unitname.OutputControl = null;
+            this.unitname.Size = new System.Drawing.Size(360, 25);
+            this.unitname.TabIndex = 16;
             // 
             // fLabel2
             // 
@@ -86,24 +86,24 @@
             this.fLabel2.Text = "Tên đơn vị tính:";
             this.fLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // fTextBox1
+            // unitcode
             // 
-            this.fTextBox1.CheckMinMaxChar = true;
-            this.fTextBox1.ColumnName = "unitcode";
-            this.fTextBox1.DBNullValueWhenBlank = false;
-            this.fTextBox1.DBValue = "";
-            this.fTextBox1.FillZeroWhenHavingText = false;
-            this.fTextBox1.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.fTextBox1.Location = new System.Drawing.Point(157, 31);
-            this.fTextBox1.MaxChar = '9';
-            this.fTextBox1.MaxLength = 20;
-            this.fTextBox1.MaxLengthFromByte = false;
-            this.fTextBox1.MinChar = '0';
-            this.fTextBox1.Name = "fTextBox1";
-            this.fTextBox1.OldText = "";
-            this.fTextBox1.OutputControl = null;
-            this.fTextBox1.Size = new System.Drawing.Size(45, 25);
-            this.fTextBox1.TabIndex = 12;
+            this.unitcode.CheckMinMaxChar = true;
+            this.unitcode.ColumnName = "unitcode";
+            this.unitcode.DBNullValueWhenBlank = false;
+            this.unitcode.DBValue = "";
+            this.unitcode.FillZeroWhenHavingText = false;
+            this.unitcode.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.unitcode.Location = new System.Drawing.Point(157, 31);
+            this.unitcode.MaxChar = '9';
+            this.unitcode.MaxLength = 20;
+            this.unitcode.MaxLengthFromByte = false;
+            this.unitcode.MinChar = '0';
+            this.unitcode.Name = "unitcode";
+            this.unitcode.OldText = "";
+            this.unitcode.OutputControl = null;
+            this.unitcode.Size = new System.Drawing.Size(45, 25);
+            this.unitcode.TabIndex = 12;
             // 
             // fLabel3
             // 
@@ -137,8 +137,8 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private FOS_Utils.FLabel fLabel3;
-        private FOS_Utils.FTextBox fTextBox3;
+        private FOS_Utils.FTextBox unitname;
         private FOS_Utils.FLabel fLabel2;
-        private FOS_Utils.FTextBox fTextBox1;
+        private FOS_Utils.FTextBox unitcode;
     }
 }

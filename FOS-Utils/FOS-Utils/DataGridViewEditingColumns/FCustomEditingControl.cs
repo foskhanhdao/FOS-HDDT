@@ -8,11 +8,11 @@ using System.Windows.Forms;
 using System.Collections;
 namespace FOS_Utils
 {
-    class CustomEditingControl : Panel, IDataGridViewEditingControl
+    class FCustomEditingControl : Panel, IDataGridViewEditingControl
     {
         DataGridView dataGridView;
         private bool valueChanged = false;
-        private String customCellType = CellTypes.DATE;
+        private String customCellType = FCellTypes.DATE;
         int rowIndex;
         private Label lbText = new Label();
         private String sqlSelect = "";
@@ -21,7 +21,7 @@ namespace FOS_Utils
         private int decimalLength = 0;
         private bool thousandsSeparator = false;
         
-        public CustomEditingControl()
+        public FCustomEditingControl()
         {
             lbText.Dock = DockStyle.Fill;
             lbText.Text = "";
@@ -243,15 +243,15 @@ namespace FOS_Utils
                         this.Controls.RemoveAt(i);
                     }
                 }
-                if (customCellType.Equals(CellTypes.STRING)
-                    || customCellType.Equals(CellTypes.NUMBER))
+                if (customCellType.Equals(FCellTypes.STRING)
+                    || customCellType.Equals(FCellTypes.NUMBER))
                 {
                     FInputControl text = new FInputControl();
                     text.Dock = DockStyle.Fill;
                     text.Location = lbText.Location;
                     lbText.Visible = false;
                     text.MaxLength = maxLength;
-                    if (customCellType.Equals(CellTypes.NUMBER))
+                    if (customCellType.Equals(FCellTypes.NUMBER))
                     {
                         text.InputType = FInputControl.DECIMAL;
                         text.ThousandsSeparator = thousandsSeparator;                        
@@ -265,7 +265,7 @@ namespace FOS_Utils
                     this.CtrlEditing = text;
                     
                 }
-                else if (customCellType.Equals(CellTypes.DATE))
+                else if (customCellType.Equals(FCellTypes.DATE))
                 {
                     DateTimePicker date = new DateTimePicker();
                     date.Dock = DockStyle.Fill;
@@ -282,7 +282,7 @@ namespace FOS_Utils
                     this.Controls.Add(date);
                     this.CtrlEditing = date;
                 }
-                else if (customCellType.Equals(CellTypes.COMBO_BOX))
+                else if (customCellType.Equals(FCellTypes.COMBO_BOX))
                 {
                     ComboBox combo = new ComboBox();
                     combo.Dock = DockStyle.Fill;
@@ -312,7 +312,7 @@ namespace FOS_Utils
                     this.Controls.Add(combo);
                     this.CtrlEditing = combo;
                 }                
-                else if (customCellType.Equals(CellTypes.CHECK_BOX))
+                else if (customCellType.Equals(FCellTypes.CHECK_BOX))
                 {
                     CheckBox chk = new CheckBox();
                     chk.Dock = DockStyle.Fill;

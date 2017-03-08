@@ -4,11 +4,11 @@ using System.Text;
 using System.Windows.Forms;
 namespace FOS_Utils
 {
-    public class CustomColumn : DataGridViewColumn
+    public class FCustomColumn : DataGridViewColumn
     {
-        public String cellType = CellTypes.STRING;
-        public CustomColumn()
-            : base(new CustomCell())
+        public String cellType = FCellTypes.STRING;
+        public FCustomColumn()
+            : base(new FCustomCell())
         {
         }
         
@@ -21,7 +21,7 @@ namespace FOS_Utils
             set
             {
                 if (value != null &&
-                    !value.GetType().IsAssignableFrom(typeof(CustomCell)))
+                    !value.GetType().IsAssignableFrom(typeof(FCustomCell)))
                 {
                     throw new InvalidCastException("Must be a TextBoxCell");
                 }
