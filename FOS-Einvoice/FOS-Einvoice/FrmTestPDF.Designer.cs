@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.invoiceGTGT1 = new FOS_Einvoice.Invoices.invoiceGTGT();
             this.btnMau = new FOS_Utils.FButton();
             this.btnPreview = new FOS_Utils.FButton();
             this.btnPDF = new FOS_Utils.FButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.invoiceGTGT1 = new FOS_Einvoice.Invoices.invoiceGTGT();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,13 +47,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(768, 509);
             this.panel1.TabIndex = 0;
-            // 
-            // invoiceGTGT1
-            // 
-            this.invoiceGTGT1.Location = new System.Drawing.Point(0, 0);
-            this.invoiceGTGT1.Name = "invoiceGTGT1";
-            this.invoiceGTGT1.Size = new System.Drawing.Size(750, 1120);
-            this.invoiceGTGT1.TabIndex = 0;
             // 
             // btnMau
             // 
@@ -96,6 +89,13 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 25);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.SelectedValueChanged += new System.EventHandler(this.comboBox1_SelectedValueChanged);
+            // 
+            // invoiceGTGT1
+            // 
+            this.invoiceGTGT1.Location = new System.Drawing.Point(0, 3);
+            this.invoiceGTGT1.Name = "invoiceGTGT1";
+            this.invoiceGTGT1.Size = new System.Drawing.Size(750, 1120);
+            this.invoiceGTGT1.TabIndex = 0;
             // 
             // FrmTestPDF
             // 

@@ -24,8 +24,9 @@ namespace FOS_Einvoice
 
             invoiceGTGT1.pnlDetail.BackgroundImage = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo_detail1;
 
-            PrintToPdf();
-            
+           // PrintToPdf();
+            string p1 = @"F:/HDGTGT_0000001_TEMP.pdf";
+            PdfHelper.PrintPdfFile(p1, invoiceGTGT1.pnlMain);
             //invoiceGTGTExamp ex = new invoiceGTGTExamp();
             //PrintHelper.BeginPrint(invoiceGTGT1.pnlMain);
             //PrintHelper.ViewBeforPrint();

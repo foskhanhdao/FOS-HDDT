@@ -49,6 +49,7 @@
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties19 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties20 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties21 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceGTGT));
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties22 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties23 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties24 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
@@ -141,7 +142,6 @@
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties111 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties112 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties113 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(invoiceGTGT));
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties114 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties115 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties116 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
@@ -151,13 +151,13 @@
             FOS_Utils.PDF.PDFControl.FPdfProperties fPdfProperties120 = new FOS_Utils.PDF.PDFControl.FPdfProperties();
             this.pnlMain = new FOS_Utils.PDF.PDFControl.FPdfPanel();
             this.pnlContents = new FOS_Utils.PDF.PDFControl.FPdfPanel();
+            this.fPdfLabel119 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.pnlSignature = new FOS_Utils.PDF.PDFControl.FPdfPanel();
             this.lblToPaperTitle = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel1 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblCompanyBankAccount = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblCompanyPhone = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.lblAddress = new FOS_Utils.PDF.PDFControl.FPdfLabel();
-            this.fPdfLabel119 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel118 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel114 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
             this.fPdfLabel113 = new FOS_Utils.PDF.PDFControl.FPdfLabel();
@@ -285,6 +285,7 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.fPdfLabel119);
             this.pnlMain.Controls.Add(this.pnlContents);
             this.pnlMain.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -292,7 +293,7 @@
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.PageType = FOS_Utils.PDF.PDFLib.PageType.Custom;
             this.pnlMain.PnDetail = this.pnlContents;
-            this.pnlMain.Size = new System.Drawing.Size(750, 1120);
+            this.pnlMain.Size = new System.Drawing.Size(799, 1120);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlContents
@@ -306,7 +307,6 @@
             this.pnlContents.Controls.Add(this.lblCompanyBankAccount);
             this.pnlContents.Controls.Add(this.lblCompanyPhone);
             this.pnlContents.Controls.Add(this.lblAddress);
-            this.pnlContents.Controls.Add(this.fPdfLabel119);
             this.pnlContents.Controls.Add(this.fPdfLabel118);
             this.pnlContents.Controls.Add(this.fPdfLabel114);
             this.pnlContents.Controls.Add(this.fPdfLabel113);
@@ -363,8 +363,35 @@
             this.pnlContents.Name = "pnlContents";
             this.pnlContents.PageType = FOS_Utils.PDF.PDFLib.PageType.Custom;
             this.pnlContents.PnDetail = null;
-            this.pnlContents.Size = new System.Drawing.Size(680, 1000);
+            this.pnlContents.Size = new System.Drawing.Size(681, 1000);
             this.pnlContents.TabIndex = 0;
+            // 
+            // fPdfLabel119
+            // 
+            this.fPdfLabel119.BackColor = System.Drawing.Color.Transparent;
+            this.fPdfLabel119.ColumnName = "";
+            this.fPdfLabel119.DBValue = "(Xuất bởi phần mềm FOS-Einvoice, FOS TECHNOLOGY SOLUTIONS CO., LTD. - MST: 031421" +
+                "0262 - www.fos-vn.com)";
+            this.fPdfLabel119.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fPdfProperties1.Rotation = 90;
+            fPdfProperties1.TableColumn = "";
+            fPdfProperties1.TableRow = 0;
+            this.fPdfLabel119.FPdfProperties = fPdfProperties1;
+            this.fPdfLabel119.IsShowLineBottom = false;
+            this.fPdfLabel119.IsShowLineLeft = false;
+            this.fPdfLabel119.IsShowLineRight = false;
+            this.fPdfLabel119.IsShowLineTop = false;
+            this.fPdfLabel119.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel119.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel119.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel119.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.fPdfLabel119.Location = new System.Drawing.Point(737, 982);
+            this.fPdfLabel119.Name = "fPdfLabel119";
+            this.fPdfLabel119.Size = new System.Drawing.Size(629, 20);
+            this.fPdfLabel119.TabIndex = 107;
+            this.fPdfLabel119.Text = "(Xuất bởi phần mềm FOS-Einvoice, FOS TECHNOLOGY SOLUTIONS CO., LTD. - MST: 031421" +
+                "0262 - www.fos-vn.com)";
+            this.fPdfLabel119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlSignature
             // 
@@ -382,10 +409,10 @@
             this.lblToPaperTitle.ColumnName = "";
             this.lblToPaperTitle.DBValue = "(HÓA ĐƠN CHUYỂN ĐỔI TỪ HÓA ĐƠN ĐIỆN TỬ)";
             this.lblToPaperTitle.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties1.Rotation = 0;
-            fPdfProperties1.TableColumn = "";
-            fPdfProperties1.TableRow = 0;
-            this.lblToPaperTitle.FPdfProperties = fPdfProperties1;
+            fPdfProperties2.Rotation = 0;
+            fPdfProperties2.TableColumn = "";
+            fPdfProperties2.TableRow = 0;
+            this.lblToPaperTitle.FPdfProperties = fPdfProperties2;
             this.lblToPaperTitle.IsShowLineBottom = false;
             this.lblToPaperTitle.IsShowLineLeft = false;
             this.lblToPaperTitle.IsShowLineRight = false;
@@ -407,10 +434,10 @@
             this.fPdfLabel1.ColumnName = "mytaxcode";
             this.fPdfLabel1.DBValue = "0314210262";
             this.fPdfLabel1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties2.Rotation = 0;
-            fPdfProperties2.TableColumn = "";
-            fPdfProperties2.TableRow = 0;
-            this.fPdfLabel1.FPdfProperties = fPdfProperties2;
+            fPdfProperties3.Rotation = 0;
+            fPdfProperties3.TableColumn = "";
+            fPdfProperties3.TableRow = 0;
+            this.fPdfLabel1.FPdfProperties = fPdfProperties3;
             this.fPdfLabel1.IsShowLineBottom = false;
             this.fPdfLabel1.IsShowLineLeft = false;
             this.fPdfLabel1.IsShowLineRight = false;
@@ -429,12 +456,12 @@
             // lblCompanyBankAccount
             // 
             this.lblCompanyBankAccount.ColumnName = "mybankaccount";
-            this.lblCompanyBankAccount.DBValue = "000.000.00000000";
+            this.lblCompanyBankAccount.DBValue = "119002621130";
             this.lblCompanyBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties3.Rotation = 0;
-            fPdfProperties3.TableColumn = "";
-            fPdfProperties3.TableRow = 0;
-            this.lblCompanyBankAccount.FPdfProperties = fPdfProperties3;
+            fPdfProperties4.Rotation = 0;
+            fPdfProperties4.TableColumn = "";
+            fPdfProperties4.TableRow = 0;
+            this.lblCompanyBankAccount.FPdfProperties = fPdfProperties4;
             this.lblCompanyBankAccount.IsShowLineBottom = false;
             this.lblCompanyBankAccount.IsShowLineLeft = false;
             this.lblCompanyBankAccount.IsShowLineRight = false;
@@ -447,7 +474,7 @@
             this.lblCompanyBankAccount.Name = "lblCompanyBankAccount";
             this.lblCompanyBankAccount.Size = new System.Drawing.Size(451, 22);
             this.lblCompanyBankAccount.TabIndex = 110;
-            this.lblCompanyBankAccount.Text = "000.000.00000000";
+            this.lblCompanyBankAccount.Text = "119002621130";
             this.lblCompanyBankAccount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblCompanyPhone
@@ -455,10 +482,10 @@
             this.lblCompanyPhone.ColumnName = "myphone";
             this.lblCompanyPhone.DBValue = "0903 093 595";
             this.lblCompanyPhone.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties4.Rotation = 0;
-            fPdfProperties4.TableColumn = "";
-            fPdfProperties4.TableRow = 0;
-            this.lblCompanyPhone.FPdfProperties = fPdfProperties4;
+            fPdfProperties5.Rotation = 0;
+            fPdfProperties5.TableColumn = "";
+            fPdfProperties5.TableRow = 0;
+            this.lblCompanyPhone.FPdfProperties = fPdfProperties5;
             this.lblCompanyPhone.IsShowLineBottom = false;
             this.lblCompanyPhone.IsShowLineLeft = false;
             this.lblCompanyPhone.IsShowLineRight = false;
@@ -477,12 +504,12 @@
             // lblAddress
             // 
             this.lblAddress.ColumnName = "myaddress";
-            this.lblAddress.DBValue = "284/41 Võ Văn Tần, Phường 05, Quận 3, TP.Hồ Chí Minh, Việt Nam";
+            this.lblAddress.DBValue = "284/41 Võ Văn Tần, Phường 05, Quận 3, Thành phố Hồ Chí Minh, Việt Nam";
             this.lblAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties5.Rotation = 0;
-            fPdfProperties5.TableColumn = "";
-            fPdfProperties5.TableRow = 0;
-            this.lblAddress.FPdfProperties = fPdfProperties5;
+            fPdfProperties6.Rotation = 0;
+            fPdfProperties6.TableColumn = "";
+            fPdfProperties6.TableRow = 0;
+            this.lblAddress.FPdfProperties = fPdfProperties6;
             this.lblAddress.IsShowLineBottom = false;
             this.lblAddress.IsShowLineLeft = false;
             this.lblAddress.IsShowLineRight = false;
@@ -495,35 +522,8 @@
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(495, 22);
             this.lblAddress.TabIndex = 108;
-            this.lblAddress.Text = "284/41 Võ Văn Tần, Phường 05, Quận 3, TP.Hồ Chí Minh, Việt Nam";
+            this.lblAddress.Text = "284/41 Võ Văn Tần, Phường 05, Quận 3, Thành phố Hồ Chí Minh, Việt Nam";
             this.lblAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // fPdfLabel119
-            // 
-            this.fPdfLabel119.BackColor = System.Drawing.Color.Transparent;
-            this.fPdfLabel119.ColumnName = "";
-            this.fPdfLabel119.DBValue = "(Xuất bởi phần mềm FOS-Einvoice, FOS TECHNOLOGY SOLUTIONS CO., LTD. - MST: 031421" +
-                "0262 - www.fos-vn.com)";
-            this.fPdfLabel119.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fPdfProperties6.Rotation = 0;
-            fPdfProperties6.TableColumn = "";
-            fPdfProperties6.TableRow = 0;
-            this.fPdfLabel119.FPdfProperties = fPdfProperties6;
-            this.fPdfLabel119.IsShowLineBottom = false;
-            this.fPdfLabel119.IsShowLineLeft = false;
-            this.fPdfLabel119.IsShowLineRight = false;
-            this.fPdfLabel119.IsShowLineTop = true;
-            this.fPdfLabel119.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Dot;
-            this.fPdfLabel119.LineStyleLeft = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel119.LineStyleRight = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel119.LineStyleTop = System.Drawing.Drawing2D.DashStyle.Solid;
-            this.fPdfLabel119.Location = new System.Drawing.Point(0, 974);
-            this.fPdfLabel119.Name = "fPdfLabel119";
-            this.fPdfLabel119.Size = new System.Drawing.Size(680, 22);
-            this.fPdfLabel119.TabIndex = 107;
-            this.fPdfLabel119.Text = "(Xuất bởi phần mềm FOS-Einvoice, FOS TECHNOLOGY SOLUTIONS CO., LTD. - MST: 031421" +
-                "0262 - www.fos-vn.com)";
-            this.fPdfLabel119.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // fPdfLabel118
             // 
@@ -657,7 +657,7 @@
             this.lblAmountinwords.DBValue = "";
             this.lblAmountinwords.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties12.Rotation = 0;
-            fPdfProperties12.TableColumn = "";
+            fPdfProperties12.TableColumn = "invoiceamountinwords";
             fPdfProperties12.TableRow = 0;
             this.lblAmountinwords.FPdfProperties = fPdfProperties12;
             this.lblAmountinwords.IsShowLineBottom = true;
@@ -706,7 +706,7 @@
             this.lblTaxRate.DBValue = "";
             this.lblTaxRate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties14.Rotation = 0;
-            fPdfProperties14.TableColumn = "";
+            fPdfProperties14.TableColumn = "invoicetaxrate";
             fPdfProperties14.TableRow = 0;
             this.lblTaxRate.FPdfProperties = fPdfProperties14;
             this.lblTaxRate.IsShowLineBottom = false;
@@ -755,7 +755,7 @@
             this.lblAmount.DBValue = "";
             this.lblAmount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties16.Rotation = 0;
-            fPdfProperties16.TableColumn = "";
+            fPdfProperties16.TableColumn = "invoiceamount";
             fPdfProperties16.TableRow = 0;
             this.lblAmount.FPdfProperties = fPdfProperties16;
             this.lblAmount.IsShowLineBottom = false;
@@ -779,7 +779,7 @@
             this.lblTax.DBValue = "";
             this.lblTax.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties17.Rotation = 0;
-            fPdfProperties17.TableColumn = "";
+            fPdfProperties17.TableColumn = "invoicetax";
             fPdfProperties17.TableRow = 0;
             this.lblTax.FPdfProperties = fPdfProperties17;
             this.lblTax.IsShowLineBottom = false;
@@ -803,7 +803,7 @@
             this.lblTotal.DBValue = "";
             this.lblTotal.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties18.Rotation = 0;
-            fPdfProperties18.TableColumn = "";
+            fPdfProperties18.TableColumn = "invoicetotal";
             fPdfProperties18.TableRow = 0;
             this.lblTotal.FPdfProperties = fPdfProperties18;
             this.lblTotal.IsShowLineBottom = false;
@@ -898,7 +898,7 @@
             // pnlDetail
             // 
             this.pnlDetail.BackColor = System.Drawing.Color.White;
-            this.pnlDetail.BackgroundImage = global::FOS_Einvoice.Properties.Resources.fos_invoice_logo_detail1;
+            this.pnlDetail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlDetail.BackgroundImage")));
             this.pnlDetail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pnlDetail.Controls.Add(this.fPdfLabel95);
             this.pnlDetail.Controls.Add(this.fPdfLabel41);
@@ -975,7 +975,7 @@
             this.fPdfLabel95.DBValue = "";
             this.fPdfLabel95.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties22.Rotation = 0;
-            fPdfProperties22.TableColumn = "";
+            fPdfProperties22.TableColumn = "invoiceamount10";
             fPdfProperties22.TableRow = 0;
             this.fPdfLabel95.FPdfProperties = fPdfProperties22;
             this.fPdfLabel95.IsShowLineBottom = true;
@@ -999,7 +999,7 @@
             this.fPdfLabel41.DBValue = "";
             this.fPdfLabel41.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties23.Rotation = 0;
-            fPdfProperties23.TableColumn = "";
+            fPdfProperties23.TableColumn = "invoicerownumber1";
             fPdfProperties23.TableRow = 0;
             this.fPdfLabel41.FPdfProperties = fPdfProperties23;
             this.fPdfLabel41.IsShowLineBottom = true;
@@ -1023,7 +1023,7 @@
             this.fPdfLabel96.DBValue = "";
             this.fPdfLabel96.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties24.Rotation = 0;
-            fPdfProperties24.TableColumn = "";
+            fPdfProperties24.TableColumn = "invoiceprice10";
             fPdfProperties24.TableRow = 0;
             this.fPdfLabel96.FPdfProperties = fPdfProperties24;
             this.fPdfLabel96.IsShowLineBottom = true;
@@ -1047,7 +1047,7 @@
             this.fPdfLabel97.DBValue = "";
             this.fPdfLabel97.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties25.Rotation = 0;
-            fPdfProperties25.TableColumn = "";
+            fPdfProperties25.TableColumn = "invoicequantity10";
             fPdfProperties25.TableRow = 0;
             this.fPdfLabel97.FPdfProperties = fPdfProperties25;
             this.fPdfLabel97.IsShowLineBottom = true;
@@ -1071,7 +1071,7 @@
             this.fPdfLabel98.DBValue = "";
             this.fPdfLabel98.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties26.Rotation = 0;
-            fPdfProperties26.TableColumn = "";
+            fPdfProperties26.TableColumn = "invoiceunitname10";
             fPdfProperties26.TableRow = 0;
             this.fPdfLabel98.FPdfProperties = fPdfProperties26;
             this.fPdfLabel98.IsShowLineBottom = true;
@@ -1095,7 +1095,7 @@
             this.fPdfLabel99.DBValue = "";
             this.fPdfLabel99.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties27.Rotation = 0;
-            fPdfProperties27.TableColumn = "";
+            fPdfProperties27.TableColumn = "invoiceproductname10";
             fPdfProperties27.TableRow = 0;
             this.fPdfLabel99.FPdfProperties = fPdfProperties27;
             this.fPdfLabel99.IsShowLineBottom = true;
@@ -1119,7 +1119,7 @@
             this.fPdfLabel100.DBValue = "";
             this.fPdfLabel100.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties28.Rotation = 0;
-            fPdfProperties28.TableColumn = "";
+            fPdfProperties28.TableColumn = "invoicerownumber10";
             fPdfProperties28.TableRow = 0;
             this.fPdfLabel100.FPdfProperties = fPdfProperties28;
             this.fPdfLabel100.IsShowLineBottom = true;
@@ -1143,7 +1143,7 @@
             this.fPdfLabel89.DBValue = "";
             this.fPdfLabel89.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties29.Rotation = 0;
-            fPdfProperties29.TableColumn = "";
+            fPdfProperties29.TableColumn = "invoiceamount9";
             fPdfProperties29.TableRow = 0;
             this.fPdfLabel89.FPdfProperties = fPdfProperties29;
             this.fPdfLabel89.IsShowLineBottom = true;
@@ -1167,7 +1167,7 @@
             this.fPdfLabel90.DBValue = "";
             this.fPdfLabel90.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties30.Rotation = 0;
-            fPdfProperties30.TableColumn = "";
+            fPdfProperties30.TableColumn = "invoiceprice9";
             fPdfProperties30.TableRow = 0;
             this.fPdfLabel90.FPdfProperties = fPdfProperties30;
             this.fPdfLabel90.IsShowLineBottom = true;
@@ -1191,7 +1191,7 @@
             this.fPdfLabel91.DBValue = "";
             this.fPdfLabel91.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties31.Rotation = 0;
-            fPdfProperties31.TableColumn = "";
+            fPdfProperties31.TableColumn = "invoicequantity9";
             fPdfProperties31.TableRow = 0;
             this.fPdfLabel91.FPdfProperties = fPdfProperties31;
             this.fPdfLabel91.IsShowLineBottom = true;
@@ -1215,7 +1215,7 @@
             this.fPdfLabel92.DBValue = "";
             this.fPdfLabel92.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties32.Rotation = 0;
-            fPdfProperties32.TableColumn = "";
+            fPdfProperties32.TableColumn = "invoiceunitname9";
             fPdfProperties32.TableRow = 0;
             this.fPdfLabel92.FPdfProperties = fPdfProperties32;
             this.fPdfLabel92.IsShowLineBottom = true;
@@ -1239,7 +1239,7 @@
             this.fPdfLabel93.DBValue = "";
             this.fPdfLabel93.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties33.Rotation = 0;
-            fPdfProperties33.TableColumn = "";
+            fPdfProperties33.TableColumn = "invoiceproductname9";
             fPdfProperties33.TableRow = 0;
             this.fPdfLabel93.FPdfProperties = fPdfProperties33;
             this.fPdfLabel93.IsShowLineBottom = true;
@@ -1263,7 +1263,7 @@
             this.fPdfLabel94.DBValue = "";
             this.fPdfLabel94.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties34.Rotation = 0;
-            fPdfProperties34.TableColumn = "";
+            fPdfProperties34.TableColumn = "invoicerownumber9";
             fPdfProperties34.TableRow = 0;
             this.fPdfLabel94.FPdfProperties = fPdfProperties34;
             this.fPdfLabel94.IsShowLineBottom = true;
@@ -1287,7 +1287,7 @@
             this.fPdfLabel83.DBValue = "";
             this.fPdfLabel83.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties35.Rotation = 0;
-            fPdfProperties35.TableColumn = "";
+            fPdfProperties35.TableColumn = "invoiceamount8";
             fPdfProperties35.TableRow = 0;
             this.fPdfLabel83.FPdfProperties = fPdfProperties35;
             this.fPdfLabel83.IsShowLineBottom = true;
@@ -1311,7 +1311,7 @@
             this.fPdfLabel84.DBValue = "";
             this.fPdfLabel84.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties36.Rotation = 0;
-            fPdfProperties36.TableColumn = "";
+            fPdfProperties36.TableColumn = "invoiceprice8";
             fPdfProperties36.TableRow = 0;
             this.fPdfLabel84.FPdfProperties = fPdfProperties36;
             this.fPdfLabel84.IsShowLineBottom = true;
@@ -1335,7 +1335,7 @@
             this.fPdfLabel85.DBValue = "";
             this.fPdfLabel85.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties37.Rotation = 0;
-            fPdfProperties37.TableColumn = "";
+            fPdfProperties37.TableColumn = "invoicequantity8";
             fPdfProperties37.TableRow = 0;
             this.fPdfLabel85.FPdfProperties = fPdfProperties37;
             this.fPdfLabel85.IsShowLineBottom = true;
@@ -1359,7 +1359,7 @@
             this.fPdfLabel86.DBValue = "";
             this.fPdfLabel86.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties38.Rotation = 0;
-            fPdfProperties38.TableColumn = "";
+            fPdfProperties38.TableColumn = "invoiceunitname8";
             fPdfProperties38.TableRow = 0;
             this.fPdfLabel86.FPdfProperties = fPdfProperties38;
             this.fPdfLabel86.IsShowLineBottom = true;
@@ -1383,7 +1383,7 @@
             this.fPdfLabel87.DBValue = "";
             this.fPdfLabel87.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties39.Rotation = 0;
-            fPdfProperties39.TableColumn = "";
+            fPdfProperties39.TableColumn = "invoiceproductname8";
             fPdfProperties39.TableRow = 0;
             this.fPdfLabel87.FPdfProperties = fPdfProperties39;
             this.fPdfLabel87.IsShowLineBottom = true;
@@ -1407,7 +1407,7 @@
             this.fPdfLabel88.DBValue = "";
             this.fPdfLabel88.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties40.Rotation = 0;
-            fPdfProperties40.TableColumn = "";
+            fPdfProperties40.TableColumn = "invoicerownumber8";
             fPdfProperties40.TableRow = 0;
             this.fPdfLabel88.FPdfProperties = fPdfProperties40;
             this.fPdfLabel88.IsShowLineBottom = true;
@@ -1431,7 +1431,7 @@
             this.fPdfLabel77.DBValue = "";
             this.fPdfLabel77.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties41.Rotation = 0;
-            fPdfProperties41.TableColumn = "";
+            fPdfProperties41.TableColumn = "invoiceamount7";
             fPdfProperties41.TableRow = 0;
             this.fPdfLabel77.FPdfProperties = fPdfProperties41;
             this.fPdfLabel77.IsShowLineBottom = true;
@@ -1455,7 +1455,7 @@
             this.fPdfLabel78.DBValue = "";
             this.fPdfLabel78.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties42.Rotation = 0;
-            fPdfProperties42.TableColumn = "";
+            fPdfProperties42.TableColumn = "invoiceprice7";
             fPdfProperties42.TableRow = 0;
             this.fPdfLabel78.FPdfProperties = fPdfProperties42;
             this.fPdfLabel78.IsShowLineBottom = true;
@@ -1479,7 +1479,7 @@
             this.fPdfLabel79.DBValue = "";
             this.fPdfLabel79.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties43.Rotation = 0;
-            fPdfProperties43.TableColumn = "";
+            fPdfProperties43.TableColumn = "invoicequantity7";
             fPdfProperties43.TableRow = 0;
             this.fPdfLabel79.FPdfProperties = fPdfProperties43;
             this.fPdfLabel79.IsShowLineBottom = true;
@@ -1503,7 +1503,7 @@
             this.fPdfLabel80.DBValue = "";
             this.fPdfLabel80.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties44.Rotation = 0;
-            fPdfProperties44.TableColumn = "";
+            fPdfProperties44.TableColumn = "invoiceunitname7";
             fPdfProperties44.TableRow = 0;
             this.fPdfLabel80.FPdfProperties = fPdfProperties44;
             this.fPdfLabel80.IsShowLineBottom = true;
@@ -1527,7 +1527,7 @@
             this.fPdfLabel81.DBValue = "";
             this.fPdfLabel81.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties45.Rotation = 0;
-            fPdfProperties45.TableColumn = "";
+            fPdfProperties45.TableColumn = "invoiceproductname7";
             fPdfProperties45.TableRow = 0;
             this.fPdfLabel81.FPdfProperties = fPdfProperties45;
             this.fPdfLabel81.IsShowLineBottom = true;
@@ -1551,7 +1551,7 @@
             this.fPdfLabel82.DBValue = "";
             this.fPdfLabel82.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties46.Rotation = 0;
-            fPdfProperties46.TableColumn = "";
+            fPdfProperties46.TableColumn = "invoicerownumber7";
             fPdfProperties46.TableRow = 0;
             this.fPdfLabel82.FPdfProperties = fPdfProperties46;
             this.fPdfLabel82.IsShowLineBottom = true;
@@ -1575,7 +1575,7 @@
             this.fPdfLabel71.DBValue = "";
             this.fPdfLabel71.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties47.Rotation = 0;
-            fPdfProperties47.TableColumn = "";
+            fPdfProperties47.TableColumn = "invoiceamount6";
             fPdfProperties47.TableRow = 0;
             this.fPdfLabel71.FPdfProperties = fPdfProperties47;
             this.fPdfLabel71.IsShowLineBottom = true;
@@ -1599,7 +1599,7 @@
             this.fPdfLabel72.DBValue = "";
             this.fPdfLabel72.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties48.Rotation = 0;
-            fPdfProperties48.TableColumn = "";
+            fPdfProperties48.TableColumn = "invoiceprice6";
             fPdfProperties48.TableRow = 0;
             this.fPdfLabel72.FPdfProperties = fPdfProperties48;
             this.fPdfLabel72.IsShowLineBottom = true;
@@ -1623,7 +1623,7 @@
             this.fPdfLabel73.DBValue = "";
             this.fPdfLabel73.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties49.Rotation = 0;
-            fPdfProperties49.TableColumn = "";
+            fPdfProperties49.TableColumn = "invoicequantity6";
             fPdfProperties49.TableRow = 0;
             this.fPdfLabel73.FPdfProperties = fPdfProperties49;
             this.fPdfLabel73.IsShowLineBottom = true;
@@ -1647,7 +1647,7 @@
             this.fPdfLabel74.DBValue = "";
             this.fPdfLabel74.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties50.Rotation = 0;
-            fPdfProperties50.TableColumn = "";
+            fPdfProperties50.TableColumn = "invoiceunitname6";
             fPdfProperties50.TableRow = 0;
             this.fPdfLabel74.FPdfProperties = fPdfProperties50;
             this.fPdfLabel74.IsShowLineBottom = true;
@@ -1671,7 +1671,7 @@
             this.fPdfLabel75.DBValue = "";
             this.fPdfLabel75.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties51.Rotation = 0;
-            fPdfProperties51.TableColumn = "";
+            fPdfProperties51.TableColumn = "invoiceproductname6";
             fPdfProperties51.TableRow = 0;
             this.fPdfLabel75.FPdfProperties = fPdfProperties51;
             this.fPdfLabel75.IsShowLineBottom = true;
@@ -1695,7 +1695,7 @@
             this.fPdfLabel76.DBValue = "";
             this.fPdfLabel76.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties52.Rotation = 0;
-            fPdfProperties52.TableColumn = "";
+            fPdfProperties52.TableColumn = "invoicerownumber6";
             fPdfProperties52.TableRow = 0;
             this.fPdfLabel76.FPdfProperties = fPdfProperties52;
             this.fPdfLabel76.IsShowLineBottom = true;
@@ -1719,7 +1719,7 @@
             this.fPdfLabel65.DBValue = "";
             this.fPdfLabel65.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties53.Rotation = 0;
-            fPdfProperties53.TableColumn = "";
+            fPdfProperties53.TableColumn = "invoiceamount5";
             fPdfProperties53.TableRow = 0;
             this.fPdfLabel65.FPdfProperties = fPdfProperties53;
             this.fPdfLabel65.IsShowLineBottom = true;
@@ -1743,7 +1743,7 @@
             this.fPdfLabel66.DBValue = "";
             this.fPdfLabel66.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties54.Rotation = 0;
-            fPdfProperties54.TableColumn = "";
+            fPdfProperties54.TableColumn = "invoiceprice5";
             fPdfProperties54.TableRow = 0;
             this.fPdfLabel66.FPdfProperties = fPdfProperties54;
             this.fPdfLabel66.IsShowLineBottom = true;
@@ -1767,7 +1767,7 @@
             this.fPdfLabel67.DBValue = "";
             this.fPdfLabel67.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties55.Rotation = 0;
-            fPdfProperties55.TableColumn = "";
+            fPdfProperties55.TableColumn = "invoicequantity5";
             fPdfProperties55.TableRow = 0;
             this.fPdfLabel67.FPdfProperties = fPdfProperties55;
             this.fPdfLabel67.IsShowLineBottom = true;
@@ -1791,7 +1791,7 @@
             this.fPdfLabel68.DBValue = "";
             this.fPdfLabel68.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties56.Rotation = 0;
-            fPdfProperties56.TableColumn = "";
+            fPdfProperties56.TableColumn = "invoiceunitname5";
             fPdfProperties56.TableRow = 0;
             this.fPdfLabel68.FPdfProperties = fPdfProperties56;
             this.fPdfLabel68.IsShowLineBottom = true;
@@ -1815,7 +1815,7 @@
             this.fPdfLabel69.DBValue = "";
             this.fPdfLabel69.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties57.Rotation = 0;
-            fPdfProperties57.TableColumn = "";
+            fPdfProperties57.TableColumn = "invoiceproductname5";
             fPdfProperties57.TableRow = 0;
             this.fPdfLabel69.FPdfProperties = fPdfProperties57;
             this.fPdfLabel69.IsShowLineBottom = true;
@@ -1839,7 +1839,7 @@
             this.fPdfLabel70.DBValue = "";
             this.fPdfLabel70.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties58.Rotation = 0;
-            fPdfProperties58.TableColumn = "";
+            fPdfProperties58.TableColumn = "invoicerownumber5";
             fPdfProperties58.TableRow = 0;
             this.fPdfLabel70.FPdfProperties = fPdfProperties58;
             this.fPdfLabel70.IsShowLineBottom = true;
@@ -1863,7 +1863,7 @@
             this.fPdfLabel59.DBValue = "";
             this.fPdfLabel59.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties59.Rotation = 0;
-            fPdfProperties59.TableColumn = "";
+            fPdfProperties59.TableColumn = "invoiceamount4";
             fPdfProperties59.TableRow = 0;
             this.fPdfLabel59.FPdfProperties = fPdfProperties59;
             this.fPdfLabel59.IsShowLineBottom = true;
@@ -1887,7 +1887,7 @@
             this.fPdfLabel60.DBValue = "";
             this.fPdfLabel60.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties60.Rotation = 0;
-            fPdfProperties60.TableColumn = "";
+            fPdfProperties60.TableColumn = "invoiceprice4";
             fPdfProperties60.TableRow = 0;
             this.fPdfLabel60.FPdfProperties = fPdfProperties60;
             this.fPdfLabel60.IsShowLineBottom = true;
@@ -1911,7 +1911,7 @@
             this.fPdfLabel61.DBValue = "";
             this.fPdfLabel61.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties61.Rotation = 0;
-            fPdfProperties61.TableColumn = "";
+            fPdfProperties61.TableColumn = "invoicequantity4";
             fPdfProperties61.TableRow = 0;
             this.fPdfLabel61.FPdfProperties = fPdfProperties61;
             this.fPdfLabel61.IsShowLineBottom = true;
@@ -1935,7 +1935,7 @@
             this.fPdfLabel62.DBValue = "";
             this.fPdfLabel62.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties62.Rotation = 0;
-            fPdfProperties62.TableColumn = "";
+            fPdfProperties62.TableColumn = "invoiceunitname4";
             fPdfProperties62.TableRow = 0;
             this.fPdfLabel62.FPdfProperties = fPdfProperties62;
             this.fPdfLabel62.IsShowLineBottom = true;
@@ -1959,7 +1959,7 @@
             this.fPdfLabel63.DBValue = "";
             this.fPdfLabel63.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties63.Rotation = 0;
-            fPdfProperties63.TableColumn = "";
+            fPdfProperties63.TableColumn = "invoiceproductname4";
             fPdfProperties63.TableRow = 0;
             this.fPdfLabel63.FPdfProperties = fPdfProperties63;
             this.fPdfLabel63.IsShowLineBottom = true;
@@ -1983,7 +1983,7 @@
             this.fPdfLabel64.DBValue = "";
             this.fPdfLabel64.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties64.Rotation = 0;
-            fPdfProperties64.TableColumn = "";
+            fPdfProperties64.TableColumn = "invoicerownumber4";
             fPdfProperties64.TableRow = 0;
             this.fPdfLabel64.FPdfProperties = fPdfProperties64;
             this.fPdfLabel64.IsShowLineBottom = true;
@@ -2007,7 +2007,7 @@
             this.fPdfLabel53.DBValue = "";
             this.fPdfLabel53.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties65.Rotation = 0;
-            fPdfProperties65.TableColumn = "";
+            fPdfProperties65.TableColumn = "invoiceamount3";
             fPdfProperties65.TableRow = 0;
             this.fPdfLabel53.FPdfProperties = fPdfProperties65;
             this.fPdfLabel53.IsShowLineBottom = true;
@@ -2031,7 +2031,7 @@
             this.fPdfLabel54.DBValue = "";
             this.fPdfLabel54.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties66.Rotation = 0;
-            fPdfProperties66.TableColumn = "";
+            fPdfProperties66.TableColumn = "invoiceprice3";
             fPdfProperties66.TableRow = 0;
             this.fPdfLabel54.FPdfProperties = fPdfProperties66;
             this.fPdfLabel54.IsShowLineBottom = true;
@@ -2055,7 +2055,7 @@
             this.fPdfLabel55.DBValue = "";
             this.fPdfLabel55.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties67.Rotation = 0;
-            fPdfProperties67.TableColumn = "";
+            fPdfProperties67.TableColumn = "invoicequantity3";
             fPdfProperties67.TableRow = 0;
             this.fPdfLabel55.FPdfProperties = fPdfProperties67;
             this.fPdfLabel55.IsShowLineBottom = true;
@@ -2079,7 +2079,7 @@
             this.fPdfLabel56.DBValue = "";
             this.fPdfLabel56.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties68.Rotation = 0;
-            fPdfProperties68.TableColumn = "";
+            fPdfProperties68.TableColumn = "invoiceunitname3";
             fPdfProperties68.TableRow = 0;
             this.fPdfLabel56.FPdfProperties = fPdfProperties68;
             this.fPdfLabel56.IsShowLineBottom = true;
@@ -2103,7 +2103,7 @@
             this.fPdfLabel57.DBValue = "";
             this.fPdfLabel57.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties69.Rotation = 0;
-            fPdfProperties69.TableColumn = "";
+            fPdfProperties69.TableColumn = "invoiceproductname3";
             fPdfProperties69.TableRow = 0;
             this.fPdfLabel57.FPdfProperties = fPdfProperties69;
             this.fPdfLabel57.IsShowLineBottom = true;
@@ -2127,7 +2127,7 @@
             this.fPdfLabel58.DBValue = "";
             this.fPdfLabel58.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties70.Rotation = 0;
-            fPdfProperties70.TableColumn = "";
+            fPdfProperties70.TableColumn = "invoicerownumber3";
             fPdfProperties70.TableRow = 0;
             this.fPdfLabel58.FPdfProperties = fPdfProperties70;
             this.fPdfLabel58.IsShowLineBottom = true;
@@ -2151,7 +2151,7 @@
             this.fPdfLabel47.DBValue = "";
             this.fPdfLabel47.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties71.Rotation = 0;
-            fPdfProperties71.TableColumn = "";
+            fPdfProperties71.TableColumn = "invoiceamount2";
             fPdfProperties71.TableRow = 0;
             this.fPdfLabel47.FPdfProperties = fPdfProperties71;
             this.fPdfLabel47.IsShowLineBottom = true;
@@ -2175,7 +2175,7 @@
             this.fPdfLabel48.DBValue = "";
             this.fPdfLabel48.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties72.Rotation = 0;
-            fPdfProperties72.TableColumn = "";
+            fPdfProperties72.TableColumn = "invoiceprice2";
             fPdfProperties72.TableRow = 0;
             this.fPdfLabel48.FPdfProperties = fPdfProperties72;
             this.fPdfLabel48.IsShowLineBottom = true;
@@ -2199,7 +2199,7 @@
             this.fPdfLabel49.DBValue = "";
             this.fPdfLabel49.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties73.Rotation = 0;
-            fPdfProperties73.TableColumn = "";
+            fPdfProperties73.TableColumn = "invoicequantity2";
             fPdfProperties73.TableRow = 0;
             this.fPdfLabel49.FPdfProperties = fPdfProperties73;
             this.fPdfLabel49.IsShowLineBottom = true;
@@ -2223,7 +2223,7 @@
             this.fPdfLabel50.DBValue = "";
             this.fPdfLabel50.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties74.Rotation = 0;
-            fPdfProperties74.TableColumn = "";
+            fPdfProperties74.TableColumn = "invoiceunitname2";
             fPdfProperties74.TableRow = 0;
             this.fPdfLabel50.FPdfProperties = fPdfProperties74;
             this.fPdfLabel50.IsShowLineBottom = true;
@@ -2247,7 +2247,7 @@
             this.fPdfLabel51.DBValue = "";
             this.fPdfLabel51.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties75.Rotation = 0;
-            fPdfProperties75.TableColumn = "";
+            fPdfProperties75.TableColumn = "invoiceproductname2";
             fPdfProperties75.TableRow = 0;
             this.fPdfLabel51.FPdfProperties = fPdfProperties75;
             this.fPdfLabel51.IsShowLineBottom = true;
@@ -2271,7 +2271,7 @@
             this.fPdfLabel52.DBValue = "";
             this.fPdfLabel52.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties76.Rotation = 0;
-            fPdfProperties76.TableColumn = "";
+            fPdfProperties76.TableColumn = "invoicerownumber2";
             fPdfProperties76.TableRow = 0;
             this.fPdfLabel52.FPdfProperties = fPdfProperties76;
             this.fPdfLabel52.IsShowLineBottom = true;
@@ -2295,7 +2295,7 @@
             this.fPdfLabel46.DBValue = "";
             this.fPdfLabel46.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties77.Rotation = 0;
-            fPdfProperties77.TableColumn = "";
+            fPdfProperties77.TableColumn = "invoiceamount1";
             fPdfProperties77.TableRow = 0;
             this.fPdfLabel46.FPdfProperties = fPdfProperties77;
             this.fPdfLabel46.IsShowLineBottom = true;
@@ -2319,7 +2319,7 @@
             this.fPdfLabel45.DBValue = "";
             this.fPdfLabel45.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties78.Rotation = 0;
-            fPdfProperties78.TableColumn = "";
+            fPdfProperties78.TableColumn = "invoiceprice1";
             fPdfProperties78.TableRow = 0;
             this.fPdfLabel45.FPdfProperties = fPdfProperties78;
             this.fPdfLabel45.IsShowLineBottom = true;
@@ -2343,7 +2343,7 @@
             this.fPdfLabel44.DBValue = "";
             this.fPdfLabel44.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties79.Rotation = 0;
-            fPdfProperties79.TableColumn = "";
+            fPdfProperties79.TableColumn = "invoicequantity1";
             fPdfProperties79.TableRow = 0;
             this.fPdfLabel44.FPdfProperties = fPdfProperties79;
             this.fPdfLabel44.IsShowLineBottom = true;
@@ -2367,7 +2367,7 @@
             this.fPdfLabel43.DBValue = "";
             this.fPdfLabel43.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties80.Rotation = 0;
-            fPdfProperties80.TableColumn = "";
+            fPdfProperties80.TableColumn = "invoiceunitname1";
             fPdfProperties80.TableRow = 0;
             this.fPdfLabel43.FPdfProperties = fPdfProperties80;
             this.fPdfLabel43.IsShowLineBottom = true;
@@ -2391,7 +2391,7 @@
             this.fPdfLabel42.DBValue = "";
             this.fPdfLabel42.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties81.Rotation = 0;
-            fPdfProperties81.TableColumn = "";
+            fPdfProperties81.TableColumn = "invoiceproductname1";
             fPdfProperties81.TableRow = 0;
             this.fPdfLabel42.FPdfProperties = fPdfProperties81;
             this.fPdfLabel42.IsShowLineBottom = true;
@@ -2419,7 +2419,7 @@
             fPdfProperties82.TableRow = 0;
             this.fPdfLabel39.FPdfProperties = fPdfProperties82;
             this.fPdfLabel39.IsShowLineBottom = true;
-            this.fPdfLabel39.IsShowLineLeft = true;
+            this.fPdfLabel39.IsShowLineLeft = false;
             this.fPdfLabel39.IsShowLineRight = true;
             this.fPdfLabel39.IsShowLineTop = true;
             this.fPdfLabel39.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2443,8 +2443,8 @@
             fPdfProperties83.TableColumn = "";
             fPdfProperties83.TableRow = 0;
             this.fPdfLabel40.FPdfProperties = fPdfProperties83;
-            this.fPdfLabel40.IsShowLineBottom = true;
-            this.fPdfLabel40.IsShowLineLeft = true;
+            this.fPdfLabel40.IsShowLineBottom = false;
+            this.fPdfLabel40.IsShowLineLeft = false;
             this.fPdfLabel40.IsShowLineRight = true;
             this.fPdfLabel40.IsShowLineTop = true;
             this.fPdfLabel40.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2469,7 +2469,7 @@
             fPdfProperties84.TableRow = 0;
             this.fPdfLabel34.FPdfProperties = fPdfProperties84;
             this.fPdfLabel34.IsShowLineBottom = true;
-            this.fPdfLabel34.IsShowLineLeft = true;
+            this.fPdfLabel34.IsShowLineLeft = false;
             this.fPdfLabel34.IsShowLineRight = true;
             this.fPdfLabel34.IsShowLineTop = true;
             this.fPdfLabel34.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2494,7 +2494,7 @@
             fPdfProperties85.TableRow = 0;
             this.fPdfLabel35.FPdfProperties = fPdfProperties85;
             this.fPdfLabel35.IsShowLineBottom = true;
-            this.fPdfLabel35.IsShowLineLeft = true;
+            this.fPdfLabel35.IsShowLineLeft = false;
             this.fPdfLabel35.IsShowLineRight = true;
             this.fPdfLabel35.IsShowLineTop = true;
             this.fPdfLabel35.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2519,7 +2519,7 @@
             fPdfProperties86.TableRow = 0;
             this.fPdfLabel36.FPdfProperties = fPdfProperties86;
             this.fPdfLabel36.IsShowLineBottom = true;
-            this.fPdfLabel36.IsShowLineLeft = true;
+            this.fPdfLabel36.IsShowLineLeft = false;
             this.fPdfLabel36.IsShowLineRight = true;
             this.fPdfLabel36.IsShowLineTop = true;
             this.fPdfLabel36.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2544,7 +2544,7 @@
             fPdfProperties87.TableRow = 0;
             this.fPdfLabel37.FPdfProperties = fPdfProperties87;
             this.fPdfLabel37.IsShowLineBottom = true;
-            this.fPdfLabel37.IsShowLineLeft = true;
+            this.fPdfLabel37.IsShowLineLeft = false;
             this.fPdfLabel37.IsShowLineRight = true;
             this.fPdfLabel37.IsShowLineTop = true;
             this.fPdfLabel37.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2593,8 +2593,8 @@
             fPdfProperties89.TableColumn = "";
             fPdfProperties89.TableRow = 0;
             this.fPdfLabel33.FPdfProperties = fPdfProperties89;
-            this.fPdfLabel33.IsShowLineBottom = true;
-            this.fPdfLabel33.IsShowLineLeft = true;
+            this.fPdfLabel33.IsShowLineBottom = false;
+            this.fPdfLabel33.IsShowLineLeft = false;
             this.fPdfLabel33.IsShowLineRight = true;
             this.fPdfLabel33.IsShowLineTop = true;
             this.fPdfLabel33.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2618,8 +2618,8 @@
             fPdfProperties90.TableColumn = "";
             fPdfProperties90.TableRow = 0;
             this.fPdfLabel32.FPdfProperties = fPdfProperties90;
-            this.fPdfLabel32.IsShowLineBottom = true;
-            this.fPdfLabel32.IsShowLineLeft = true;
+            this.fPdfLabel32.IsShowLineBottom = false;
+            this.fPdfLabel32.IsShowLineLeft = false;
             this.fPdfLabel32.IsShowLineRight = true;
             this.fPdfLabel32.IsShowLineTop = true;
             this.fPdfLabel32.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2643,8 +2643,8 @@
             fPdfProperties91.TableColumn = "";
             fPdfProperties91.TableRow = 0;
             this.fPdfLabel31.FPdfProperties = fPdfProperties91;
-            this.fPdfLabel31.IsShowLineBottom = true;
-            this.fPdfLabel31.IsShowLineLeft = true;
+            this.fPdfLabel31.IsShowLineBottom = false;
+            this.fPdfLabel31.IsShowLineLeft = false;
             this.fPdfLabel31.IsShowLineRight = true;
             this.fPdfLabel31.IsShowLineTop = true;
             this.fPdfLabel31.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2668,8 +2668,8 @@
             fPdfProperties92.TableColumn = "";
             fPdfProperties92.TableRow = 0;
             this.fPdfLabel30.FPdfProperties = fPdfProperties92;
-            this.fPdfLabel30.IsShowLineBottom = true;
-            this.fPdfLabel30.IsShowLineLeft = true;
+            this.fPdfLabel30.IsShowLineBottom = false;
+            this.fPdfLabel30.IsShowLineLeft = false;
             this.fPdfLabel30.IsShowLineRight = true;
             this.fPdfLabel30.IsShowLineTop = true;
             this.fPdfLabel30.LineStyleBottom = System.Drawing.Drawing2D.DashStyle.Solid;
@@ -2693,7 +2693,7 @@
             fPdfProperties93.TableColumn = "";
             fPdfProperties93.TableRow = 0;
             this.fPdfLabel29.FPdfProperties = fPdfProperties93;
-            this.fPdfLabel29.IsShowLineBottom = true;
+            this.fPdfLabel29.IsShowLineBottom = false;
             this.fPdfLabel29.IsShowLineLeft = true;
             this.fPdfLabel29.IsShowLineRight = true;
             this.fPdfLabel29.IsShowLineTop = true;
@@ -2715,7 +2715,7 @@
             this.lblCusBankAccount.DBValue = "";
             this.lblCusBankAccount.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties94.Rotation = 0;
-            fPdfProperties94.TableColumn = "";
+            fPdfProperties94.TableColumn = "invoicebankaccount";
             fPdfProperties94.TableRow = 0;
             this.lblCusBankAccount.FPdfProperties = fPdfProperties94;
             this.lblCusBankAccount.IsShowLineBottom = true;
@@ -2739,7 +2739,7 @@
             this.lblCusPayment.DBValue = "";
             this.lblCusPayment.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties95.Rotation = 0;
-            fPdfProperties95.TableColumn = "";
+            fPdfProperties95.TableColumn = "invoicepaymentname";
             fPdfProperties95.TableRow = 0;
             this.lblCusPayment.FPdfProperties = fPdfProperties95;
             this.lblCusPayment.IsShowLineBottom = true;
@@ -2763,7 +2763,7 @@
             this.lblCusAddress.DBValue = "";
             this.lblCusAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties96.Rotation = 0;
-            fPdfProperties96.TableColumn = "";
+            fPdfProperties96.TableColumn = "invoicecustomeraddress";
             fPdfProperties96.TableRow = 0;
             this.lblCusAddress.FPdfProperties = fPdfProperties96;
             this.lblCusAddress.IsShowLineBottom = true;
@@ -2787,7 +2787,7 @@
             this.lblCusTaxcode.DBValue = "";
             this.lblCusTaxcode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties97.Rotation = 0;
-            fPdfProperties97.TableColumn = "";
+            fPdfProperties97.TableColumn = "invoicetaxcode";
             fPdfProperties97.TableRow = 0;
             this.lblCusTaxcode.FPdfProperties = fPdfProperties97;
             this.lblCusTaxcode.IsShowLineBottom = true;
@@ -2811,7 +2811,7 @@
             this.lblCusCompany.DBValue = "";
             this.lblCusCompany.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties98.Rotation = 0;
-            fPdfProperties98.TableColumn = "";
+            fPdfProperties98.TableColumn = "invoicecompanyname";
             fPdfProperties98.TableRow = 0;
             this.lblCusCompany.FPdfProperties = fPdfProperties98;
             this.lblCusCompany.IsShowLineBottom = true;
@@ -2835,7 +2835,7 @@
             this.lblCusName.DBValue = "";
             this.lblCusName.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties99.Rotation = 0;
-            fPdfProperties99.TableColumn = "";
+            fPdfProperties99.TableColumn = "invoicecustomername";
             fPdfProperties99.TableRow = 0;
             this.lblCusName.FPdfProperties = fPdfProperties99;
             this.lblCusName.IsShowLineBottom = true;
@@ -3050,7 +3050,7 @@
             this.lblInvoiceCode.DBValue = "0000000";
             this.lblInvoiceCode.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties107.Rotation = 0;
-            fPdfProperties107.TableColumn = "";
+            fPdfProperties107.TableColumn = "invoicecode";
             fPdfProperties107.TableRow = 0;
             this.lblInvoiceCode.FPdfProperties = fPdfProperties107;
             this.lblInvoiceCode.IsShowLineBottom = false;
@@ -3098,7 +3098,7 @@
             this.lblInvoiceSymbol.DBValue = "TS/17E";
             this.lblInvoiceSymbol.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties109.Rotation = 0;
-            fPdfProperties109.TableColumn = "";
+            fPdfProperties109.TableColumn = "invoicesymbol";
             fPdfProperties109.TableRow = 0;
             this.lblInvoiceSymbol.FPdfProperties = fPdfProperties109;
             this.lblInvoiceSymbol.IsShowLineBottom = false;
@@ -3146,7 +3146,7 @@
             this.lblInvoiceTempate.DBValue = "01GTKT0/001";
             this.lblInvoiceTempate.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties111.Rotation = 0;
-            fPdfProperties111.TableColumn = "";
+            fPdfProperties111.TableColumn = "invoicetemplate";
             fPdfProperties111.TableRow = 0;
             this.lblInvoiceTempate.FPdfProperties = fPdfProperties111;
             this.lblInvoiceTempate.IsShowLineBottom = false;
@@ -3249,7 +3249,7 @@
             // lblBankAddress
             // 
             this.lblBankAddress.ColumnName = "mybankaddress";
-            this.lblBankAddress.DBValue = "tại ngân hàng Công thương Việt Nam - CN TP.HCM (VietinBank)";
+            this.lblBankAddress.DBValue = "tại Ngân hàng TMCP Công Thương Việt Nam - Chi nhánh 3 - TP HCM";
             this.lblBankAddress.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             fPdfProperties115.Rotation = 0;
             fPdfProperties115.TableColumn = "";
@@ -3267,7 +3267,7 @@
             this.lblBankAddress.Name = "lblBankAddress";
             this.lblBankAddress.Size = new System.Drawing.Size(546, 22);
             this.lblBankAddress.TabIndex = 5;
-            this.lblBankAddress.Text = "tại ngân hàng Công thương Việt Nam - CN TP.HCM (VietinBank)";
+            this.lblBankAddress.Text = "tại Ngân hàng TMCP Công Thương Việt Nam - Chi nhánh 3 - TP HCM";
             this.lblBankAddress.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // fPdfLabel5
@@ -3395,7 +3395,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.Controls.Add(this.pnlMain);
             this.Name = "invoiceGTGT";
-            this.Size = new System.Drawing.Size(750, 1120);
+            this.Size = new System.Drawing.Size(801, 1120);
             this.pnlMain.ResumeLayout(false);
             this.pnlContents.ResumeLayout(false);
             this.pnlDetail.ResumeLayout(false);
